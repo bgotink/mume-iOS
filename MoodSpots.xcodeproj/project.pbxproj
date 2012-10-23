@@ -18,6 +18,7 @@
 		255BC56716318F0F00EEF8F5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56616318F0F00EEF8F5 /* Default-568h@2x.png */; };
 		255BC56A16318F0F00EEF8F5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */; };
 		255BC56D16318F0F00EEF8F5 /* MoodSpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */; };
+		25E222B2163318EF004290B1 /* WheelDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222B1163318EF004290B1 /* WheelDrawer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		255BC56916318F0F00EEF8F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		255BC56B16318F0F00EEF8F5 /* MoodSpotsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodSpotsViewController.h; sourceTree = "<group>"; };
 		255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodSpotsViewController.m; sourceTree = "<group>"; };
+		25E222B0163318EF004290B1 /* WheelDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelDrawer.h; sourceTree = "<group>"; };
+		25E222B1163318EF004290B1 /* WheelDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelDrawer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +88,12 @@
 			children = (
 				255BC55F16318F0F00EEF8F5 /* MoodSpotsAppDelegate.h */,
 				255BC56016318F0F00EEF8F5 /* MoodSpotsAppDelegate.m */,
-				255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */,
 				255BC56B16318F0F00EEF8F5 /* MoodSpotsViewController.h */,
 				255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */,
 				255BC55716318F0F00EEF8F5 /* Supporting Files */,
+				255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */,
+				25E222B0163318EF004290B1 /* WheelDrawer.h */,
+				25E222B1163318EF004290B1 /* WheelDrawer.m */,
 			);
 			path = MoodSpots;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				255BC55D16318F0F00EEF8F5 /* main.m in Sources */,
 				255BC56116318F0F00EEF8F5 /* MoodSpotsAppDelegate.m in Sources */,
 				255BC56D16318F0F00EEF8F5 /* MoodSpotsViewController.m in Sources */,
+				25E222B2163318EF004290B1 /* WheelDrawer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +299,7 @@
 				255BC57216318F0F00EEF8F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

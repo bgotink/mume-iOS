@@ -14,50 +14,65 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="WmK-1z-Hoq">
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" image="Default.png" translatesAutoresizingMaskIntoConstraints="NO" id="dpW-VM-x7m">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="313" id="aEc-k7-kkm"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter new mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNX-rF-fVI">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKL-fY-eMY" customClass="WheelDrawer">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="293" id="x6v-Qh-xWC"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="qNX-rF-fVI" firstAttribute="centerX" secondItem="WmK-1z-Hoq" secondAttribute="centerX" type="default" id="6fq-gp-zYO"/>
-                                    <constraint firstAttribute="bottom" secondItem="dpW-VM-x7m" secondAttribute="bottom" constant="181" id="BNb-vJ-PvS"/>
+                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="33q-Ol-cVG"/>
+                                    <constraint firstItem="qNX-rF-fVI" firstAttribute="centerX" secondItem="WmK-1z-Hoq" secondAttribute="centerX" type="default" id="4Vf-rn-1YY"/>
+                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" type="default" id="5Ls-Of-naV"/>
+                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="48" id="62U-J6-nXK"/>
+                                    <constraint firstAttribute="bottom" secondItem="eKL-fY-eMY" secondAttribute="bottom" constant="207" id="CKm-jQ-mW5"/>
                                     <constraint firstAttribute="trailing" secondItem="qNX-rF-fVI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Yfc-S0-FCI"/>
-                                    <constraint firstItem="qNX-rF-fVI" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="20" symbolic="YES" type="default" id="fBh-av-PZk"/>
-                                    <constraint firstItem="dpW-VM-x7m" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="54" id="pN0-sR-KFS"/>
                                     <constraint firstItem="qNX-rF-fVI" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="s6h-kb-IWx"/>
-                                    <constraint firstItem="dpW-VM-x7m" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" type="default" id="wDb-89-7gD"/>
-                                    <constraint firstItem="dpW-VM-x7m" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="yXs-Yl-ZwM"/>
+                                    <constraint firstItem="qNX-rF-fVI" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="10" id="tUx-6E-dwS"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WmK-1z-Hoq" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Jtc-FL-BF0"/>
-                            <constraint firstItem="WmK-1z-Hoq" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="OZH-hK-Phm"/>
-                            <constraint firstItem="WmK-1z-Hoq" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="aKu-9Q-8TZ"/>
-                            <constraint firstItem="WmK-1z-Hoq" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="zod-PB-6sF"/>
+                            <constraint firstItem="WmK-1z-Hoq" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="1bU-qO-ml2"/>
+                            <constraint firstItem="WmK-1z-Hoq" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Gxe-fF-JqQ"/>
+                            <constraint firstItem="WmK-1z-Hoq" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="J5y-Yg-rH0"/>
+                            <constraint firstAttribute="bottom" secondItem="WmK-1z-Hoq" secondAttribute="bottom" constant="-20" id="aUQ-Uv-Ods"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="WmK-1z-Hoq" id="tcO-Fi-tbJ"/>
-                        <outlet property="wheelImage" destination="dpW-VM-x7m" id="DY2-Pe-awM"/>
+                        <outlet property="wheelImage" destination="eKL-fY-eMY" id="c1k-fl-zbe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="42"/>
+            <point key="canvasLocation" x="-53" y="-181"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Default.png" width="477" height="480"/>
-    </resources>
+    <classes>
+        <class className="MoodSpotsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodSpotsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handleWheelTap:" candidateClass="UIGestureRecognizer"/>
+                <relationship kind="outlet" name="actionSelector" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="wheelImage" candidateClass="WheelDrawer"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="WheelDrawer" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WheelDrawer.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
