@@ -14,9 +14,12 @@
 
 @property (strong,nonatomic,setter=setWheelView:) WheelView *wheelView;
 
-@property (nonatomic) CGPoint point;
-@property (nonatomic) bool pointSet;
+@property (nonatomic) CGPoint *points;
+@property (nonatomic) int nbPoints;
 
--(void)pointTapped:(CGPoint)point;
+- (void)pointTapped:(CGPoint)point;
+
+- (CGPoint*)getPoint:(int)index;
+- (PolarCoordinate*)getPointPolar:(int)index;
 
 @end

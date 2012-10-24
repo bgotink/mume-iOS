@@ -177,17 +177,17 @@
     
     NSLog(@"Tap location: %f x %f", x, y);
     
-    PolarCoordinate *retVal = [[PolarCoordinate alloc] init];
-    retVal.r = sqrt(x * x + y * y) / radius;
+    PolarCoordinate *retVal = malloc(sizeof(PolarCoordinate));
+    retVal->r = sqrt(x * x + y * y) / radius;
     
-    if (retVal.r > 1) {
+    if (retVal->r > 1) {
         NSLog(@"Tapped outside of wheel, ignore");
         return nil;
     }
     
-    retVal.phi = atan2f(-y, x);
+    retVal->phi = atan2f(-y, x);
     
-    NSLog(@"Tap location polar: r = %f, phi = %f", retVal.r, retVal.phi);
+    NSLog(@"Tap location polar: r = %f, phi = %f", retVal->r, retVal->phi);
     return retVal;
 }
 

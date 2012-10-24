@@ -6,11 +6,7 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface PolarCoordinate : NSObject
-
-@property (nonatomic) float r;
-@property (nonatomic) float phi;
-
-@end
+typedef struct PolarCoordinate {
+    float r;
+    float phi;
+} PolarCoordinate;

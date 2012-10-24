@@ -8,10 +8,12 @@
 
 #import "WheelOverlay.h"
 
+#define MAX_NB_POINTS   4
+
 @implementation WheelOverlay
 
-@synthesize point;
-@synthesize pointSet;
+@synthesize points;
+@synthesize nbPoints;
 @synthesize wheelView;
 
 - (id)initWithFrame:(CGRect)frame
@@ -47,31 +49,67 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    if (!pointSet || wheelView == nil)
+    if ((nbPoints == 0) || wheelView == nil)
         return;
     
     NSLog(@"Drawing WheelOverlay...");
     
-    CGPoint _point = [self point];
-    
+    CGPoint _point;
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGContextConcatCTM(context, CGAffineTransformMakeTranslation(_point.x, _point.y));
+    int i;
+    for(i = 0; i < nbPoints; i++) {
+        _point = points[i];
+        
+        CGContextConcatCTM(context, CGAffineTransformMakeTranslation(_point.x, _point.y));
     
-    CGContextAddArc(context, 0, 0, 5, 0, M_2_PI, 1);
-    CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
-    CGContextFillPath(context);
+        CGContextAddArc(context, 0, 0, 5, 0, M_2_PI, 1);
+        CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
+        CGContextFillPath(context);
     
-    CGContextConcatCTM(context, CGAffineTransformMakeTranslation(-_point.x, -_point.y));
+        CGContextConcatCTM(context, CGAffineTransformMakeTranslation(-_point.x, -_point.y));
+    }
 }
 
 - (void)pointTapped:(CGPoint)newPoint
 {
+    if (points == nil) {
+        points = malloc(sizeof(CGPoint) * MAX_NB_POINTS);
+        if (points == nil) {
+            NSLog(@"Failed to create CGPoint array!!!");
+            return;
+        }
+    }
+    
+    if(nbPoints >= MAX_NB_POINTS) {
+        NSLog(@"Maximum nb points reached");
+        return;
+    }
+    
     if([wheelView getPolar:newPoint] != nil) {
-        point = newPoint;
-        pointSet = true;
+        points[nbPoints++] = newPoint;
         [self setNeedsDisplay];
     }
+}
+
+- (CGPoint*)getPoint:(int)index
+{
+    if (points == nil)
+        return nil;
+    
+    if (index < 0 || index >= nbPoints)
+        return nil;
+    return &points[index];
+}
+
+- (PolarCoordinate*)getPointPolar:(int)index
+{
+    if (points == nil)
+        return nil;
+    
+    if (index < 0 || index >= nbPoints)
+        return nil;
+    return [wheelView getPolar:points[index]];
 }
 
 @end
