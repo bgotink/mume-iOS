@@ -19,9 +19,18 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKL-fY-eMY" customClass="WheelDrawer">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKL-fY-eMY" customClass="WheelView">
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZU-7t-UaG" customClass="WheelOverlay">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="leading" secondItem="eKL-fY-eMY" secondAttribute="leading" type="default" id="A63-Rq-Eqd"/>
+                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="trailing" secondItem="eKL-fY-eMY" secondAttribute="trailing" type="default" id="LhB-Cu-Kga"/>
+                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="bottom" secondItem="eKL-fY-eMY" secondAttribute="bottom" type="default" id="bIX-No-QON"/>
+                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="top" secondItem="eKL-fY-eMY" secondAttribute="top" type="default" id="nhb-Cc-5b4"/>
                                             <constraint firstAttribute="height" constant="293" id="x6v-Qh-xWC"/>
                                         </constraints>
                                     </view>
@@ -29,9 +38,9 @@
                                 <constraints>
                                     <constraint firstItem="eKL-fY-eMY" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="33q-Ol-cVG"/>
                                     <constraint firstItem="qNX-rF-fVI" firstAttribute="centerX" secondItem="WmK-1z-Hoq" secondAttribute="centerX" type="default" id="4Vf-rn-1YY"/>
+                                    <constraint firstAttribute="bottom" secondItem="eKL-fY-eMY" secondAttribute="bottom" constant="207" id="4dK-Mp-yvT"/>
                                     <constraint firstItem="eKL-fY-eMY" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" type="default" id="5Ls-Of-naV"/>
                                     <constraint firstItem="eKL-fY-eMY" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="48" id="62U-J6-nXK"/>
-                                    <constraint firstAttribute="bottom" secondItem="eKL-fY-eMY" secondAttribute="bottom" constant="207" id="CKm-jQ-mW5"/>
                                     <constraint firstAttribute="trailing" secondItem="qNX-rF-fVI" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Yfc-S0-FCI"/>
                                     <constraint firstItem="qNX-rF-fVI" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="s6h-kb-IWx"/>
                                     <constraint firstItem="qNX-rF-fVI" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="10" id="tUx-6E-dwS"/>
@@ -49,6 +58,7 @@
                     <connections>
                         <outlet property="scrollView" destination="WmK-1z-Hoq" id="tcO-Fi-tbJ"/>
                         <outlet property="wheelImage" destination="eKL-fY-eMY" id="c1k-fl-zbe"/>
+                        <outlet property="wheelOverlay" destination="JZU-7t-UaG" id="WH8-on-dAN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -56,23 +66,6 @@
             <point key="canvasLocation" x="-53" y="-181"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MoodSpotsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodSpotsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handleWheelTap:" candidateClass="UIGestureRecognizer"/>
-                <relationship kind="outlet" name="actionSelector" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="wheelImage" candidateClass="WheelDrawer"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WheelDrawer" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WheelDrawer.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

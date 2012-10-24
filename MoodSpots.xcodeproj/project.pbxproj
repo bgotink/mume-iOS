@@ -18,7 +18,9 @@
 		255BC56716318F0F00EEF8F5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56616318F0F00EEF8F5 /* Default-568h@2x.png */; };
 		255BC56A16318F0F00EEF8F5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */; };
 		255BC56D16318F0F00EEF8F5 /* MoodSpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */; };
-		25E222B2163318EF004290B1 /* WheelDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222B1163318EF004290B1 /* WheelDrawer.m */; };
+		25E222B2163318EF004290B1 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222B1163318EF004290B1 /* WheelView.m */; };
+		25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222BF16376BC0004290B1 /* WheelOverlay.m */; };
+		25E222C416376EC4004290B1 /* PolarCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222C316376EC4004290B1 /* PolarCoordinate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +40,12 @@
 		255BC56916318F0F00EEF8F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		255BC56B16318F0F00EEF8F5 /* MoodSpotsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodSpotsViewController.h; sourceTree = "<group>"; };
 		255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodSpotsViewController.m; sourceTree = "<group>"; };
-		25E222B0163318EF004290B1 /* WheelDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelDrawer.h; sourceTree = "<group>"; };
-		25E222B1163318EF004290B1 /* WheelDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelDrawer.m; sourceTree = "<group>"; };
+		25E222B0163318EF004290B1 /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
+		25E222B1163318EF004290B1 /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
+		25E222BE16376BC0004290B1 /* WheelOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelOverlay.h; sourceTree = "<group>"; };
+		25E222BF16376BC0004290B1 /* WheelOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelOverlay.m; sourceTree = "<group>"; };
+		25E222C216376EC4004290B1 /* PolarCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolarCoordinate.h; sourceTree = "<group>"; };
+		25E222C316376EC4004290B1 /* PolarCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolarCoordinate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +98,12 @@
 				255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */,
 				255BC55716318F0F00EEF8F5 /* Supporting Files */,
 				255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */,
-				25E222B0163318EF004290B1 /* WheelDrawer.h */,
-				25E222B1163318EF004290B1 /* WheelDrawer.m */,
+				25E222C216376EC4004290B1 /* PolarCoordinate.h */,
+				25E222C316376EC4004290B1 /* PolarCoordinate.m */,
+				25E222BE16376BC0004290B1 /* WheelOverlay.h */,
+				25E222BF16376BC0004290B1 /* WheelOverlay.m */,
+				25E222B0163318EF004290B1 /* WheelView.h */,
+				25E222B1163318EF004290B1 /* WheelView.m */,
 			);
 			path = MoodSpots;
 			sourceTree = "<group>";
@@ -182,7 +192,9 @@
 				255BC55D16318F0F00EEF8F5 /* main.m in Sources */,
 				255BC56116318F0F00EEF8F5 /* MoodSpotsAppDelegate.m in Sources */,
 				255BC56D16318F0F00EEF8F5 /* MoodSpotsViewController.m in Sources */,
-				25E222B2163318EF004290B1 /* WheelDrawer.m in Sources */,
+				25E222B2163318EF004290B1 /* WheelView.m in Sources */,
+				25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */,
+				25E222C416376EC4004290B1 /* PolarCoordinate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

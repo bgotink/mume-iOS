@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WheelDrawer.h"
+#import "WheelView.h"
+#import "WheelOverlay.h"
 
 @interface MoodSpotsViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet WheelDrawer *wheelImage;
+@property (strong, nonatomic) IBOutlet WheelView *wheelImage;
+@property (strong, nonatomic) IBOutlet WheelOverlay *wheelOverlay;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIPickerView *actionSelector;

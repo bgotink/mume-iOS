@@ -14,7 +14,8 @@
 
 @implementation MoodSpotsViewController
 
-@synthesize wheelImage = _wheelImage;
+@synthesize wheelImage;
+@synthesize wheelOverlay;
 
 - (void)viewDidLoad
 {
@@ -22,7 +23,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleWheelTap:)];
-    [_wheelImage addGestureRecognizer:tapGesture];
+    [wheelImage addGestureRecognizer:tapGesture];
+    
+    [wheelOverlay setWheelView:wheelImage];
+    [wheelOverlay setFrame:wheelImage.frame];
     
     NSLog(@"LOADED");
 }
@@ -35,8 +39,8 @@
 
 - (IBAction)handleWheelTap:(UIGestureRecognizer *) sender
 {
-    CGPoint tapPoint = [sender locationInView:_wheelImage];
-    [_wheelImage pointClicked:tapPoint];
+    CGPoint tapPoint = [sender locationInView:wheelImage];
+    [wheelOverlay pointTapped:tapPoint];
 }
 
 @end
