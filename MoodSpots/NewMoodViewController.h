@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WheelView.h"
 #import "WheelOverlay.h"
+#import "StringArrayPickerView.h"
 
 @interface NewMoodViewController : UIViewController
 
@@ -16,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet WheelOverlay *wheelOverlay;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic) IBOutlet UIPickerView *actionSelector;
+@property (strong, nonatomic) IBOutlet StringArrayPickerView *actionSelector;
 
 - (IBAction)handleWheelTap:(UIGestureRecognizer *) sender;
 

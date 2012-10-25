@@ -16,6 +16,7 @@
 
 @synthesize wheelImage;
 @synthesize wheelOverlay;
+@synthesize actionSelector;
 
 - (void)viewDidLoad
 {
@@ -28,7 +29,7 @@
     [wheelOverlay setWheelView:wheelImage];
     [wheelOverlay setFrame:wheelImage.frame];
     
-    NSLog(@"LOADED");
+    NSLog(@"NewMoodViewController loaded");
 }
 
 - (void)didReceiveMemoryWarning

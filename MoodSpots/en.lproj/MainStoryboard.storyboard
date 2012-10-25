@@ -96,11 +96,44 @@
                             <constraint firstItem="2IW-Si-rKn" firstAttribute="top" secondItem="kSq-2E-isH" secondAttribute="top" constant="20" symbolic="YES" type="default" id="z99-1U-v3f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MoodSpots" id="UDD-hd-GDh"/>
+                    <navigationItem key="navigationItem" title="MoodSpots" id="UDD-hd-GDh">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="it9-5B-csr">
+                            <connections>
+                                <segue destination="dAU-N3-UPT" kind="push" id="1J1-KL-qAc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hnm-tf-jAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1037" y="-485"/>
+        </scene>
+        <!--View Controller - Settings-->
+        <scene sceneID="7J7-LJ-OQq">
+            <objects>
+                <viewController id="dAU-N3-UPT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Txd-bf-hZe">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="This will become the settings view" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9N-cr-j2S">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n9N-cr-j2S" firstAttribute="top" secondItem="Txd-bf-hZe" secondAttribute="top" constant="221" id="2ZP-Hi-nGe"/>
+                            <constraint firstAttribute="trailing" secondItem="n9N-cr-j2S" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mN3-Y0-Vs2"/>
+                            <constraint firstItem="n9N-cr-j2S" firstAttribute="leading" secondItem="Txd-bf-hZe" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="upw-BB-mCM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="wOv-gg-0Dd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxv-jg-eEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-493" y="-1146"/>
         </scene>
         <!--New Mood View Controller - New Mood-->
         <scene sceneID="5">
@@ -120,20 +153,46 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="top" secondItem="eKL-fY-eMY" secondAttribute="top" type="default" id="7Vl-1Q-AJS"/>
                                             <constraint firstItem="JZU-7t-UaG" firstAttribute="leading" secondItem="eKL-fY-eMY" secondAttribute="leading" type="default" id="A63-Rq-Eqd"/>
                                             <constraint firstItem="JZU-7t-UaG" firstAttribute="trailing" secondItem="eKL-fY-eMY" secondAttribute="trailing" type="default" id="LhB-Cu-Kga"/>
-                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="bottom" secondItem="eKL-fY-eMY" secondAttribute="bottom" type="default" id="Qaw-mh-FI9"/>
-                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="top" secondItem="eKL-fY-eMY" secondAttribute="top" type="default" id="mqg-DK-Bdv"/>
-                                            <constraint firstAttribute="height" constant="293" id="x6v-Qh-xWC"/>
+                                            <constraint firstItem="JZU-7t-UaG" firstAttribute="bottom" secondItem="eKL-fY-eMY" secondAttribute="bottom" type="default" id="p7e-gO-jxG"/>
+                                            <constraint firstAttribute="height" constant="299" id="s9R-Pi-kHH"/>
                                         </constraints>
                                     </view>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BeB-rR-y8h" customClass="StringArrayPickerView">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="216" id="oan-ZQ-bBJ"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select your mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nT3-CA-Acc">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="285" id="hYC-lY-ilW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="What are you doing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euj-eK-AZk">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eKL-fY-eMY" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="33q-Ol-cVG"/>
-                                    <constraint firstAttribute="bottom" secondItem="eKL-fY-eMY" secondAttribute="bottom" constant="207" id="4dK-Mp-yvT"/>
                                     <constraint firstItem="eKL-fY-eMY" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" type="default" id="5Ls-Of-naV"/>
-                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="48" id="62U-J6-nXK"/>
-                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="centerX" secondItem="WmK-1z-Hoq" secondAttribute="centerX" type="default" id="qcE-ja-xAc"/>
+                                    <constraint firstItem="BeB-rR-y8h" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="7o4-rI-uUd"/>
+                                    <constraint firstItem="BeB-rR-y8h" firstAttribute="top" secondItem="euj-eK-AZk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7qk-vO-HPk"/>
+                                    <constraint firstAttribute="trailing" secondItem="nT3-CA-Acc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8VJ-j0-RY3"/>
+                                    <constraint firstItem="BeB-rR-y8h" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" type="default" id="H2u-Z3-17h"/>
+                                    <constraint firstItem="euj-eK-AZk" firstAttribute="centerX" secondItem="WmK-1z-Hoq" secondAttribute="centerX" type="default" id="HtQ-cr-uUj"/>
+                                    <constraint firstAttribute="bottom" secondItem="BeB-rR-y8h" secondAttribute="bottom" type="user" id="LRr-v5-hBp"/>
+                                    <constraint firstItem="euj-eK-AZk" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="T7g-J0-Ude"/>
+                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="51" id="e8i-x3-8sw"/>
+                                    <constraint firstAttribute="trailing" secondItem="euj-eK-AZk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kNU-2M-TKA"/>
+                                    <constraint firstItem="nT3-CA-Acc" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="20" symbolic="YES" type="default" id="oZi-vb-hdX"/>
+                                    <constraint firstItem="euj-eK-AZk" firstAttribute="top" secondItem="eKL-fY-eMY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vgb-U1-xhr"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -147,6 +206,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Mood" id="jQJ-73-cTG"/>
                     <connections>
+                        <outlet property="actionSelector" destination="BeB-rR-y8h" id="Oj5-uw-Qgf"/>
                         <outlet property="scrollView" destination="WmK-1z-Hoq" id="tcO-Fi-tbJ"/>
                         <outlet property="wheelImage" destination="eKL-fY-eMY" id="c1k-fl-zbe"/>
                         <outlet property="wheelOverlay" destination="JZU-7t-UaG" id="WH8-on-dAN"/>
@@ -156,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="-497" y="-485"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller - Not implemented yet-->
         <scene sceneID="AZP-fF-h2M">
             <objects>
                 <viewController id="SDa-eB-h0M" sceneMemberID="viewController">
@@ -177,24 +237,13 @@
                             <constraint firstItem="h5t-O1-iDF" firstAttribute="leading" secondItem="6UY-zy-jjF" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="tKp-TJ-WH4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wmu-G8-IaQ"/>
+                    <navigationItem key="navigationItem" title="Not implemented yet" id="wmu-G8-IaQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GnC-3v-zpa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-491" y="222"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="WheelOverlay" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WheelOverlay.h"/>
-        </class>
-        <class className="WheelView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WheelView.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
