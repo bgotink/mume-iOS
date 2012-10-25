@@ -8,12 +8,13 @@
 
 #import "WheelView.h"
 
+@interface WheelView ()
+
+-(CGColorRef)colorFromHex:(NSString*)hex;
+
+@end
+
 @implementation WheelView
-
-@synthesize size;
-
-@synthesize wheelCenter;
-@synthesize radius;
 
 - (id)initWithFrame:(CGRect)frame
 {

@@ -6,13 +6,13 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodSpotsViewController.h"
+#import "NewMoodViewController.h"
 
-@interface MoodSpotsViewController ()
+@interface NewMoodViewController ()
 
 @end
 
-@implementation MoodSpotsViewController
+@implementation NewMoodViewController
 
 @synthesize wheelImage;
 @synthesize wheelOverlay;

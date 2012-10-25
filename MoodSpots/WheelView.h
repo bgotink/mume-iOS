@@ -9,14 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "PolarCoordinate.h"
 
-@interface WheelView : UIView
-
-@property (nonatomic) CGSize size;
-
-@property (nonatomic) CGPoint wheelCenter;
-@property float radius;
-
--(CGColorRef)colorFromHex:(NSString*)hex;
+@interface WheelView : UIView {
+    CGSize size;
+    CGPoint wheelCenter;
+    float radius;
+}
 
 -(PolarCoordinate*)getPolar:(CGPoint)point;
 

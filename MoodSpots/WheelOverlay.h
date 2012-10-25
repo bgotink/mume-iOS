@@ -10,12 +10,13 @@
 
 #import "WheelView.h"
 
-@interface WheelOverlay : UIView
+@interface WheelOverlay : UIView {
+    WheelView *wheelView;
+    CGPoint *points;
+    int nbPoints;
+}
 
 @property (strong,nonatomic,setter=setWheelView:) WheelView *wheelView;
-
-@property (nonatomic) CGPoint *points;
-@property (nonatomic) int nbPoints;
 
 - (void)pointTapped:(CGPoint)point;
 

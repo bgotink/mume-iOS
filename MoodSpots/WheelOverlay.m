@@ -12,8 +12,6 @@
 
 @implementation WheelOverlay
 
-@synthesize points;
-@synthesize nbPoints;
 @synthesize wheelView;
 
 - (id)initWithFrame:(CGRect)frame

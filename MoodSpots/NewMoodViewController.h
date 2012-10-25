@@ -10,7 +10,7 @@
 #import "WheelView.h"
 #import "WheelOverlay.h"
 
-@interface MoodSpotsViewController : UIViewController
+@interface NewMoodViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet WheelView *wheelImage;
 @property (strong, nonatomic) IBOutlet WheelOverlay *wheelOverlay;

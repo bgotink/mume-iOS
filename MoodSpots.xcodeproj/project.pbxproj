@@ -17,7 +17,7 @@
 		255BC56516318F0F00EEF8F5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56416318F0F00EEF8F5 /* Default@2x.png */; };
 		255BC56716318F0F00EEF8F5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56616318F0F00EEF8F5 /* Default-568h@2x.png */; };
 		255BC56A16318F0F00EEF8F5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */; };
-		255BC56D16318F0F00EEF8F5 /* MoodSpotsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */; };
+		255BC56D16318F0F00EEF8F5 /* NewMoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC56C16318F0F00EEF8F5 /* NewMoodViewController.m */; };
 		25E222B2163318EF004290B1 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222B1163318EF004290B1 /* WheelView.m */; };
 		25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222BF16376BC0004290B1 /* WheelOverlay.m */; };
 /* End PBXBuildFile section */
@@ -37,8 +37,8 @@
 		255BC56416318F0F00EEF8F5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		255BC56616318F0F00EEF8F5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		255BC56916318F0F00EEF8F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		255BC56B16318F0F00EEF8F5 /* MoodSpotsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodSpotsViewController.h; sourceTree = "<group>"; };
-		255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodSpotsViewController.m; sourceTree = "<group>"; };
+		255BC56B16318F0F00EEF8F5 /* NewMoodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewMoodViewController.h; sourceTree = "<group>"; };
+		255BC56C16318F0F00EEF8F5 /* NewMoodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewMoodViewController.m; sourceTree = "<group>"; };
 		25E222B0163318EF004290B1 /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
 		25E222B1163318EF004290B1 /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
 		25E222BE16376BC0004290B1 /* WheelOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelOverlay.h; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 			children = (
 				255BC55F16318F0F00EEF8F5 /* MoodSpotsAppDelegate.h */,
 				255BC56016318F0F00EEF8F5 /* MoodSpotsAppDelegate.m */,
-				255BC56B16318F0F00EEF8F5 /* MoodSpotsViewController.h */,
-				255BC56C16318F0F00EEF8F5 /* MoodSpotsViewController.m */,
+				255BC56B16318F0F00EEF8F5 /* NewMoodViewController.h */,
+				255BC56C16318F0F00EEF8F5 /* NewMoodViewController.m */,
 				255BC55716318F0F00EEF8F5 /* Supporting Files */,
 				255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */,
 				25E222C216376EC4004290B1 /* PolarCoordinate.h */,
@@ -188,7 +188,7 @@
 			files = (
 				255BC55D16318F0F00EEF8F5 /* main.m in Sources */,
 				255BC56116318F0F00EEF8F5 /* MoodSpotsAppDelegate.m in Sources */,
-				255BC56D16318F0F00EEF8F5 /* MoodSpotsViewController.m in Sources */,
+				255BC56D16318F0F00EEF8F5 /* NewMoodViewController.m in Sources */,
 				25E222B2163318EF004290B1 /* WheelView.m in Sources */,
 				25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */,
 			);
