@@ -7,6 +7,7 @@
 //
 
 #import "NewMoodViewController.h"
+#import "Log.h"
 
 @interface NewMoodViewController ()
 
@@ -31,7 +32,7 @@
     
     [actionSelector setValues:@[@"NewMoodViewController",@"this",@"is",@"hardcoded"]];
     
-    NSLog(@"NewMoodViewController loaded");
+    MSLog(@"NewMoodViewController loaded");
 }
 
 - (void)didReceiveMemoryWarning

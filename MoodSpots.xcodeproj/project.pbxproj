@@ -47,6 +47,7 @@
 		25E222BE16376BC0004290B1 /* WheelOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelOverlay.h; sourceTree = "<group>"; };
 		25E222BF16376BC0004290B1 /* WheelOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelOverlay.m; sourceTree = "<group>"; };
 		25E222C216376EC4004290B1 /* PolarCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolarCoordinate.h; sourceTree = "<group>"; };
+		25F89441163AB73100714679 /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		255BC55616318F0F00EEF8F5 /* MoodSpots */ = {
 			isa = PBXGroup;
 			children = (
+				25F89441163AB73100714679 /* Log.h */,
 				255BC55F16318F0F00EEF8F5 /* MoodSpotsAppDelegate.h */,
 				255BC56016318F0F00EEF8F5 /* MoodSpotsAppDelegate.m */,
 				255BC56B16318F0F00EEF8F5 /* NewMoodViewController.h */,

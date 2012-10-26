@@ -7,6 +7,7 @@
 //
 
 #import "WheelView.h"
+#import "Log.h"
 
 @interface WheelView ()
 
@@ -38,9 +39,9 @@
     
     radius = MIN(wheelCenter.x, wheelCenter.y) - margin;
     
-    NSLog(@"Drawing Wheel...");
-    NSLog(@"Radius: %f", radius);
-    NSLog(@"wheelCenter: %f x %f", wheelCenter.x, wheelCenter.y);
+    MSLog(@"Drawing Wheel...");
+    MSLog(@"Radius: %f", radius);
+    MSLog(@"wheelCenter: %f x %f", wheelCenter.x, wheelCenter.y);
     
     // Define all the colors, yay
     CGColorRef joyColor = [self colorFromHex:@"EDC500"];
@@ -68,7 +69,7 @@
     float curAngle = index * M_PI_4;
     float nextAngle = curAngle + M_PI_4;
     
-    NSLog(@"Drawing wheel part %s", name.UTF8String);
+    MSLog(@"Drawing wheel part %s", name.UTF8String);
     
     // set the color
     CGContextSetFillColorWithColor(context, color);
@@ -171,24 +172,24 @@
 
 -(PolarCoordinate*)getPolar:(CGPoint)point
 {
-    NSLog(@"Tapped wheel");
+    MSLog(@"Tapped wheel");
     
     float x = point.x - wheelCenter.x;
     float y = point.y - wheelCenter.y;
     
-    NSLog(@"Tap location: %f x %f", x, y);
+    MSLog(@"Tap location: %f x %f", x, y);
     
     PolarCoordinate *retVal = malloc(sizeof(PolarCoordinate));
     retVal->r = sqrt(x * x + y * y) / radius;
     
     if (retVal->r > 1) {
-        NSLog(@"Tapped outside of wheel, ignore");
+        MSLog(@"Tapped outside of wheel, ignore");
         return nil;
     }
     
     retVal->phi = atan2f(-y, x);
     
-    NSLog(@"Tap location polar: r = %f, phi = %f", retVal->r, retVal->phi);
+    MSLog(@"Tap location polar: r = %f, phi = %f", retVal->r, retVal->phi);
     return retVal;
 }
 
