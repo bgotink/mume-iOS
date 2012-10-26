@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface StringArrayPickerView : UIPickerView
-            <UIPickerViewDataSource>
+            <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     NSArray *values;
 }

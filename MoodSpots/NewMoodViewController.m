@@ -29,6 +29,8 @@
     [wheelOverlay setWheelView:wheelImage];
     [wheelOverlay setFrame:wheelImage.frame];
     
+    [actionSelector setValues:@[@"NewMoodViewController",@"this",@"is",@"hardcoded"]];
+    
     NSLog(@"NewMoodViewController loaded");
 }
 

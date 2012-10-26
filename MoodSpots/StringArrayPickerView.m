@@ -19,8 +19,9 @@
 - (id)init
 {
     if (self = [super init]) {
-        [self setValues:@[@"oops",@"this",@"is",@"hardcoded"]];
+        [self setValues:@[@"values",@"not",@"set"]];
         [super setDataSource:self];
+        [super setDelegate:self];
     }
     return self;
 }
@@ -28,8 +29,9 @@
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        [self setValues:@[@"this",@"is",@"hardcoded"]];
+        [self setValues:@[@"values",@"not",@"set"]];
         [super setDataSource:self];
+        [super setDelegate:self];
     }
     return self;
 }
@@ -37,8 +39,9 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder]) {
-        [self setValues:@[@"this",@"is",@"hardcoded"]];
+        [self setValues:@[@"values",@"not",@"set"]];
         [super setDataSource:self];
+        [super setDelegate:self];
     }
     return self;
 }
@@ -51,16 +54,19 @@
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView
+- (NSInteger)pickerView:(UIPickerView*)pickerView
         numberOfRowsInComponent:(NSInteger)component
 {
     return [values count];
 }
 
-- (NSString *)pickerView:(UIPickerView *)pickerView
-             titleForRow:(NSInteger)row forComponent:(NSInteger)component
+#pragma mark -
+#pragma mark PickerView Delegate
+
+- (NSString*) pickerView:(UIPickerView*)pickerView
+              titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return values[row];
+    return [values objectAtIndex:row];
 }
 
 @end
