@@ -113,25 +113,48 @@
     // Draw the text
 
     // transformation
-    CGContextSetTextMatrix(context, CGAffineTransformMake(
+    
+    if((index < 2) || (index > 5)){
+        CGContextSetTextMatrix(context, CGAffineTransformMake(
                                                               1.0,  0.0,
                                                               0.0, -1.0,
                                                               0.0,  0.0));
-    CGContextConcatCTM(context, CGAffineTransformMakeTranslation(wheelCenter.x, wheelCenter.y));
-    CGContextConcatCTM(context, CGAffineTransformMakeRotation((curAngle + nextAngle) / 2));
+        CGContextConcatCTM(context, CGAffineTransformMakeTranslation(wheelCenter.x, wheelCenter.y));
+        CGContextConcatCTM(context, CGAffineTransformMakeRotation((curAngle + nextAngle) / 2));
 
-    CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
-    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
     
-    CGContextSelectFont(context, "Helvetica", 18, kCGEncodingMacRoman);
+        CGContextSelectFont(context, "Helvetica", 18, kCGEncodingMacRoman);
     
-    CGContextSetTextDrawingMode(context, kCGTextFill);
-    CGContextShowTextAtPoint(context, 40, 6, name.UTF8String, name.length);
+        CGContextSetTextDrawingMode(context, kCGTextFill);
+        CGContextShowTextAtPoint(context, 60, 6, name.UTF8String, name.length);
     
-    // undo transformation
-    CGContextConcatCTM(context, CGAffineTransformMakeRotation(-(curAngle + nextAngle) / 2));
-    CGContextConcatCTM(context, CGAffineTransformMakeTranslation(-wheelCenter.x, -wheelCenter.y));
-    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+        // undo transformation
+        CGContextConcatCTM(context, CGAffineTransformMakeRotation(-(curAngle + nextAngle) / 2));
+        CGContextConcatCTM(context, CGAffineTransformMakeTranslation(-wheelCenter.x, -wheelCenter.y));
+        CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    } else{
+        CGContextSetTextMatrix(context, CGAffineTransformMake(
+                                                              1.0,  0.0,
+                                                              0.0, -1.0,
+                                                              0.0,  0.0));
+        CGContextConcatCTM(context, CGAffineTransformMakeTranslation(wheelCenter.x, wheelCenter.y));
+        CGContextConcatCTM(context, CGAffineTransformMakeRotation(((curAngle + nextAngle) / 2)-M_PI));
+        
+        CGContextSetStrokeColorWithColor(context, [UIColor whiteColor].CGColor);
+        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+        
+        CGContextSelectFont(context, "Helvetica", 18, kCGEncodingMacRoman);
+        
+        CGContextSetTextDrawingMode(context, kCGTextFill);
+        CGContextShowTextAtPoint(context, -wheelCenter.x + 40, 6, name.UTF8String, name.length);
+        
+        // undo transformation
+        CGContextConcatCTM(context, CGAffineTransformMakeRotation(-(((curAngle + nextAngle) / 2) - M_PI)));
+        CGContextConcatCTM(context, CGAffineTransformMakeTranslation(-wheelCenter.x, -wheelCenter.y));
+        CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    }
 }
 
 -(CGColorRef)colorFromHex:(NSString*)hex
@@ -170,6 +193,7 @@
                            alpha:1.0f].CGColor;
 }
 
+//Returns the coordinates of the given point in polar format.
 -(PolarCoordinate*)getPolar:(CGPoint)point
 {
     MSLog(@"Tapped wheel");

@@ -47,4 +47,8 @@
     [wheelOverlay pointTapped:tapPoint];
 }
 
+- (IBAction)ResetButtonAction:(id)sender{
+    [wheelOverlay resetPoints];
+}
+
 @end

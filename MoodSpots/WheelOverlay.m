@@ -8,7 +8,7 @@
 
 #import "WheelOverlay.h"
 
-#define MAX_NB_POINTS   4
+#define MAX_NB_POINTS   2
 
 @implementation WheelOverlay
 
@@ -59,6 +59,8 @@
     for(i = 0; i < nbPoints; i++) {
         _point = points[i];
         
+        
+        //Waarom hier transformatie ipv gewoon _point.x en _point.y in te vullen in de addArc?
         CGContextConcatCTM(context, CGAffineTransformMakeTranslation(_point.x, _point.y));
     
         CGContextAddArc(context, 0, 0, 5, 0, M_2_PI, 1);
@@ -79,14 +81,21 @@
         }
     }
     
-    if(nbPoints >= MAX_NB_POINTS) {
-        NSLog(@"Maximum nb points reached");
-        return;
-    }
-    
     if([wheelView getPolar:newPoint] != nil) {
-        points[nbPoints++] = newPoint;
-        [self setNeedsDisplay];
+        if(nbPoints >= MAX_NB_POINTS) {
+            NSLog(@"Maximum nb points reached");
+                CGPoint temp1 = newPoint;
+                CGPoint temp2;
+                for (int i = MAX_NB_POINTS - 1; i >= 0; i--) {
+                    temp2 = points[i];
+                    points[i] = temp1;
+                    temp1 = temp2;
+                }
+            [self setNeedsDisplay];
+        } else {
+            points[nbPoints++] = newPoint;
+            [self setNeedsDisplay];
+        }
     }
 }
 
@@ -108,6 +117,11 @@
     if (index < 0 || index >= nbPoints)
         return nil;
     return [wheelView getPolar:points[index]];
+}
+
+- (void)resetPoints{
+    nbPoints = 0;
+    [self setNeedsDisplay];
 }
 
 @end

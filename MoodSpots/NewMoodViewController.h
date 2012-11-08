@@ -20,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet StringArrayPickerView *actionSelector;
 
 - (IBAction)handleWheelTap:(UIGestureRecognizer *) sender;
+- (IBAction)ResetButtonAction:(id)sender;
 
 @end
