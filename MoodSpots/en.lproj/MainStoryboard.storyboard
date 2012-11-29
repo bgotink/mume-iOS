@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="11G56" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="b2Y-Dm-hyY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="b2Y-Dm-hyY">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -194,6 +194,19 @@
                                             <action selector="ResetButtonAction:" destination="2" eventType="touchUpInside" id="FYl-zD-pAB"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEk-LY-nGU">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="SubmitButtonAction:" destination="2" eventType="touchUpInside" id="dOj-jA-d0g"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eKL-fY-eMY" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="33q-Ol-cVG"/>
@@ -201,16 +214,18 @@
                                     <constraint firstItem="BeB-rR-y8h" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="7o4-rI-uUd"/>
                                     <constraint firstItem="BeB-rR-y8h" firstAttribute="top" secondItem="euj-eK-AZk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7qk-vO-HPk"/>
                                     <constraint firstAttribute="trailing" secondItem="nT3-CA-Acc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="8VJ-j0-RY3"/>
+                                    <constraint firstItem="fEk-LY-nGU" firstAttribute="trailing" secondItem="WmK-1z-Hoq" secondAttribute="trailing" type="default" id="G68-cu-AYJ"/>
                                     <constraint firstItem="BeB-rR-y8h" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" type="default" id="H2u-Z3-17h"/>
                                     <constraint firstItem="eKL-fY-eMY" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="51" id="Jx3-hL-Lsg"/>
-                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="centerX" secondItem="WmK-1z-Hoq" secondAttribute="centerX" type="default" id="Pfp-O2-AUM"/>
                                     <constraint firstItem="euj-eK-AZk" firstAttribute="leading" secondItem="WmK-1z-Hoq" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="T7g-J0-Ude"/>
+                                    <constraint firstItem="eKL-fY-eMY" firstAttribute="centerX" secondItem="WmK-1z-Hoq" secondAttribute="centerX" type="default" id="a3k-09-a0E"/>
                                     <constraint firstAttribute="bottom" secondItem="BeB-rR-y8h" secondAttribute="bottom" constant="-99" id="cds-cS-fxT"/>
                                     <constraint firstItem="y1O-tw-b7W" firstAttribute="baseline" secondItem="nT3-CA-Acc" secondAttribute="baseline" type="default" id="hCA-cM-0nW"/>
                                     <constraint firstAttribute="trailing" secondItem="euj-eK-AZk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kNU-2M-TKA"/>
                                     <constraint firstItem="nT3-CA-Acc" firstAttribute="top" secondItem="WmK-1z-Hoq" secondAttribute="top" constant="20" symbolic="YES" type="default" id="oZi-vb-hdX"/>
                                     <constraint firstItem="euj-eK-AZk" firstAttribute="top" secondItem="eKL-fY-eMY" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vgb-U1-xhr"/>
                                     <constraint firstAttribute="trailing" secondItem="y1O-tw-b7W" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yMs-f8-e08"/>
+                                    <constraint firstItem="fEk-LY-nGU" firstAttribute="centerY" secondItem="euj-eK-AZk" secondAttribute="centerY" type="default" id="yzk-Ya-z8t"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -270,6 +285,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewMoodViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ResetButtonAction:"/>
+                <relationship kind="action" name="SubmitButtonAction:"/>
                 <relationship kind="action" name="handleWheelTap:" candidateClass="UIGestureRecognizer"/>
                 <relationship kind="outlet" name="actionSelector" candidateClass="StringArrayPickerView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
@@ -293,6 +309,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fDj-Mo-xTA"/>
+        <segue reference="Ye6-p9-XhN"/>
     </inferredMetricsTieBreakers>
 </document>
