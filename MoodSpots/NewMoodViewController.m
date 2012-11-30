@@ -31,6 +31,7 @@
 @synthesize wheelImage;
 @synthesize wheelOverlay;
 @synthesize actionSelector;
+//@synthesize selectedMoods;
 
 - (void)viewDidLoad
 {
@@ -79,5 +80,4 @@
         //TODO give this class also selectedLocation and such and give them to inputview.
     }
 }
-
 @end

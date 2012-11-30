@@ -29,6 +29,7 @@
     }
 }
 
+
 /* This method queries for a person with the given name in the database. */
 + (NSArray *)queryPerson:(NSString *)name inManagedObjectContext:(NSManagedObjectContext *)context{
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Person"];

@@ -94,7 +94,7 @@
         MSLog(@"Person is made");
         [newPerson setValue:@"Geert" forKey:@"name"];
         MSLog(@"value %@",[newPerson valueForKey:@"name"]);
-        
+		
         Person *michiel = [Person createPerson:@"Michiel" inManagedObjectContext:context];
         MSLog(@"name: %@", michiel.name);
         

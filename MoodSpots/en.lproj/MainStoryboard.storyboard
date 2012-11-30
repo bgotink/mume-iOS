@@ -384,6 +384,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewMoodViewController.h"/>
             <relationships>
                 <relationship kind="action" name="ResetButtonAction:"/>
+                <relationship kind="action" name="SubmitButtonAction:"/>
                 <relationship kind="action" name="handleWheelTap:" candidateClass="UIGestureRecognizer"/>
                 <relationship kind="outlet" name="actionSelector" candidateClass="StringArrayPickerView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
