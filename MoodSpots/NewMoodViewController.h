@@ -10,6 +10,7 @@
 #import "WheelView.h"
 #import "WheelOverlay.h"
 #import "StringArrayPickerView.h"
+#import "MoodEntry.h"
 
 @interface NewMoodViewController : UIViewController
 
@@ -18,6 +19,8 @@
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet StringArrayPickerView *actionSelector;
+
+@property (strong, nonatomic) NSArray *selectedMoods;
 
 - (IBAction)handleWheelTap:(UIGestureRecognizer *) sender;
 - (IBAction)ResetButtonAction:(id)sender;
