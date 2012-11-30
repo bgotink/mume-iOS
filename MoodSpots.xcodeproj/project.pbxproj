@@ -21,6 +21,21 @@
 		25E047AD1639DC2900961904 /* StringArrayPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E047AC1639DC2900961904 /* StringArrayPickerView.m */; };
 		25E222B2163318EF004290B1 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222B1163318EF004290B1 /* WheelView.m */; };
 		25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222BF16376BC0004290B1 /* WheelOverlay.m */; };
+		F4D174071663D8F900785604 /* Activity+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174061663D8F900785604 /* Activity+Create.m */; };
+		F4D1740B1663DE1300785604 /* Location+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1740A1663DE1300785604 /* Location+Create.m */; };
+		F4D174121664130400785604 /* MoodSelection+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174111664130400785604 /* MoodSelection+Create.m */; };
+		F4D174161664149000785604 /* MoodEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174151664149000785604 /* MoodEntry.m */; };
+		F4D174191664149100785604 /* MoodSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174181664149100785604 /* MoodSelection.m */; };
+		F4D1741C1664149100785604 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1741B1664149100785604 /* Location.m */; };
+		F4D1741F1664149100785604 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1741E1664149100785604 /* Activity.m */; };
+		F4D174221664149100785604 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174211664149100785604 /* Person.m */; };
+		F4D17425166419EA00785604 /* MoodEntry+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D17424166419EA00785604 /* MoodEntry+Create.m */; };
+		F4D1742816641AA600785604 /* Person+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1742716641AA600785604 /* Person+Create.m */; };
+		F4D8B0971667E2B000086BFD /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0961667E2B000086BFD /* InputViewController.m */; };
+		F4D8B09A1667E64600086BFD /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0991667E64600086BFD /* OptionsViewController.m */; };
+		F4D8B0A61668267000086BFD /* Polar2dPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0A51668266F00086BFD /* Polar2dPoint.m */; };
+		F4EB6DA01662543B0009F79E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EB6D9F1662543B0009F79E /* CoreData.framework */; };
+		F4FB2F5F1659207000687A9D /* MoodSpacesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4FB2F5D1659207000687A9D /* MoodSpacesModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +63,34 @@
 		25E222BF16376BC0004290B1 /* WheelOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelOverlay.m; sourceTree = "<group>"; };
 		25E222C216376EC4004290B1 /* PolarCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolarCoordinate.h; sourceTree = "<group>"; };
 		25F89441163AB73100714679 /* Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
+		F4D174051663D8F900785604 /* Activity+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Activity+Create.h"; path = "DataModel/Activity+Create.h"; sourceTree = "<group>"; };
+		F4D174061663D8F900785604 /* Activity+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Activity+Create.m"; path = "DataModel/Activity+Create.m"; sourceTree = "<group>"; };
+		F4D174091663DE1300785604 /* Location+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Location+Create.h"; path = "DataModel/Location+Create.h"; sourceTree = "<group>"; };
+		F4D1740A1663DE1300785604 /* Location+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Location+Create.m"; path = "DataModel/Location+Create.m"; sourceTree = "<group>"; };
+		F4D174101664130400785604 /* MoodSelection+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MoodSelection+Create.h"; path = "DataModel/MoodSelection+Create.h"; sourceTree = "<group>"; };
+		F4D174111664130400785604 /* MoodSelection+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MoodSelection+Create.m"; path = "DataModel/MoodSelection+Create.m"; sourceTree = "<group>"; };
+		F4D174141664149000785604 /* MoodEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoodEntry.h; path = DataModel/MoodEntry.h; sourceTree = "<group>"; };
+		F4D174151664149000785604 /* MoodEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoodEntry.m; path = DataModel/MoodEntry.m; sourceTree = "<group>"; };
+		F4D174171664149100785604 /* MoodSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoodSelection.h; path = DataModel/MoodSelection.h; sourceTree = "<group>"; };
+		F4D174181664149100785604 /* MoodSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoodSelection.m; path = DataModel/MoodSelection.m; sourceTree = "<group>"; };
+		F4D1741A1664149100785604 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = DataModel/Location.h; sourceTree = "<group>"; };
+		F4D1741B1664149100785604 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = DataModel/Location.m; sourceTree = "<group>"; };
+		F4D1741D1664149100785604 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = DataModel/Activity.h; sourceTree = "<group>"; };
+		F4D1741E1664149100785604 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = DataModel/Activity.m; sourceTree = "<group>"; };
+		F4D174201664149100785604 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Person.h; path = DataModel/Person.h; sourceTree = "<group>"; };
+		F4D174211664149100785604 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = DataModel/Person.m; sourceTree = "<group>"; };
+		F4D17423166419EA00785604 /* MoodEntry+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MoodEntry+Create.h"; path = "DataModel/MoodEntry+Create.h"; sourceTree = "<group>"; };
+		F4D17424166419EA00785604 /* MoodEntry+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MoodEntry+Create.m"; path = "DataModel/MoodEntry+Create.m"; sourceTree = "<group>"; };
+		F4D1742616641AA600785604 /* Person+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Person+Create.h"; path = "DataModel/Person+Create.h"; sourceTree = "<group>"; };
+		F4D1742716641AA600785604 /* Person+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Person+Create.m"; path = "DataModel/Person+Create.m"; sourceTree = "<group>"; };
+		F4D8B0951667E2B000086BFD /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
+		F4D8B0961667E2B000086BFD /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
+		F4D8B0981667E64600086BFD /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		F4D8B0991667E64600086BFD /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		F4D8B0A41668266F00086BFD /* Polar2dPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polar2dPoint.h; sourceTree = "<group>"; };
+		F4D8B0A51668266F00086BFD /* Polar2dPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polar2dPoint.m; sourceTree = "<group>"; };
+		F4EB6D9F1662543B0009F79E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F4FB2F5E1659207000687A9D /* MoodSpacesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodSpacesModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EB6DA01662543B0009F79E /* CoreData.framework in Frameworks */,
 				255BC55116318F0F00EEF8F5 /* UIKit.framework in Frameworks */,
 				255BC55316318F0F00EEF8F5 /* Foundation.framework in Frameworks */,
 				255BC55516318F0F00EEF8F5 /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +111,7 @@
 		255BC54116318F0F00EEF8F5 = {
 			isa = PBXGroup;
 			children = (
+				F4EB6D9F1662543B0009F79E /* CoreData.framework */,
 				255BC55616318F0F00EEF8F5 /* MoodSpots */,
 				255BC54F16318F0F00EEF8F5 /* Frameworks */,
 				255BC54D16318F0F00EEF8F5 /* Products */,
@@ -90,17 +135,45 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		255BC55616318F0F00EEF8F5 /* MoodSpots */ = {
 			isa = PBXGroup;
 			children = (
+				F4D1742716641AA600785604 /* Person+Create.m */,
+				F4D1742616641AA600785604 /* Person+Create.h */,
 				25F89441163AB73100714679 /* Log.h */,
 				255BC55F16318F0F00EEF8F5 /* MoodSpotsAppDelegate.h */,
 				255BC56016318F0F00EEF8F5 /* MoodSpotsAppDelegate.m */,
+				F4D17423166419EA00785604 /* MoodEntry+Create.h */,
+				F4D17424166419EA00785604 /* MoodEntry+Create.m */,
+				F4D174101664130400785604 /* MoodSelection+Create.h */,
+				F4D174111664130400785604 /* MoodSelection+Create.m */,
+				F4D174051663D8F900785604 /* Activity+Create.h */,
+				F4D174061663D8F900785604 /* Activity+Create.m */,
+				F4D174091663DE1300785604 /* Location+Create.h */,
+				F4D1740A1663DE1300785604 /* Location+Create.m */,
 				255BC56B16318F0F00EEF8F5 /* NewMoodViewController.h */,
 				255BC56C16318F0F00EEF8F5 /* NewMoodViewController.m */,
+				F4D8B0A41668266F00086BFD /* Polar2dPoint.h */,
+				F4D8B0A51668266F00086BFD /* Polar2dPoint.m */,
 				255BC55716318F0F00EEF8F5 /* Supporting Files */,
 				255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */,
+				F4D8B0981667E64600086BFD /* OptionsViewController.h */,
+				F4D8B0991667E64600086BFD /* OptionsViewController.m */,
+				F4D8B0951667E2B000086BFD /* InputViewController.h */,
+				F4D8B0961667E2B000086BFD /* InputViewController.m */,
+				F4FB2F5D1659207000687A9D /* MoodSpacesModel.xcdatamodeld */,
+				F4D174201664149100785604 /* Person.h */,
+				F4D174211664149100785604 /* Person.m */,
+				F4D1741D1664149100785604 /* Activity.h */,
+				F4D1741E1664149100785604 /* Activity.m */,
+				F4D1741A1664149100785604 /* Location.h */,
+				F4D1741B1664149100785604 /* Location.m */,
+				F4D174171664149100785604 /* MoodSelection.h */,
+				F4D174181664149100785604 /* MoodSelection.m */,
+				F4D174141664149000785604 /* MoodEntry.h */,
+				F4D174151664149000785604 /* MoodEntry.m */,
 				25E222C216376EC4004290B1 /* PolarCoordinate.h */,
 				25E222BE16376BC0004290B1 /* WheelOverlay.h */,
 				25E222BF16376BC0004290B1 /* WheelOverlay.m */,
@@ -199,6 +272,20 @@
 				25E222B2163318EF004290B1 /* WheelView.m in Sources */,
 				25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */,
 				25E047AD1639DC2900961904 /* StringArrayPickerView.m in Sources */,
+				F4FB2F5F1659207000687A9D /* MoodSpacesModel.xcdatamodeld in Sources */,
+				F4D174071663D8F900785604 /* Activity+Create.m in Sources */,
+				F4D1740B1663DE1300785604 /* Location+Create.m in Sources */,
+				F4D174121664130400785604 /* MoodSelection+Create.m in Sources */,
+				F4D174161664149000785604 /* MoodEntry.m in Sources */,
+				F4D174191664149100785604 /* MoodSelection.m in Sources */,
+				F4D1741C1664149100785604 /* Location.m in Sources */,
+				F4D1741F1664149100785604 /* Activity.m in Sources */,
+				F4D174221664149100785604 /* Person.m in Sources */,
+				F4D17425166419EA00785604 /* MoodEntry+Create.m in Sources */,
+				F4D1742816641AA600785604 /* Person+Create.m in Sources */,
+				F4D8B0971667E2B000086BFD /* InputViewController.m in Sources */,
+				F4D8B09A1667E64600086BFD /* OptionsViewController.m in Sources */,
+				F4D8B0A61668267000086BFD /* Polar2dPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +405,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F4FB2F5D1659207000687A9D /* MoodSpacesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F4FB2F5E1659207000687A9D /* MoodSpacesModel.xcdatamodel */,
+			);
+			currentVersion = F4FB2F5E1659207000687A9D /* MoodSpacesModel.xcdatamodel */;
+			path = MoodSpacesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 255BC54316318F0F00EEF8F5 /* Project object */;
 }

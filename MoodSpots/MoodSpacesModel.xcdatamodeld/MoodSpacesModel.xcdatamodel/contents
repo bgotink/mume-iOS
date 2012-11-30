@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12A269" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="MoodEntry" representedClassName="MoodEntry" syncable="YES">
+        <relationship name="closePersons" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Person" syncable="YES"/>
+        <relationship name="fromWhere" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Location" syncable="YES"/>
+        <relationship name="selectedMoods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodSelection" syncable="YES"/>
+        <relationship name="whichActivity" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" syncable="YES"/>
+    </entity>
+    <entity name="MoodSelection" representedClassName="MoodSelection" syncable="YES">
+        <attribute name="r" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="theta" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="-441" positionY="-1561" width="128" height="58"/>
+        <element name="Location" positionX="-693" positionY="-1561" width="128" height="58"/>
+        <element name="MoodEntry" positionX="-576" positionY="-1476" width="128" height="103"/>
+        <element name="MoodSelection" positionX="-695" positionY="-1305" width="128" height="73"/>
+        <element name="Person" positionX="-450" positionY="-1305" width="128" height="58"/>
+    </elements>
+</model>

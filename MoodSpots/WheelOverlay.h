@@ -22,6 +22,7 @@
 
 - (CGPoint*)getPoint:(int)index;
 - (PolarCoordinate*)getPointPolar:(int)index;
+- (int)getNbOfPoints;
 
 - (void)resetPoints;
 
