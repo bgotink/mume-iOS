@@ -93,6 +93,7 @@
         MSLog(@"No mood has been selected, please make a selection");
         return;
     }
+	
     NSMutableArray *localSelectedMoods = [[NSMutableArray alloc] initWithCapacity:numberOfSelectedMoods];
     for (int i = 0; i < numberOfSelectedMoods; i++) {
         PolarCoordinate *coord = [wheelOverlay getPointPolar:i];
@@ -124,6 +125,7 @@
     MSLog(@"Submit successful");
 }
 
+<<<<<<< HEAD
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"nextStep"]) {
         NSMutableArray *points = [NSMutableArray arrayWithCapacity:[wheelOverlay getNbOfPoints]];
@@ -144,4 +146,6 @@
     }
 }
 
+=======
+>>>>>>> 4610af1ff0c993ab0d8353ef82af22f71c33eb11
 @end

@@ -109,6 +109,7 @@
         MSLog(@"moodselection: (%@, %@)", selection.r, selection.theta);
         
         NSSet *closePeople = [NSSet setWithObjects:michiel, newPerson, nil];
+
         NSSet *selectedMoods = [NSSet setWithObject:selection];
         
         MoodEntry *entry = [MoodEntry createMoodEntry:closePeople at:kot withSelected:selectedMoods doing:mume inManagedObjectContext:context];
