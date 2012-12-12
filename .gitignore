@@ -14,7 +14,7 @@ xcuserdata
 profile
 *.moved-aside
 
-#OSX
+# OSX
 .DS_Store
 .DS_Store?
 ._*

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C3006" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="MoodActivity" representedClassName="MoodActivity" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="doing" inverseEntity="MoodEntry" syncable="YES"/>
+    </entity>
+    <entity name="MoodEntry" representedClassName="MoodEntry" syncable="YES">
+        <attribute name="date" attributeType="Date" syncable="YES"/>
+        <relationship name="at" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MoodSpot" inverseName="in" inverseEntity="MoodSpot" syncable="YES"/>
+        <relationship name="doing" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MoodActivity" inverseName="in" inverseEntity="MoodActivity" syncable="YES"/>
+        <relationship name="feeling" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="MoodSelection" inverseName="in" inverseEntity="MoodSelection" syncable="YES"/>
+        <relationship name="with" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodPerson" inverseName="in" inverseEntity="MoodPerson" syncable="YES"/>
+    </entity>
+    <entity name="MoodPerson" representedClassName="MoodPerson" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="with" inverseEntity="MoodEntry" syncable="YES"/>
+    </entity>
+    <entity name="MoodSelection" representedClassName="MoodSelection" syncable="YES">
+        <attribute name="r" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="theta" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="in" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="feeling" inverseEntity="MoodEntry" syncable="YES"/>
+    </entity>
+    <entity name="MoodSpot" representedClassName="MoodSpot" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="at" inverseEntity="MoodEntry" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MoodActivity" positionX="-389" positionY="-1561" width="128" height="73"/>
+        <element name="MoodSpot" positionX="-756" positionY="-1584" width="128" height="103"/>
+        <element name="MoodEntry" positionX="-576" positionY="-1476" width="128" height="120"/>
+        <element name="MoodSelection" positionX="-758" positionY="-1332" width="128" height="90"/>
+        <element name="MoodPerson" positionX="-389" positionY="-1323" width="128" height="73"/>
+    </elements>
+</model>
