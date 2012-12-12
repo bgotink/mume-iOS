@@ -11,7 +11,7 @@
 
 @interface WheelView ()
 
--(CGColorRef)colorFromHex:(NSString*)hex;
+-(UIColor *)colorFromHex:(NSString*)hex;
 
 @end
 
@@ -44,24 +44,24 @@
     MSLog(@"wheelCenter: %f x %f", wheelCenter.x, wheelCenter.y);
     
     // Define all the colors, yay
-    CGColorRef joyColor = [self colorFromHex:@"EDC500"];
-    CGColorRef trustColor = [self colorFromHex:@"7BBD0D"];
-    CGColorRef fearColor = [self colorFromHex:@"007B33"];
-    CGColorRef surpriseColor = [self colorFromHex:@"0081AB"];
-    CGColorRef sadnessColor = [self colorFromHex:@"1F6CAD"];
-    CGColorRef disgustColor = [self colorFromHex:@"7B4EA3"];
-    CGColorRef angerColor = [self colorFromHex:@"DC0047"];
-    CGColorRef anticipationColor = [self colorFromHex:@"E87200"];
+    UIColor *joyColor = [self colorFromHex:@"EDC500"];
+    UIColor *trustColor = [self colorFromHex:@"7BBD0D"];
+    UIColor *fearColor = [self colorFromHex:@"007B33"];
+    UIColor *surpriseColor = [self colorFromHex:@"0081AB"];
+    UIColor *sadnessColor = [self colorFromHex:@"1F6CAD"];
+    UIColor *disgustColor = [self colorFromHex:@"7B4EA3"];
+    UIColor *angerColor = [self colorFromHex:@"DC0047"];
+    UIColor *anticipationColor = [self colorFromHex:@"E87200"];
     
     
-    [self drawPart:@"joy" withContext:context withColor:joyColor atIndex:6];
-    [self drawPart:@"trust" withContext:context withColor:trustColor atIndex:7];
-    [self drawPart:@"fear" withContext:context withColor:fearColor atIndex:0];
-    [self drawPart:@"surprise" withContext:context withColor:surpriseColor atIndex:1];
-    [self drawPart:@"sadness" withContext:context withColor:sadnessColor atIndex:2];
-    [self drawPart:@"disgust" withContext:context withColor:disgustColor atIndex:3];
-    [self drawPart:@"anger" withContext:context withColor:angerColor atIndex:4];
-    [self drawPart:@"anticipation" withContext:context withColor:anticipationColor atIndex:5];
+    [self drawPart:@"joy" withContext:context withColor:joyColor.CGColor atIndex:6];
+    [self drawPart:@"trust" withContext:context withColor:trustColor.CGColor atIndex:7];
+    [self drawPart:@"fear" withContext:context withColor:fearColor.CGColor atIndex:0];
+    [self drawPart:@"surprise" withContext:context withColor:surpriseColor.CGColor atIndex:1];
+    [self drawPart:@"sadness" withContext:context withColor:sadnessColor.CGColor atIndex:2];
+    [self drawPart:@"disgust" withContext:context withColor:disgustColor.CGColor atIndex:3];
+    [self drawPart:@"anger" withContext:context withColor:angerColor.CGColor atIndex:4];
+    [self drawPart:@"anticipation" withContext:context withColor:anticipationColor.CGColor atIndex:5];
 }
 
 -(void)drawPart:(NSString*)name withContext:(CGContextRef)context withColor:(CGColorRef)color atIndex:(int)index
@@ -157,17 +157,17 @@
     }
 }
 
--(CGColorRef)colorFromHex:(NSString*)hex
+-(UIColor *)colorFromHex:(NSString*)hex
 {
     NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
     // String should be 6 or 8 characters
-    if ([cString length] < 6) return [UIColor grayColor].CGColor;
+    if ([cString length] < 6) return [UIColor grayColor];
     
     // strip 0X if it appears
     if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
     
-    if ([cString length] != 6) return  [UIColor grayColor].CGColor;
+    if ([cString length] != 6) return  [UIColor grayColor];
     
     // Separate into r, g, b substrings
     NSRange range;
@@ -190,7 +190,7 @@
     return [UIColor colorWithRed:((float) r / 255.0f)
                            green:((float) g / 255.0f)
                             blue:((float) b / 255.0f)
-                           alpha:1.0f].CGColor;
+                           alpha:1.0f];
 }
 
 //Returns the coordinates of the given point in polar format.
