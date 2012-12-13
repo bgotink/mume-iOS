@@ -10,7 +10,7 @@
 
 static NSString *MOODSPOT_TABLE = @"MoodSpot";
 
-@interface MoodSpot (Create)
+@interface MoodSpot (CRUD)
 
 + (MoodSpot *)createMoodSpotWithName:(NSString *)name
                           atLatitude:(double)latitude
@@ -19,5 +19,7 @@ static NSString *MOODSPOT_TABLE = @"MoodSpot";
 
 + (NSArray *)queryMoodSpotWithName:(NSString *)name
             inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (NSArray *)findAllInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

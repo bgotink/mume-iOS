@@ -18,7 +18,7 @@
 #import "MoodPerson.h"
 #import "MoodPerson+Create.h"
 #import "MoodSpot.h"
-#import "MoodSpot+Create.h"
+#import "MoodSpot+CRUD.h"
 #import "MoodActivity.h"
 #import "MoodActivity+Create.h"
 

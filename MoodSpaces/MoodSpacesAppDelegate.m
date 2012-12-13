@@ -13,7 +13,7 @@
 #import "MoodActivity.h"
 #import "MoodActivity+Create.h"
 #import "MoodSpot.h"
-#import "MoodSpot+Create.h"
+#import "MoodSpot+CRUD.h"
 #import "MoodSelection.h"
 #import "MoodSelection+Create.h"
 #import "MoodEntry.h"

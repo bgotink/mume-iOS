@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodSpot+Create.h"
+#import "MoodSpot+CRUD.h"
 #import "Log.h"
 
 @implementation MoodSpot (Create)
@@ -43,6 +43,13 @@
     request.fetchLimit = 1;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
     request.predicate = predicate;
+    NSError *error;
+    return [context executeFetchRequest:request error:&error];
+}
+
++ (NSArray *)findAllInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODSPOT_TABLE];
     NSError *error;
     return [context executeFetchRequest:request error:&error];
 }
