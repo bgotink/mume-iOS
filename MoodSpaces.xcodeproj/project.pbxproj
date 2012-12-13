@@ -25,6 +25,9 @@
 		CFC57C431678EBC700D9273F /* MoodPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC57C421678EBC700D9273F /* MoodPerson.m */; };
 		CFC57C451678F4E400D9273F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC57C441678F4E400D9273F /* MapKit.framework */; };
 		CFC57C471678F4EA00D9273F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC57C461678F4EA00D9273F /* CoreLocation.framework */; };
+		CFC57C541679100000D9273F /* moodspaces-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC57C531679100000D9273F /* moodspaces-57x57.png */; };
+		CFC57C561679101B00D9273F /* moodspaces-114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC57C551679101B00D9273F /* moodspaces-114x114.png */; };
+		CFC57C581679113E00D9273F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC57C571679113E00D9273F /* Default.png */; };
 		F4D174071663D8F900785604 /* MoodActivity+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174061663D8F900785604 /* MoodActivity+Create.m */; };
 		F4D1740B1663DE1300785604 /* MoodSpot+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1740A1663DE1300785604 /* MoodSpot+Create.m */; };
 		F4D174121664130400785604 /* MoodSelection+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174111664130400785604 /* MoodSelection+Create.m */; };
@@ -71,6 +74,9 @@
 		CFC57C421678EBC700D9273F /* MoodPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodPerson.m; sourceTree = "<group>"; };
 		CFC57C441678F4E400D9273F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CFC57C461678F4EA00D9273F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CFC57C531679100000D9273F /* moodspaces-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodspaces-57x57.png"; sourceTree = "<group>"; };
+		CFC57C551679101B00D9273F /* moodspaces-114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodspaces-114x114.png"; sourceTree = "<group>"; };
+		CFC57C571679113E00D9273F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		F4D174051663D8F900785604 /* MoodActivity+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MoodActivity+Create.h"; path = "DataModel/MoodActivity+Create.h"; sourceTree = "<group>"; };
 		F4D174061663D8F900785604 /* MoodActivity+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MoodActivity+Create.m"; path = "DataModel/MoodActivity+Create.m"; sourceTree = "<group>"; };
 		F4D174091663DE1300785604 /* MoodSpot+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MoodSpot+Create.h"; path = "DataModel/MoodSpot+Create.h"; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 		255BC54116318F0F00EEF8F5 = {
 			isa = PBXGroup;
 			children = (
+				CFC57C5216790FB700D9273F /* Resources */,
 				CFC57C461678F4EA00D9273F /* CoreLocation.framework */,
 				CFC57C441678F4E400D9273F /* MapKit.framework */,
 				F4EB6D9F1662543B0009F79E /* CoreData.framework */,
@@ -206,6 +213,16 @@
 			name = "Data Model";
 			sourceTree = "<group>";
 		};
+		CFC57C5216790FB700D9273F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFC57C571679113E00D9273F /* Default.png */,
+				CFC57C531679100000D9273F /* moodspaces-57x57.png */,
+				CFC57C551679101B00D9273F /* moodspaces-114x114.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +277,9 @@
 			files = (
 				255BC55B16318F0F00EEF8F5 /* InfoPlist.strings in Resources */,
 				255BC56A16318F0F00EEF8F5 /* MainStoryboard.storyboard in Resources */,
+				CFC57C541679100000D9273F /* moodspaces-57x57.png in Resources */,
+				CFC57C561679101B00D9273F /* moodspaces-114x114.png in Resources */,
+				CFC57C581679113E00D9273F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
