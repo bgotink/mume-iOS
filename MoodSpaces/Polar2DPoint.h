@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "PolarCoordinate.h"
 
-@interface Polar2dPoint : NSObject
+@interface Polar2DPoint : NSObject
 
 @property float r;
-@property float phi;
+@property float theta;
 
-+ (Polar2dPoint *)fromPolarCoordinate:(PolarCoordinate)p;
++ (Polar2DPoint *)fromPolarCoordinate:(PolarCoordinate)p;
 
 @end

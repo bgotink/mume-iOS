@@ -27,10 +27,10 @@
         <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="at" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MoodActivity" positionX="-389" positionY="-1561" width="128" height="73"/>
-        <element name="MoodSpot" positionX="-756" positionY="-1584" width="128" height="103"/>
-        <element name="MoodEntry" positionX="-576" positionY="-1476" width="128" height="120"/>
-        <element name="MoodSelection" positionX="-758" positionY="-1332" width="128" height="90"/>
-        <element name="MoodPerson" positionX="-389" positionY="-1323" width="128" height="73"/>
+        <element name="MoodActivity" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MoodEntry" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MoodPerson" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MoodSelection" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MoodSpot" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

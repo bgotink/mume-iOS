@@ -8,5 +8,5 @@
 
 typedef struct PolarCoordinate {
     float r;
-    float phi;
+    float theta;
 } PolarCoordinate;

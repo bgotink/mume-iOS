@@ -14,7 +14,7 @@
 #import "MoodSelection+Create.h"
 #import "MoodEntry.h"
 #import "MoodEntry+Create.h"
-#import "Polar2dPoint.h"
+#import "Polar2DPoint.h"
 #import "MoodPerson.h"
 #import "MoodPerson+Create.h"
 #import "MoodSpot.h"
@@ -127,8 +127,8 @@
     int numberOfSelectedMoods = [selectedMoods count];
     NSMutableArray *localSelectedMoods = [[NSMutableArray alloc] initWithCapacity:numberOfSelectedMoods];
     for (int i = 0; i < numberOfSelectedMoods; i++) {
-        Polar2dPoint *coord = [selectedMoods objectAtIndex:i];
-        [localSelectedMoods addObject:[MoodSelection createMoodSelection:[NSNumber numberWithFloat:coord.r] withTheta:[NSNumber numberWithFloat:coord.phi] inManagedObjectContext:context]];
+        Polar2DPoint *coord = [selectedMoods objectAtIndex:i];
+        [localSelectedMoods addObject:[MoodSelection createMoodSelection:[NSNumber numberWithFloat:coord.r] withTheta:[NSNumber numberWithFloat:coord.theta] inManagedObjectContext:context]];
     }
     NSSet *selectedMoodsSet = [NSSet setWithArray:localSelectedMoods];
     

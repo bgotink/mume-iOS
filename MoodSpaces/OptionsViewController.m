@@ -14,7 +14,7 @@
 #import "MoodActivity.h"
 #import "MoodPerson.h"
 #import "InputViewController.h"
-#import "Polar2dPoint.h"
+#import "Polar2DPoint.h"
 #import "MoodSelection.h"
 
 @interface OptionsViewController ()

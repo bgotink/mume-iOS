@@ -35,7 +35,7 @@
 		F4D1742816641AA600785604 /* MoodPerson+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1742716641AA600785604 /* MoodPerson+Create.m */; };
 		F4D8B0971667E2B000086BFD /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0961667E2B000086BFD /* InputViewController.m */; };
 		F4D8B09A1667E64600086BFD /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0991667E64600086BFD /* OptionsViewController.m */; };
-		F4D8B0A61668267000086BFD /* Polar2dPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0A51668266F00086BFD /* Polar2dPoint.m */; };
+		F4D8B0A61668267000086BFD /* Polar2DPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0A51668266F00086BFD /* Polar2DPoint.m */; };
 		F4EB6DA01662543B0009F79E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EB6D9F1662543B0009F79E /* CoreData.framework */; };
 		F4FB2F5F1659207000687A9D /* MoodSpacesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4FB2F5D1659207000687A9D /* MoodSpacesModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -91,8 +91,8 @@
 		F4D8B0961667E2B000086BFD /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
 		F4D8B0981667E64600086BFD /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
 		F4D8B0991667E64600086BFD /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
-		F4D8B0A41668266F00086BFD /* Polar2dPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polar2dPoint.h; sourceTree = "<group>"; };
-		F4D8B0A51668266F00086BFD /* Polar2dPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polar2dPoint.m; sourceTree = "<group>"; };
+		F4D8B0A41668266F00086BFD /* Polar2DPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polar2DPoint.h; sourceTree = "<group>"; };
+		F4D8B0A51668266F00086BFD /* Polar2DPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polar2DPoint.m; sourceTree = "<group>"; };
 		F4EB6D9F1662543B0009F79E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4FB2F5E1659207000687A9D /* MoodSpacesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodSpacesModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,8 +155,8 @@
 				255BC56016318F0F00EEF8F5 /* MoodSpacesAppDelegate.m */,
 				255BC56B16318F0F00EEF8F5 /* NewMoodViewController.h */,
 				255BC56C16318F0F00EEF8F5 /* NewMoodViewController.m */,
-				F4D8B0A41668266F00086BFD /* Polar2dPoint.h */,
-				F4D8B0A51668266F00086BFD /* Polar2dPoint.m */,
+				F4D8B0A41668266F00086BFD /* Polar2DPoint.h */,
+				F4D8B0A51668266F00086BFD /* Polar2DPoint.m */,
 				255BC55716318F0F00EEF8F5 /* Supporting Files */,
 				255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */,
 				F4D8B0981667E64600086BFD /* OptionsViewController.h */,
@@ -304,7 +304,7 @@
 				F4D1742816641AA600785604 /* MoodPerson+Create.m in Sources */,
 				F4D8B0971667E2B000086BFD /* InputViewController.m in Sources */,
 				F4D8B09A1667E64600086BFD /* OptionsViewController.m in Sources */,
-				F4D8B0A61668267000086BFD /* Polar2dPoint.m in Sources */,
+				F4D8B0A61668267000086BFD /* Polar2DPoint.m in Sources */,
 				CFC57C371678EBC700D9273F /* MoodActivity.m in Sources */,
 				CFC57C3A1678EBC700D9273F /* MoodEntry.m in Sources */,
 				CFC57C3D1678EBC700D9273F /* MoodSpot.m in Sources */,

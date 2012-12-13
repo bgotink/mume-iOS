@@ -211,9 +211,9 @@
         return nil;
     }
     
-    retVal->phi = atan2f(-y, x);
+    retVal->theta = atan2f(-y, x);
     
-    MSLog(@"Tap location polar: r = %f, phi = %f", retVal->r, retVal->phi);
+    MSLog(@"Tap location polar: r = %f, theta = %f", retVal->r, retVal->theta);
     return retVal;
 }
 

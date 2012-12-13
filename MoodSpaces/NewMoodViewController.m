@@ -9,7 +9,7 @@
 #import "NewMoodViewController.h"
 #import "MoodSpacesAppDelegate.h"
 #import "Log.h"
-#import "Polar2dPoint.h"
+#import "Polar2DPoint.h"
 #import "InputViewController.h"
 
 @interface NewMoodViewController ()
@@ -61,9 +61,9 @@
         NSMutableArray *points = [NSMutableArray arrayWithCapacity:[wheelOverlay getNbOfPoints]];
         for (int i = 0; i < [wheelOverlay getNbOfPoints]; i++) {
             PolarCoordinate *coord = [wheelOverlay getPointPolar:i];
-            Polar2dPoint *point = [Polar2dPoint fromPolarCoordinate:*coord];
+            Polar2DPoint *point = [Polar2DPoint fromPolarCoordinate:*coord];
             points[i] = point;
-            MSLog(@"coord: (%f, %f)", point.r, point.phi);
+            MSLog(@"coord: (%f, %f)", point.r, point.theta);
         }
         InputViewController *destViewController = segue.destinationViewController;
         destViewController.selectedMoods = points;

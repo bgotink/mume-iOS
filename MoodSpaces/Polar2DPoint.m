@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "Polar2dPoint.h"
+#import "Polar2DPoint.h"
 #import "PolarCoordinate.h"
 
-@implementation Polar2dPoint
+@implementation Polar2DPoint
 
-+ (Polar2dPoint *)fromPolarCoordinate:(PolarCoordinate)polarCoord{
-    Polar2dPoint *returnValue = [[Polar2dPoint alloc] init];
++ (Polar2DPoint *)fromPolarCoordinate:(PolarCoordinate)polarCoord{
+    Polar2DPoint *returnValue = [[Polar2DPoint alloc] init];
     returnValue.r = polarCoord.r;
-    returnValue.phi = polarCoord.phi;
+    returnValue.theta = polarCoord.theta;
     return returnValue;
 }
 
