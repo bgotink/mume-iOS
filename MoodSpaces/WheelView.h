@@ -9,11 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PolarCoordinate.h"
 
-@interface WheelView : UIView {
-    CGSize size;
-    CGPoint wheelCenter;
-    float radius;
-}
+@interface WheelView : UIView
 
 -(PolarCoordinate*)getPolar:(CGPoint)point;
 

@@ -8,7 +8,7 @@
 
 #import "MoodSelection.h"
 
-@interface MoodSelection (Create)
+@interface MoodSelection (CRUD)
 
 + (MoodSelection *)createMoodSelection:(NSNumber *)r withTheta:(NSNumber *)theta inManagedObjectContext:(NSManagedObjectContext *)context;
 

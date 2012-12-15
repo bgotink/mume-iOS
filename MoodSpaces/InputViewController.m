@@ -9,113 +9,95 @@
 #import "MoodSpacesAppDelegate.h"
 #import "InputViewController.h"
 #import "OptionsViewController.h"
-#import "Log.h"
-#import "NewMoodViewController.h"
-#import "MoodSelection+Create.h"
-#import "MoodEntry.h"
-#import "MoodEntry+Create.h"
 #import "Polar2DPoint.h"
-#import "MoodPerson.h"
-#import "MoodPerson+Create.h"
-#import "MoodSpot.h"
+#import "MoodViewController.h"
+
+#import "MoodSelection+CRUD.h"
+#import "MoodEntry+CRUD.h"
+#import "MoodPerson+CRUD.h"
 #import "MoodSpot+CRUD.h"
-#import "MoodActivity.h"
-#import "MoodActivity+Create.h"
+#import "MoodActivity+CRUD.h"
 
 @interface InputViewController ()
 
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+
 @end
 
-@implementation InputViewController {
-    NSArray *options;
-}
+@implementation InputViewController
 
-@synthesize tableView;
-@synthesize selectedLocation;
-@synthesize selectedActivity;
-@synthesize selectedPerson;
-@synthesize selectedMoods;
+@synthesize tableView = _tableView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+@synthesize moodSpot = _moodSpot;
+@synthesize moodActivity = _moodActivity;
+@synthesize moodPeeps = _moodPeeps;
+
+@synthesize selectedMoods = _selectedMoods;
+
+#pragma mark UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return 3;
 }
 
-- (void)viewDidLoad
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    MSLog(@"viewDidLoad is called");
-    options = [NSArray arrayWithObjects:@"Location", @"Activity", @"People that are nearby", nil];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [options count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)localTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *simpleTableIdentifier = @"GeneralOptionCell";
-    
-    UITableViewCell *cell = [localTableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    cell.textLabel.text = [options objectAtIndex:indexPath.row];
-    
-    
-    MSLog(@"indexPath: %d, %d", indexPath.row, indexPath.section);
-    
-    if(indexPath.row == 0){
-        [self updateCellTextColor:cell selectionMade:selectedLocation];
-    } else if(indexPath.row == 1){
-        [self updateCellTextColor:cell selectionMade:selectedActivity];
-    } else {
-        [self updateCellTextColor:cell selectionMade:selectedPerson];
+    UITableViewCell *cell;
+    switch (indexPath.row) {
+        case 0:
+            cell = [self cellForMoodSpotSelectorInTableView:tableView];
+            break;
+        case 1:
+            cell = [self cellForMoodPeepsSelectorInTableView:tableView];
+            break;
+        case 2:
+            cell = [self cellForMoodActivitySelectorInTableView:tableView];
+            break;
     }
     return cell;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showDetailedOptions"]) {
-        MSLog(@"prepareForSegue is called");
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        OptionsViewController *destViewController = segue.destinationViewController;
-        destViewController.optionName = [options objectAtIndex:indexPath.row];
-        
-        destViewController.selectedLocation = selectedLocation;
-        destViewController.selectedActivity = selectedActivity;
-        destViewController.selectedPerson = selectedPerson;
-        destViewController.selectedMoods = selectedMoods;
-    } /*else if([segue.identifier isEqualToString:@"backSelectMood"]){
-        NewMoodViewController *destViewController = segue.destinationViewController;
-        destViewController.selectedMoods = selectedMoods;
-        //TODO put other like location and such in newmoodview too.
-    }*/
-}
-
-- (void)updateCellTextColor:(UITableViewCell *)cell selectionMade:(NSString *)selection{
-    MSLog(@"updateCellTextColor is called with %@", selection);
-    if(selection){
-        cell.textLabel.textColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
-    } else{
-        cell.textLabel.textColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
+- (UITableViewCell *)cellWithReuseIdentifier:(NSString *)identifier
+                                 inTableView:(UITableView *)tableView
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:identifier];
     }
+    return cell;
 }
 
-- (IBAction)SubmitButtonAction:(id)sender{
-    MSLog(@"Submit is pressed");
+- (UITableViewCell *)cellForMoodSpotSelectorInTableView:(UITableView *)tableView
+{
+    UITableViewCell *cell = [self cellWithReuseIdentifier:@"MoodSpot" inTableView:tableView];
+    cell.textLabel.text = @"MoodSpot";
+    cell.detailTextLabel.text = @"Not Set";
+    return cell;
+}
+
+- (UITableViewCell *)cellForMoodPeepsSelectorInTableView:(UITableView *)tableView
+{
+    UITableViewCell *cell = [self cellWithReuseIdentifier:@"MoodPeeps" inTableView:tableView];
+    cell.textLabel.text = @"MoodPeeps";
+    cell.detailTextLabel.text = @"Not Set";
+    return cell;
+}
+
+- (UITableViewCell *)cellForMoodActivitySelectorInTableView:(UITableView *)tableView
+{
+    UITableViewCell *cell = [self cellWithReuseIdentifier:@"MoodActivity" inTableView:tableView];
+    cell.textLabel.text = @"MoodActivity";
+    cell.detailTextLabel.text = @"Not Set";
+    return cell;
+}
+
+- (IBAction)done:(id)sender
+{
+    /*
     //TODO check of er nog dingen zijn die op nil staan en geef dan een notificatie aan de user dat hij dat nog moet selecteren.
     
     //Step 1: Fetch the NSManagedObjectContext from the AppDelegate
@@ -150,7 +132,8 @@
     //Step 4: explicitely save the document here.
     [appDelegate saveDocument];
     
-    MSLog(@"Submit successful");
+    NSLog(@"Submit successful");
+     */
 }
 
 @end

@@ -13,7 +13,4 @@
 @property (strong, nonatomic) UIManagedDocument *document;
 @property (strong, nonatomic) UIWindow *window;
 
-- (void)documentIsReady;
-- (void)saveDocument;
-
 @end

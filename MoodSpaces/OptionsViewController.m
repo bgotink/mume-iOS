@@ -7,7 +7,7 @@
 //
 
 #import "OptionsViewController.h"
-#import "Log.h"
+
 #import "MoodSpacesAppDelegate.h"
 #import <CoreData/CoreData.h>
 #import "MoodSpot.h"
@@ -50,13 +50,13 @@
     
     //Setting the values of the detailedOption to the available options of the selected option.
     if([optionName isEqualToString:@"Location"]){
-        MSLog(@"Location is clicked");
+        NSLog(@"Location is clicked");
         detailedOptions = [self fetchAllLocations:context];
     } else if([optionName isEqualToString:@"Activity"]){
-        MSLog(@"Activity is clicked");
+        NSLog(@"Activity is clicked");
         detailedOptions = [self fetchAllActivities:context];
     } else if([optionName isEqualToString:@"People that are nearby"]){
-        MSLog(@"People that are nearby is clicked");
+        NSLog(@"People that are nearby is clicked");
         detailedOptions = [self fetchAllNearbyPeople:context];
     }
     
@@ -90,46 +90,46 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //Handles the data flow when you go back to the main options of the InputViewController.
+    /*
     if ([segue.identifier isEqualToString:@"showMainOptions"]) {
-        MSLog(@"prepareForSegue for showMainOptions is called");
+        NSLog(@"prepareForSegue for showMainOptions is called");
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         InputViewController *destViewController = segue.destinationViewController;
-        MSLog(@"object: %@", [detailedOptions objectAtIndex:indexPath.row]);
-        MSLog(@"key: %@",optionName);
-        
+        NSLog(@"object: %@", [detailedOptions objectAtIndex:indexPath.row]);
+        NSLog(@"key: %@",optionName);
         if([optionName isEqualToString:@"Location"]){
             destViewController.selectedLocation = [detailedOptions objectAtIndex:indexPath.row];
             destViewController.selectedActivity = selectedActivity;
             destViewController.selectedPerson = selectedPerson;
             
-            MSLog(@"selected loc = %@", destViewController.selectedLocation);
-            MSLog(@"selected act = %@", destViewController.selectedActivity);
-            MSLog(@"selected pers = %@", destViewController.selectedPerson);
+            NSLog(@"selected loc = %@", destViewController.selectedLocation);
+            NSLog(@"selected act = %@", destViewController.selectedActivity);
+            NSLog(@"selected pers = %@", destViewController.selectedPerson);
         } else if([optionName isEqualToString:@"Activity"]){
             destViewController.selectedActivity = [detailedOptions objectAtIndex:indexPath.row];
             destViewController.selectedLocation = selectedLocation;
             destViewController.selectedPerson = selectedPerson;
             
-            MSLog(@"selected loc = %@", destViewController.selectedLocation);
-            MSLog(@"selected act = %@", destViewController.selectedActivity);
-            MSLog(@"selected pers = %@", destViewController.selectedPerson);
+            NSLog(@"selected loc = %@", destViewController.selectedLocation);
+            NSLog(@"selected act = %@", destViewController.selectedActivity);
+            NSLog(@"selected pers = %@", destViewController.selectedPerson);
         } else if([optionName isEqualToString:@"People that are nearby"]){
             destViewController.selectedPerson = [detailedOptions objectAtIndex:indexPath.row];
             destViewController.selectedLocation = selectedLocation;
             destViewController.selectedActivity = selectedActivity;
             
-            MSLog(@"selected loc = %@", destViewController.selectedLocation);
-            MSLog(@"selected act = %@", destViewController.selectedActivity);
-            MSLog(@"selected pers = %@", destViewController.selectedPerson);
+            NSLog(@"selected loc = %@", destViewController.selectedLocation);
+            NSLog(@"selected act = %@", destViewController.selectedActivity);
+            NSLog(@"selected pers = %@", destViewController.selectedPerson);
         } else{
-            MSLog(@"Error, the text in cell %d is not equal to one of the options", indexPath.row);
+            NSLog(@"Error, the text in cell %d is not equal to one of the options", indexPath.row);
         }
         destViewController.selectedMoods = selectedMoods;
-        
         //[destViewController.selectedItems setObject:[detailedOptions objectAtIndex:indexPath.row] forKey:optionName];
-        //MSLog(@"dictionary: %@", destViewController.selectedItems);
+        //NSLog(@"dictionary: %@", destViewController.selectedItems);
         //Implement the following method to make the text of the cells green when an object is selected.
     }
+    */
 }
 
 //The following three methods look very much alike but there is a difference in the for loop, they can be refactored though but you will still need 3 different methodes + a fourth method with the refactored code.

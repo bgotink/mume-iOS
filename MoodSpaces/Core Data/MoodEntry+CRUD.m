@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodEntry+Create.h"
-#import "Log.h"
+#import "MoodEntry+CRUD.h"
 
-@implementation MoodEntry (Create)
+
+@implementation MoodEntry (CRUD)
 
 /* Creates a mood entry with the given parameters. */
 + (MoodEntry *)createMoodEntryWithSelections:(NSSet *)moodSelections
@@ -18,7 +18,7 @@
                                        doing:(MoodActivity *)moodActivity
                       inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    MSLog(@"Creating MoodEntry");
+    NSLog(@"Creating MoodEntry");
     //We dont check whether the same MoodEntry already exists because double are allowed.
     MoodEntry *entry;
     if (!entry) {

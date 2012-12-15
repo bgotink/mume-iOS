@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodActivity+Create.h"
-#import "Log.h"
+#import "MoodActivity+CRUD.h"
 
-@implementation MoodActivity (Create)
+
+@implementation MoodActivity (CRUD)
 
 /* Creates an activity with the given name if it doesn't already exits in the database. */
 + (MoodActivity *)createMoodActivityWithName:(NSString *)name
@@ -21,13 +21,13 @@
                                            inManagedObjectContext:context];
     
     if (!activities) {
-        MSLog(@"Error occured while fetching from database");
+        NSLog(@"Error occured while fetching from database");
         return nil;
     } else if (activities.count > 0) {
-        MSLog(@"MoodActivity with name: %@ already exists in database, no new MoodActivity is made.", name);
+        NSLog(@"MoodActivity with name: %@ already exists in database, no new MoodActivity is made.", name);
         return activities[0];
     } else {
-        MSLog(@"Creating Activity with activity: %@", name);
+        NSLog(@"Creating Activity with activity: %@", name);
         MoodActivity *activity = [NSEntityDescription insertNewObjectForEntityForName:MOODACTIVITY_TABLE
                                                                inManagedObjectContext:context];
         [activity setName:name];

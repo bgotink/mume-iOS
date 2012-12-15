@@ -10,7 +10,7 @@
 
 static NSString *MOODENTRY_TABLE = @"MoodEntry";
 
-@interface MoodEntry (Create)
+@interface MoodEntry (CRUD)
 
 + (MoodEntry *)createMoodEntryWithSelections:(NSSet *)moodSelections
                                         with:(NSSet *)moodPeeps

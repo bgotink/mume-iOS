@@ -7,7 +7,9 @@
 //
 
 #import "WheelView.h"
-#import "Log.h"
+
+
+#define DEFAULT_SCALE 0.9
 
 @interface WheelView ()
 
@@ -32,15 +34,13 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    wheelCenter.x = rect.size.width / 2;
-    wheelCenter.y = rect.size.height / 2;
-    int margin = 10;
+    CGPoint wheelCenter;
+    wheelCenter.x = self.bounds.origin.x + self.bounds.size.width / 2;
+    wheelCenter.y = self.bounds.origin.y + self.bounds.size.height / 2;
     
-    radius = MIN(wheelCenter.x, wheelCenter.y) - margin;
+    CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) * DEFAULT_SCALE / 2;
     
-    MSLog(@"Drawing Wheel...");
-    MSLog(@"Radius: %f", radius);
-    MSLog(@"wheelCenter: %f x %f", wheelCenter.x, wheelCenter.y);
+    NSLog(@"Drawing Wheel with radius: %f at (%f, %f)", radius, wheelCenter.x, wheelCenter.y);
     
     // Define all the colors, yay
     UIColor *joyColor = [self colorFromHex:@"EDC500"];
@@ -53,22 +53,27 @@
     UIColor *anticipationColor = [self colorFromHex:@"E87200"];
     
     
-    [self drawPart:@"joy" withContext:context withColor:joyColor.CGColor atIndex:6];
-    [self drawPart:@"trust" withContext:context withColor:trustColor.CGColor atIndex:7];
-    [self drawPart:@"fear" withContext:context withColor:fearColor.CGColor atIndex:0];
-    [self drawPart:@"surprise" withContext:context withColor:surpriseColor.CGColor atIndex:1];
-    [self drawPart:@"sadness" withContext:context withColor:sadnessColor.CGColor atIndex:2];
-    [self drawPart:@"disgust" withContext:context withColor:disgustColor.CGColor atIndex:3];
-    [self drawPart:@"anger" withContext:context withColor:angerColor.CGColor atIndex:4];
-    [self drawPart:@"anticipation" withContext:context withColor:anticipationColor.CGColor atIndex:5];
+    [self drawPartWithName:@"joy" atIndex:6 withColor:joyColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"trust" atIndex:7 withColor:trustColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"fear" atIndex:0 withColor:fearColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"surprise" atIndex:1 withColor:surpriseColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"sadness" atIndex:2 withColor:sadnessColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"disgust" atIndex:3 withColor:disgustColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"anger" atIndex:4 withColor:angerColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"anticipation" atIndex:5 withColor:anticipationColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
 }
 
--(void)drawPart:(NSString*)name withContext:(CGContextRef)context withColor:(CGColorRef)color atIndex:(int)index
+-(void)drawPartWithName:(NSString*)name
+                atIndex:(int)index
+              withColor:(CGColorRef)color
+             fromCenter:(CGPoint)wheelCenter
+             withRadius:(CGFloat)radius
+              inContext:(CGContextRef)context
 {
     float curAngle = index * M_PI_4;
     float nextAngle = curAngle + M_PI_4;
     
-    MSLog(@"Drawing wheel part %s", name.UTF8String);
+    NSLog(@"Drawing wheel part %s", name.UTF8String);
     
     // set the color
     CGContextSetFillColorWithColor(context, color);
@@ -195,25 +200,28 @@
 //Returns the coordinates of the given point in polar format.
 -(PolarCoordinate*)getPolar:(CGPoint)point
 {
-    MSLog(@"Tapped wheel");
+    /*
+    NSLog(@"Tapped wheel");
     
     float x = point.x - wheelCenter.x;
     float y = point.y - wheelCenter.y;
     
-    MSLog(@"Tap location: %f x %f", x, y);
+    NSLog(@"Tap location: %f x %f", x, y);
     
     PolarCoordinate *retVal = malloc(sizeof(PolarCoordinate));
     retVal->r = sqrt(x * x + y * y) / radius;
     
     if (retVal->r > 1) {
-        MSLog(@"Tapped outside of wheel, ignore");
+        NSLog(@"Tapped outside of wheel, ignore");
         return nil;
     }
     
     retVal->theta = atan2f(-y, x);
     
-    MSLog(@"Tap location polar: r = %f, theta = %f", retVal->r, retVal->theta);
+    NSLog(@"Tap location polar: r = %f, theta = %f", retVal->r, retVal->theta);
     return retVal;
+     */
+    return nil;
 }
 
 @end

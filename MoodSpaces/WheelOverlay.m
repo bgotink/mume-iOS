@@ -7,7 +7,7 @@
 //
 
 #import "WheelOverlay.h"
-#import "Log.h"
+
 
 #define MAX_NB_POINTS   2
 
@@ -51,7 +51,7 @@
     if ((nbPoints == 0) || wheelView == nil)
         return;
     
-    MSLog(@"Drawing WheelOverlay...");
+    NSLog(@"Drawing WheelOverlay...");
     
     CGPoint _point;
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -77,14 +77,14 @@
     if (points == nil) {
         points = malloc(sizeof(CGPoint) * MAX_NB_POINTS);
         if (points == nil) {
-            MSLog(@"Failed to create CGPoint array!!!");
+            NSLog(@"Failed to create CGPoint array!!!");
             return;
         }
     }
     
     if([wheelView getPolar:newPoint] != nil) {
         if(nbPoints >= MAX_NB_POINTS) {
-            MSLog(@"Maximum nb points reached");
+            NSLog(@"Maximum nb points reached");
                 /*CGPoint temp1 = newPoint;
                 CGPoint temp2;
                 for (int i = MAX_NB_POINTS - 1; i >= 0; i--) {

@@ -6,10 +6,9 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodPerson+Create.h"
-#import "Log.h"
+#import "MoodPerson+CRUD.h"
 
-@implementation MoodPerson (Create)
+@implementation MoodPerson (CRUD)
 
 /* Creates a person with the given name in the database if a person with this name didn't already exist in the database. */
 + (MoodPerson *)createMoodPersonWithName:(NSString *)name
@@ -18,13 +17,13 @@
     // Check whether a person with the name already exists in the database.
     NSArray *people = [MoodPerson queryMoodPersonWithName:name inManagedObjectContext:context];
     if (!people) {
-        MSLog(@"Error occured while fetching from database");
+        NSLog(@"Error occured while fetching from database");
         return nil;
     } else if (people.count > 0) {
-        MSLog(@"Person with name: %@ already exists in database, no new person is made.", name);
+        NSLog(@"Person with name: %@ already exists in database, no new person is made.", name);
         return people[0];
     } else{
-        MSLog(@"Creating Person with name: %@", name);
+        NSLog(@"Creating Person with name: %@", name);
         MoodPerson *person = [NSEntityDescription insertNewObjectForEntityForName:MOODPERSON_TABLE
                                                            inManagedObjectContext:context];
         [person setName:name];

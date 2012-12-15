@@ -8,44 +8,43 @@
 
 #import "MoodSpacesAppDelegate.h"
 #import <CoreData/CoreData.h>
-#import "MoodPerson.h"
-#import "MoodPerson+Create.h"
-#import "MoodActivity.h"
-#import "MoodActivity+Create.h"
-#import "MoodSpot.h"
-#import "MoodSpot+CRUD.h"
-#import "MoodSelection.h"
-#import "MoodSelection+Create.h"
-#import "MoodEntry.h"
-#import "MoodEntry+Create.h"
-#import "Log.h"
 
 @implementation MoodSpacesAppDelegate
 
 @synthesize document = _document;
 
+- (void)useDocument
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:self.document.fileURL.path]) {
+        [self.document saveToURL:self.document.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+            if (!success) NSLog(@"Could not create document at %@", self.document.fileURL.path);
+            else NSLog(@"Created document at %@", self.document.fileURL.path);
+        }];
+    } else if (self.document.documentState == UIDocumentStateClosed) {
+        [self.document openWithCompletionHandler:^(BOOL success) {
+            if (!success) NSLog(@"Could not open document at %@", self.document.fileURL.path);
+            else NSLog(@"Opened document at %@", self.document.fileURL.path);
+        }];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //Create the UIManagedDocument
     NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
-    url = [url URLByAppendingPathComponent:@"MyDocument1.md"];
+    url = [url URLByAppendingPathComponent:@"MoodSpaces"];
     self.document = [[UIManagedDocument alloc] initWithFileURL:url];
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
-        [self.document openWithCompletionHandler:^(BOOL success) {
-            if (success) [self documentIsReady];
-            if (!success) NSLog(@"couldn’t open document at %@", url);
-        }]; } else {
-            [self.document saveToURL:url forSaveOperation:UIDocumentSaveForCreating
-              completionHandler:^(BOOL success) {
-                  if (success) [self documentIsReady];
-                  if (!success) NSLog(@"couldn’t create document at %@", url);
-              }]; }
-    // can’t do anything with the document yet (do it in documentIsReady).
-    
     
     // Override point for customization after application launch.
     return YES;
+}
+
+- (void)setDocument:(UIManagedDocument *)document
+{
+    if (_document != document) {
+        _document = document;
+        [self useDocument];
+    }
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -72,14 +71,10 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    [self.document closeWithCompletionHandler:^(BOOL success) {
-        if (!success){
-            MSLog(@"failed to close document %@", self.document.localizedName);
-        } else{
-            MSLog(@"document %@ is closed", self.document.localizedName);
-        }
-    }];
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self.document closeWithCompletionHandler:^(BOOL success) {
+        if (!success) NSLog(@"Could not close document %@", self.document.fileURL.path);
+    }];
 }
 
 - (void)documentIsReady{
@@ -88,42 +83,42 @@
         //Do something with it...
         
         //The following test code creates some database entities.
-        /*MSLog(@"It succeeded to make the context.");
+        /*NSLog(@"It succeeded to make the context.");
         NSManagedObject *newPerson = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:context];
 
         
-        MSLog(@"Person is made");
+        NSLog(@"Person is made");
         [newPerson setValue:@"Geert" forKey:@"name"];
-        MSLog(@"value %@",[newPerson valueForKey:@"name"]);
+        NSLog(@"value %@",[newPerson valueForKey:@"name"]);
 		
         Person *michiel = [Person createPerson:@"Michiel" inManagedObjectContext:context];
-        MSLog(@"name: %@", michiel.name);
+        NSLog(@"name: %@", michiel.name);
         
         Activity *mume = [Activity createActivity:@"mume12" inManagedObjectContext:context];
-        MSLog(@"activity: %@", mume.activity);
+        NSLog(@"activity: %@", mume.activity);
         
         Location *kot = [Location createLocation:@"kot" inManagedObjectContext:context];
-        MSLog(@"location: %@", kot.location);
+        NSLog(@"location: %@", kot.location);
         
         
         //Waarom gebruik ik hier [NSNumber numberWithDouble:0.12] ??
         // Omdat een NSManagedObject een double als een NSNumber opslaat en je dus een double moet wrappen met NSNumber.
         MoodSelection *selection = [MoodSelection createMoodSelection:[NSNumber numberWithDouble:0.12] withTheta:[NSNumber numberWithDouble:1.23] inManagedObjectContext:context];
-        MSLog(@"moodselection: (%@, %@)", selection.r, selection.theta);
+        NSLog(@"moodselection: (%@, %@)", selection.r, selection.theta);
         
         NSSet *closePeople = [NSSet setWithObjects:michiel, newPerson, nil];
         NSSet *selectedMoods = [NSSet setWithObject:selection];
         
         MoodEntry *entry = [MoodEntry createMoodEntry:closePeople at:kot withSelected:selectedMoods doing:mume inManagedObjectContext:context];
-        MSLog(@"MoodEntry: ");
+        NSLog(@"MoodEntry: ");
         for(Person *closePerson in entry.closePersons){
             NSLog(@"closePeople contains: %@", closePerson.name);
         }
-        MSLog(@"location: %@", entry.fromWhere.location);
+        NSLog(@"location: %@", entry.fromWhere.location);
         for(MoodSelection *selectedMoods in entry.selectedMoods){
             NSLog(@"selectedMoods contains: (%@, %@)", selectedMoods.r, selectedMoods.theta);
         }
-        MSLog(@"activity: %@", entry.whichActivity.activity);
+        NSLog(@"activity: %@", entry.whichActivity.activity);
         
         //Object can be deleted by calling
         //[self.document.managedObjectContext deleteObject:entry];
@@ -132,27 +127,18 @@
         
         NSArray *persons = [Person queryPerson:@"Michiel" inManagedObjectContext:context];
         if(persons == nil){
-            MSLog(@"an error occured while querying");
+            NSLog(@"an error occured while querying");
         } else{
-            MSLog(@"Persons found in database: ");
+            NSLog(@"Persons found in database: ");
             for(Person *result in persons){
-                MSLog(@"name: %@", result.name);
+                NSLog(@"name: %@", result.name);
             }
-            MSLog(@"___");
+            NSLog(@"___");
         }
         
         Person *bram = [Person createPerson:@"Bram" inManagedObjectContext:context];
-        MSLog(@"name: %@", bram.name);*/
+        NSLog(@"name: %@", bram.name);*/
     //}
-}
-
-- (void) saveDocument{
-    [self.document saveToURL:self.document.fileURL
-                   forSaveOperation:UIDocumentSaveForOverwriting
-                  completionHandler:^(BOOL success) {
-                      if (!success)
-                          MSLog(@"failed to save document %@", self.document.localizedName);
-                  }];
 }
 
 @end

@@ -10,7 +10,7 @@
 
 static NSString *MOODPERSON_TABLE = @"MoodPerson";
 
-@interface MoodPerson (Create)
+@interface MoodPerson (CRUD)
 
 + (MoodPerson *)createMoodPersonWithName:(NSString *)name
                   inManagedObjectContext:(NSManagedObjectContext *)context;

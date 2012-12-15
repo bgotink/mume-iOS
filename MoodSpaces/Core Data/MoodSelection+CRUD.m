@@ -6,10 +6,9 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodSelection+Create.h"
-#import "Log.h"
+#import "MoodSelection+CRUD.h"
 
-@implementation MoodSelection (Create)
+@implementation MoodSelection (CRUD)
 
 /* Creates a moodselection with the given polar coordinates. */
 + (MoodSelection *)createMoodSelection:(NSNumber *)r withTheta:(NSNumber *)theta inManagedObjectContext:(NSManagedObjectContext *)context{
@@ -25,13 +24,13 @@
     NSArray *moodselections = [context executeFetchRequest:request error:&error];
     
     if(moodselections == nil){
-        MSLog(@"Error occured while fetching from database: %@", error);
+        NSLog(@"Error occured while fetching from database: %@", error);
         return nil;
     } else if(moodselections.count > 0){
-        MSLog(@"MoodSelection: (%@, %@) already exists in database, no new moodselection is made.", r, theta);
+        NSLog(@"MoodSelection: (%@, %@) already exists in database, no new moodselection is made.", r, theta);
         return moodselections[0];
     } else{*/
-        MSLog(@"Creating MoodSelection with elements: (%@, %@)", r, theta);
+        NSLog(@"Creating MoodSelection with elements: (%@, %@)", r, theta);
         MoodSelection *newSelection;
         newSelection = [NSEntityDescription insertNewObjectForEntityForName:@"MoodSelection"inManagedObjectContext:context];
         [newSelection setR:r];

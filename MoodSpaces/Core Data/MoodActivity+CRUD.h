@@ -8,9 +8,10 @@
 
 #import "MoodActivity.h"
 
-static NSString *MOODACTIVITY_TABLE = @"MoodActivity";
+static NSString *MOODACTIVITY_ENTITY = @"MoodActivity";
+static NSString *MOODACTIVITY_NAME = @"name";
 
-@interface MoodActivity (Create)
+@interface MoodActivity (CRUD)
 
 + (MoodActivity *)createMoodActivityWithName:(NSString *)name
                       inManagedObjectContext:(NSManagedObjectContext *)context;

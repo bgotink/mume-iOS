@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "MoodSpot.h"
 
 @interface MoodSpotAnnotation : NSObject <MKAnnotation>
@@ -15,5 +16,7 @@
 @property (nonatomic, strong) MoodSpot *moodSpot;
 
 + (MoodSpotAnnotation *) annotationForMoodSpot:(MoodSpot *)moodSpot;
+
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
 @end

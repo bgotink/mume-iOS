@@ -23,22 +23,32 @@
 
 @synthesize mapView = _mapView;
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //self.mapView.delegate = self;
+    
+    //MoodSpacesAppDelegate *appDelegate = (MoodSpacesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    //self.moodSpots = [MoodSpot findAllInManagedObjectContext:appDelegate.document.managedObjectContext];
+}
+
+- (void)updateMapView
+{
+    if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
+    if (self.moodSpots) [self.mapView addAnnotations:self.moodSpots];
+}
+
 - (void)setMapView:(MKMapView *)mapView
 {
-    self.mapView = mapView;
+    _mapView = mapView;
     [self updateMapView];
 }
 
 - (void)setMoodSpots:(NSArray *)moodSpots
 {
-    self.moodSpots = moodSpots;
+    _moodSpots = moodSpots;
     [self updateMapView];
-}
-                      
-- (void)updateMapView
-{
-    if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
-    if (self.moodSpots) [self.mapView addAnnotations:self.moodSpots];
 }
 
 - (NSArray *)moodSpotAnnotations
@@ -48,16 +58,6 @@
         [annotations addObject:[MoodSpotAnnotation annotationForMoodSpot:moodSpot]];
     }
     return annotations;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    //self.mapView.delegate = self;
-    
-    //MoodSpacesAppDelegate *appDelegate = (MoodSpacesAppDelegate *)[[UIApplication sharedApplication] delegate];
-    //self.moodSpots = [MoodSpot findAllInManagedObjectContext:appDelegate.document.managedObjectContext];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView

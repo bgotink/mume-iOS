@@ -6,22 +6,20 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "NewMoodViewController.h"
+#import "MoodViewController.h"
 #import "MoodSpacesAppDelegate.h"
-#import "Log.h"
+
 #import "Polar2DPoint.h"
 #import "InputViewController.h"
 
-@interface NewMoodViewController ()
+@interface MoodViewController ()
 
 @end
 
-@implementation NewMoodViewController
+@implementation MoodViewController
 
-@synthesize wheelImage;
-@synthesize wheelOverlay;
-@synthesize actionSelector;
-//@synthesize selectedMoods;
+@synthesize wheelView = _wheelView;
+@synthesize wheelOverlay = _wheelOverlay;
 
 - (void)viewDidLoad
 {
@@ -29,15 +27,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleWheelTap:)];
-    [wheelImage addGestureRecognizer:tapGesture];
+    [self.wheelView addGestureRecognizer:tapGesture];
     
-    [wheelOverlay setWheelView:wheelImage];
-    [wheelOverlay setFrame:wheelImage.frame];
+    [self.wheelOverlay setWheelView:self.wheelView];
+    [self.wheelOverlay setFrame:self.wheelView.frame];
     
-    [actionSelector setValues:@[@"NewMoodViewController",@"this",@"is",@"hardcoded"]];
-    [wheelOverlay setNeedsDisplay];
+    [self.wheelOverlay setNeedsDisplay];
     
-    MSLog(@"NewMoodViewController loaded");
+    NSLog(@"NewMoodViewController loaded");
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,22 +45,24 @@
 
 - (IBAction)handleWheelTap:(UIGestureRecognizer *) sender
 {
-    CGPoint tapPoint = [sender locationInView:wheelImage];
-    [wheelOverlay pointTapped:tapPoint];
+    CGPoint tapPoint = [sender locationInView:self.wheelView];
+    [self.wheelOverlay pointTapped:tapPoint];
 }
 
 - (IBAction)ResetButtonAction:(id)sender{
-    [wheelOverlay resetPoints];
+    [self.wheelOverlay resetPoints];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"nextStep"]) {
-        NSMutableArray *points = [NSMutableArray arrayWithCapacity:[wheelOverlay getNbOfPoints]];
-        for (int i = 0; i < [wheelOverlay getNbOfPoints]; i++) {
-            PolarCoordinate *coord = [wheelOverlay getPointPolar:i];
+        NSMutableArray *points = [NSMutableArray arrayWithCapacity:[self.wheelOverlay getNbOfPoints]];
+        for (int i = 0; i < [self.wheelOverlay getNbOfPoints]; i++) {
+            PolarCoordinate *coord = [self.wheelOverlay getPointPolar:i];
             Polar2DPoint *point = [Polar2DPoint fromPolarCoordinate:*coord];
             points[i] = point;
-            MSLog(@"coord: (%f, %f)", point.r, point.theta);
+            NSLog(@"coord: (%f, %f)", point.r, point.theta);
         }
         InputViewController *destViewController = segue.destinationViewController;
         destViewController.selectedMoods = points;

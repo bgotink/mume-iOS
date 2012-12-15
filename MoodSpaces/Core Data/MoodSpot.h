@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-
+#import <CoreLocation/CoreLocation.h>
 
 @class MoodEntry;
 
