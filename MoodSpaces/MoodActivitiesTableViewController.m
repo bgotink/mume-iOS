@@ -43,7 +43,7 @@
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:self.context
                                                                           sectionNameKeyPath:nil
-                                                                                   cacheName:@"MoodActivities"];
+                                                                                   cacheName:nil];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,6 +67,16 @@
 
     // TODO: Set MoodActivity
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"SegueDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        MoodActivity *moodActivity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [segue.destinationViewController performSelector:@selector(setMoodActivity:) withObject:moodActivity];
+    }
 }
 
 @end

@@ -93,6 +93,11 @@
     cell.textLabel.text = @"MoodActivity";
     cell.detailTextLabel.text = @"Not Set";
     return cell;
+}\
+
+- (IBAction)moodPeeps:(id)sender
+{
+    
 }
 
 - (IBAction)done:(id)sender

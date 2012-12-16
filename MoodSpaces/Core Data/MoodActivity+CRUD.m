@@ -8,41 +8,35 @@
 
 #import "MoodActivity+CRUD.h"
 
-
 @implementation MoodActivity (CRUD)
 
 /* Creates an activity with the given name if it doesn't already exits in the database. */
 + (MoodActivity *)createMoodActivityWithName:(NSString *)name
                       inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    
-    //Check whether a activity with the activity already exists in the database.
-    NSArray *activities = [MoodActivity queryMoodActivityWithName:name
-                                           inManagedObjectContext:context];
-    
-    if (!activities) {
+    MoodActivity *moodActivity;
+    //Check whether a location with the location already exists in the database.
+    NSArray *activities = [MoodActivity queryMoodActivityWithName:name inManagedObjectContext:context];
+    if (!activities || (activities.count > 1)) {
         NSLog(@"Error occured while fetching from database");
-        return nil;
-    } else if (activities.count > 0) {
+    } else if (activities.count == 1) {
         NSLog(@"MoodActivity with name: %@ already exists in database, no new MoodActivity is made.", name);
-        return activities[0];
+        moodActivity = [activities lastObject];
     } else {
-        NSLog(@"Creating Activity with activity: %@", name);
-        MoodActivity *activity = [NSEntityDescription insertNewObjectForEntityForName:MOODACTIVITY_TABLE
-                                                               inManagedObjectContext:context];
-        [activity setName:name];
-        return activity;
+        NSLog(@"Creating MoodActivity with name: %@", name);
+        moodActivity = [NSEntityDescription insertNewObjectForEntityForName:MOODACTIVITY_ENTITY
+                                                 inManagedObjectContext:context];
+        moodActivity.name = name;
     }
+    return moodActivity;
 }
 
 /* Query for an activity with the given name in the database. */
 + (NSArray *)queryMoodActivityWithName:(NSString *)name
                 inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODACTIVITY_TABLE];
-    request.fetchLimit = 1;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
-    request.predicate = predicate;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODACTIVITY_ENTITY];
+    request.predicate = [NSPredicate predicateWithFormat:@"%@ == %@", MOODACTIVITY_NAME, name];
     NSError *error;
     return [context executeFetchRequest:request error:&error];
 }

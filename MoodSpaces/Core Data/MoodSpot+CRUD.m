@@ -27,7 +27,6 @@
                                                  inManagedObjectContext:context];
         [moodSpot setName:name];
     }
-    NSLog(@"Returned MoodSpot = %@", moodSpot);
     return moodSpot;
 }
 
@@ -36,7 +35,7 @@
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODSPOT_ENTITY];
     request.fetchLimit = 1;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", name];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ == %@", MOODSPOT_NAME, name];
     request.predicate = predicate;
     NSError *error;
     return [context executeFetchRequest:request error:&error];
@@ -45,7 +44,7 @@
 + (NSArray *)queryAllInManagedObjectContext:(NSManagedObjectContext *)context
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODSPOT_ENTITY];
-    request.predicate = [NSPredicate predicateWithFormat:@"name != ''"];
+    request.predicate = [NSPredicate predicateWithFormat:@"%@ != ''", MOODSPOT_NAME];
     NSError *error;
     return [context executeFetchRequest:request error:&error];
 }

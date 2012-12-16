@@ -15,7 +15,6 @@
 @interface MoodSpotEditorViewController () <MKMapViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UIToolbar *toolbar;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, weak) IBOutlet UITextField *nameText;
 
@@ -26,7 +25,6 @@
 @implementation MoodSpotEditorViewController
 
 @synthesize toolbar =  _toolbar;
-@synthesize doneButton = _doneButton;
 @synthesize mapView = _mapView;
 @synthesize nameText = _nameText;
 
