@@ -12,7 +12,9 @@
         <relationship name="with" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodPerson" inverseName="in" inverseEntity="MoodPerson" syncable="YES"/>
     </entity>
     <entity name="MoodPerson" representedClassName="MoodPerson" syncable="YES">
-        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recordId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="with" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <entity name="MoodSelection" representedClassName="MoodSelection" syncable="YES">
@@ -27,10 +29,10 @@
         <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="at" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MoodActivity" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MoodEntry" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MoodPerson" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MoodSelection" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="MoodSpot" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MoodActivity" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="MoodEntry" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="MoodPerson" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="MoodSelection" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="MoodSpot" positionX="0" positionY="0" width="128" height="105"/>
     </elements>
 </model>

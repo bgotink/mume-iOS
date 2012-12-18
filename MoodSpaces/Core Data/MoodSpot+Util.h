@@ -7,6 +7,7 @@
 //
 
 #import "MoodSpot.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface MoodSpot (Util)
 

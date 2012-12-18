@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AddressBook/AddressBook.h>
+#import "MoodEntryDataSource.h"
+#import "MoodEntryDelegate.h"
 
 @interface MoodPeepsTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *contacts;
+@property (nonatomic, strong) NSDictionary *contacts;
+
+@property (nonatomic, weak) UIViewController <MoodEntryDataSource> *moodEntryDataSource;
+@property (nonatomic, weak) UIViewController <MoodEntryDelegate> *moodEntryDelegate;
 
 @end

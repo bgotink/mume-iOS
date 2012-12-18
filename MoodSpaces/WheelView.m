@@ -37,7 +37,6 @@
     CGPoint wheelCenter;
     wheelCenter.x = self.bounds.origin.x + self.bounds.size.width / 2;
     wheelCenter.y = self.bounds.origin.y + self.bounds.size.height / 2;
-    
     CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) * DEFAULT_SCALE / 2;
     
     NSLog(@"Drawing Wheel with radius: %f at (%f, %f)", radius, wheelCenter.x, wheelCenter.y);
@@ -198,30 +197,41 @@
 }
 
 //Returns the coordinates of the given point in polar format.
--(PolarCoordinate*)getPolar:(CGPoint)point
+- (PolarCoordinate *)getPolar:(CGPoint)point
 {
-    /*
     NSLog(@"Tapped wheel");
+    
+    CGPoint wheelCenter;
+    wheelCenter.x = self.bounds.origin.x + self.bounds.size.width / 2;
+    wheelCenter.y = self.bounds.origin.y + self.bounds.size.height / 2;
+    CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) * DEFAULT_SCALE / 2;
     
     float x = point.x - wheelCenter.x;
     float y = point.y - wheelCenter.y;
     
-    NSLog(@"Tap location: %f x %f", x, y);
+    NSLog(@"Tap location: %f x %f", point.x, point.y);
     
-    PolarCoordinate *retVal = malloc(sizeof(PolarCoordinate));
-    retVal->r = sqrt(x * x + y * y) / radius;
+    PolarCoordinate *result = [[PolarCoordinate alloc] init];
+    result.r = sqrt(x * x + y * y) / radius;
     
-    if (retVal->r > 1) {
-        NSLog(@"Tapped outside of wheel, ignore");
+    if(result.r > 1) {
         return nil;
     }
     
-    retVal->theta = atan2f(-y, x);
+    result.theta = atan2f(-y, x);
     
-    NSLog(@"Tap location polar: r = %f, theta = %f", retVal->r, retVal->theta);
-    return retVal;
-     */
-    return nil;
+    NSLog(@"Tap location polar: r = %f, theta = %f", result.r, result.theta);
+    return result;
+}
+
+- (CGPoint)getCGPoint:(PolarCoordinate *)polarCoordinate
+{
+    CGPoint wheelCenter;
+    wheelCenter.x = self.bounds.origin.x + self.bounds.size.width / 2;
+    wheelCenter.y = self.bounds.origin.y + self.bounds.size.height / 2;
+    CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) * DEFAULT_SCALE / 2;
+    
+    return CGPointMake(wheelCenter.x + polarCoordinate.r * radius * cosf(polarCoordinate.theta), wheelCenter.y - polarCoordinate.r * radius * sinf(polarCoordinate.theta));
 }
 
 @end

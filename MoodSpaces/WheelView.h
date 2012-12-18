@@ -11,6 +11,9 @@
 
 @interface WheelView : UIView
 
--(PolarCoordinate*)getPolar:(CGPoint)point;
+@property CGPoint wheelCenter;
+
+- (PolarCoordinate *)getPolar:(CGPoint)point;
+- (CGPoint)getCGPoint:(PolarCoordinate *)polarCoordinate;
 
 @end

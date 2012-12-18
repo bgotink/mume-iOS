@@ -12,7 +12,7 @@
 #import "MoodSpot+Util.h"
 #import "MoodSpacesAppDelegate.h"
 
-@interface MoodSpotEditorViewController () <MKMapViewDelegate>
+@interface MoodSpotEditorViewController () <MKMapViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
@@ -38,6 +38,7 @@
     
     [self createToolbar];
     self.mapView.delegate = self;
+    self.nameText.delegate = self;
     
     if(!self.moodSpot) {
         self.moodSpot = [MoodSpot createOrFetchMoodSpotWithName:@"" inManagedObjectContext:self.context];
@@ -116,6 +117,12 @@
         [self updateMapView];
         [self.mapView setUserTrackingMode:MKUserTrackingModeNone animated:YES];
     }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)locateUser:(id)sender

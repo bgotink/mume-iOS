@@ -1,12 +1,16 @@
 //
-//  PolarCoordinate.h
+//  Polar2dPoint.h
 //  MoodSpots
 //
-//  Created by Bram Gotink on 24/10/12.
+//  Created by Thypo on 11/30/12.
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-typedef struct PolarCoordinate {
-    float r;
-    float theta;
-} PolarCoordinate;
+#import <Foundation/Foundation.h>
+
+@interface PolarCoordinate : NSObject
+
+@property float r;
+@property float theta;
+
+@end

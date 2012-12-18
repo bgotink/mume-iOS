@@ -2,7 +2,7 @@
 //  MoodEntry.m
 //  MoodSpaces
 //
-//  Created by Michiel Staessen on 12/12/12.
+//  Created by Michiel Staessen on 18/12/12.
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
@@ -16,9 +16,9 @@
 @implementation MoodEntry
 
 @dynamic date;
-@dynamic with;
 @dynamic at;
-@dynamic feeling;
 @dynamic doing;
+@dynamic feeling;
+@dynamic with;
 
 @end

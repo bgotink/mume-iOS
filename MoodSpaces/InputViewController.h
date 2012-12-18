@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MoodSpot.h"
-#import "MoodActivity.h"
+#import "MoodEntryDataSource.h"
+#import "MoodEntryDelegate.h"
 
-@interface InputViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface InputViewController : UITableViewController
 
-@property (nonatomic, strong) MoodSpot* moodSpot;
-@property (nonatomic, strong) MoodActivity *moodActivity;
-@property (nonatomic, strong) NSArray *moodPeeps;
-
-@property (nonatomic, strong) NSArray *selectedMoods;
+@property (nonatomic, weak) UIViewController <MoodEntryDataSource> *moodEntryDataSource;
+@property (nonatomic, weak) UIViewController <MoodEntryDelegate> *moodEntryDelegate;
 
 @end

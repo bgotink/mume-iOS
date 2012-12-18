@@ -21,7 +21,8 @@
 @implementation MoodSpotsTableViewController 
 
 @synthesize context = _context;
-@synthesize dataSource = _dataSource;
+@synthesize moodEntryDataSource = _moodEntryDataSource;
+@synthesize moodEntryDelegate = _moodEntryDelegate;
 
 - (void)viewDidLoad
 {
@@ -75,9 +76,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MoodSpot *moodSpot = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    NSLog(@"Selected MoodSpot = %@", moodSpot);
-
-    // TODO: Set MoodSpot in inputController
+    [self.moodEntryDelegate setMoodSpot:moodSpot];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

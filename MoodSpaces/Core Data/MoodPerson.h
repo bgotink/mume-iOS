@@ -2,7 +2,7 @@
 //  MoodPerson.h
 //  MoodSpaces
 //
-//  Created by Michiel Staessen on 12/12/12.
+//  Created by Michiel Staessen on 18/12/12.
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
@@ -13,7 +13,9 @@
 
 @interface MoodPerson : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * firstName;
+@property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSNumber * recordId;
 @property (nonatomic, retain) NSSet *in;
 @end
 

@@ -6,12 +6,8 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodSpacesAppDelegate.h"
 #import "InputViewController.h"
-#import "OptionsViewController.h"
-#import "Polar2DPoint.h"
-#import "MoodViewController.h"
-
+#import "MoodSpacesAppDelegate.h"
 #import "MoodSelection+CRUD.h"
 #import "MoodEntry+CRUD.h"
 #import "MoodPerson+CRUD.h"
@@ -20,19 +16,38 @@
 
 @interface InputViewController ()
 
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
-
 @end
 
 @implementation InputViewController
 
-@synthesize tableView = _tableView;
+@synthesize moodEntryDataSource = _moodEntryDataSource;
+@synthesize moodEntryDelegate = _moodEntryDelegate;
 
-@synthesize moodSpot = _moodSpot;
-@synthesize moodActivity = _moodActivity;
-@synthesize moodPeeps = _moodPeeps;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 
-@synthesize selectedMoods = _selectedMoods;
+- (MoodSpot *)moodSpot
+{
+    return self.moodEntryDataSource.moodSpot;
+}
+
+- (NSSet *)moodPeeps
+{
+    return self.moodEntryDataSource.moodPeeps;
+}
+
+- (MoodActivity *)moodActivity
+{
+    return self.moodEntryDataSource.moodActivity;
+}
+
+- (NSArray *)moodSelections
+{
+    return self.moodEntryDataSource.moodSelections;
+}
 
 #pragma mark UITableViewDataSource
 
@@ -75,7 +90,7 @@
 {
     UITableViewCell *cell = [self cellWithReuseIdentifier:@"MoodSpot" inTableView:tableView];
     cell.textLabel.text = @"MoodSpot";
-    cell.detailTextLabel.text = @"Not Set";
+    cell.detailTextLabel.text = self.moodSpot ? self.moodSpot.name : @"Not Set";
     return cell;
 }
 
@@ -83,7 +98,7 @@
 {
     UITableViewCell *cell = [self cellWithReuseIdentifier:@"MoodPeeps" inTableView:tableView];
     cell.textLabel.text = @"MoodPeeps";
-    cell.detailTextLabel.text = @"Not Set";
+    cell.detailTextLabel.text = self.moodPeeps.count > 0 ? [self descriptionForMoodPeeps:self.moodEntryDataSource.moodPeeps] : @"Not Set";
     return cell;
 }
 
@@ -91,54 +106,30 @@
 {
     UITableViewCell *cell = [self cellWithReuseIdentifier:@"MoodActivity" inTableView:tableView];
     cell.textLabel.text = @"MoodActivity";
-    cell.detailTextLabel.text = @"Not Set";
+    cell.detailTextLabel.text = self.moodActivity ? self.moodActivity.name : @"Not Set";
     return cell;
-}\
+}
 
-- (IBAction)moodPeeps:(id)sender
+- (NSString *)descriptionForMoodPeeps:(NSSet *)moodPeeps
 {
-    
+    return [[moodPeeps allObjects] componentsJoinedByString:@", "];
 }
 
 - (IBAction)done:(id)sender
 {
-    /*
-    //TODO check of er nog dingen zijn die op nil staan en geef dan een notificatie aan de user dat hij dat nog moet selecteren.
     
-    //Step 1: Fetch the NSManagedObjectContext from the AppDelegate
-    MoodSpacesAppDelegate *appDelegate = (MoodSpacesAppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSManagedObjectContext *context = appDelegate.document.managedObjectContext;
-    
-    //Step 2: Fetch all the users input
-    //Step 2.1: Fetch the selected moods.
-    int numberOfSelectedMoods = [selectedMoods count];
-    NSMutableArray *localSelectedMoods = [[NSMutableArray alloc] initWithCapacity:numberOfSelectedMoods];
-    for (int i = 0; i < numberOfSelectedMoods; i++) {
-        Polar2DPoint *coord = [selectedMoods objectAtIndex:i];
-        [localSelectedMoods addObject:[MoodSelection createMoodSelection:[NSNumber numberWithFloat:coord.r] withTheta:[NSNumber numberWithFloat:coord.theta] inManagedObjectContext:context]];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    if ([segue.destinationViewController respondsToSelector:@selector(setMoodEntryDataSource:)]) {
+        [segue.destinationViewController performSelector:@selector(setMoodEntryDataSource:)
+                                              withObject:self.moodEntryDataSource];
     }
-    NSSet *selectedMoodsSet = [NSSet setWithArray:localSelectedMoods];
-    
-    //Step 2.2: Fetch people that are close by.
-    //TODO: create the possibility to select MULTIPLE nearby people on the input screen.
-    MoodPerson *moodPerson = [[MoodPerson queryMoodPersonWithName:selectedPerson inManagedObjectContext:context] objectAtIndex:0];
-    NSSet *moodPeople = [NSSet setWithObjects: moodPerson, nil];
-    
-    //Step 2.3: Fetch the location.
-    MoodSpot *moodSpot = [MoodSpot createMoodSpotWithName:selectedLocation atLatitude:0.0 atLongitude:0.0 inManagedObjectContext:context];
-    //MoodSpot *location = [MoodSpot createLocation:selectedLocation inManagedObjectContext:context];
-    
-    //Step 2.4: Fetch the activity.
-    MoodActivity *activity = [MoodActivity createMoodActivityWithName:selectedActivity inManagedObjectContext:context];
-    
-    //Step 3: create the moodEntry
-    [MoodEntry createMoodEntryWithSelections:selectedMoodsSet with:moodPeople at:moodSpot doing:activity inManagedObjectContext:context];
-    
-    //Step 4: explicitely save the document here.
-    [appDelegate saveDocument];
-    
-    NSLog(@"Submit successful");
-     */
+    if ([segue.destinationViewController respondsToSelector:@selector(setMoodEntryDelegate:)]) {
+        [segue.destinationViewController performSelector:@selector(setMoodEntryDelegate:)
+                                              withObject:self.moodEntryDelegate];
+    }
 }
 
 @end

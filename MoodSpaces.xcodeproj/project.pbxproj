@@ -14,21 +14,22 @@
 		255BC55D16318F0F00EEF8F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC55C16318F0F00EEF8F5 /* main.m */; };
 		255BC56116318F0F00EEF8F5 /* MoodSpacesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC56016318F0F00EEF8F5 /* MoodSpacesAppDelegate.m */; };
 		255BC56A16318F0F00EEF8F5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */; };
-		255BC56D16318F0F00EEF8F5 /* MoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC56C16318F0F00EEF8F5 /* MoodViewController.m */; };
+		255BC56D16318F0F00EEF8F5 /* MoodEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 255BC56C16318F0F00EEF8F5 /* MoodEntryViewController.m */; };
 		25E222B2163318EF004290B1 /* WheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222B1163318EF004290B1 /* WheelView.m */; };
 		25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E222BF16376BC0004290B1 /* WheelOverlay.m */; };
-		CF46A208167E16E0005ADB82 /* ladeuze.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CF46A207167E16E0005ADB82 /* ladeuze.gpx */; };
-		CF46A20B167E186B005ADB82 /* grotemarkt.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CF46A20A167E186B005ADB82 /* grotemarkt.gpx */; };
+		CF4CEE5C1680C109005BE6E6 /* MoodSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CEE5B1680C109005BE6E6 /* MoodSelection.m */; };
+		CF4CEE5F1680C109005BE6E6 /* MoodSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CEE5E1680C109005BE6E6 /* MoodSpot.m */; };
+		CF4CEE621680C109005BE6E6 /* MoodEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CEE611680C109005BE6E6 /* MoodEntry.m */; };
+		CF4CEE651680C109005BE6E6 /* MoodPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CEE641680C109005BE6E6 /* MoodPerson.m */; };
+		CF4CEE681680C109005BE6E6 /* MoodActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CEE671680C109005BE6E6 /* MoodActivity.m */; };
+		CF4CEE6F1680F88C005BE6E6 /* UnmanagedMoodPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CEE6E1680F88C005BE6E6 /* UnmanagedMoodPerson.m */; };
+		CF4CEE731680FA57005BE6E6 /* MoodPerson+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4CEE721680FA57005BE6E6 /* MoodPerson+Util.m */; };
 		CF583691167CC21E0069B662 /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF583690167CC21E0069B662 /* CoreDataTableViewController.m */; };
 		CF583695167CC9F50069B662 /* MoodSpot+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CF583694167CC9F50069B662 /* MoodSpot+Util.m */; };
 		CF5836A2167CE5C50069B662 /* MoodActivity+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CF5836A1167CE5C50069B662 /* MoodActivity+Util.m */; };
+		CF866BF6167FB5FA00D9C554 /* CartesianCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF866BF5167FB5FA00D9C554 /* CartesianCoordinate.m */; };
 		CF874D2E167A8BB300CFC8AE /* MoodSpotEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF874D2D167A8BB300CFC8AE /* MoodSpotEditorViewController.m */; };
 		CF874D31167B7D6300CFC8AE /* MoodSpotsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF874D30167B7D6300CFC8AE /* MoodSpotsTableViewController.m */; };
-		CFC57C371678EBC700D9273F /* MoodActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC57C361678EBC700D9273F /* MoodActivity.m */; };
-		CFC57C3A1678EBC700D9273F /* MoodEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC57C391678EBC700D9273F /* MoodEntry.m */; };
-		CFC57C3D1678EBC700D9273F /* MoodSpot.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC57C3C1678EBC700D9273F /* MoodSpot.m */; };
-		CFC57C401678EBC700D9273F /* MoodSelection.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC57C3F1678EBC700D9273F /* MoodSelection.m */; };
-		CFC57C431678EBC700D9273F /* MoodPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CFC57C421678EBC700D9273F /* MoodPerson.m */; };
 		CFC57C451678F4E400D9273F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC57C441678F4E400D9273F /* MapKit.framework */; };
 		CFC57C471678F4EA00D9273F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC57C461678F4EA00D9273F /* CoreLocation.framework */; };
 		CFC57C541679100000D9273F /* moodspaces-57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = CFC57C531679100000D9273F /* moodspaces-57x57.png */; };
@@ -40,19 +41,13 @@
 		CFDF54C6167CF08E0067DF26 /* MoodActivityEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF54C5167CF08E0067DF26 /* MoodActivityEditorViewController.m */; };
 		CFDF54D5167D2BA40067DF26 /* MoodPeepsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDF54D4167D2BA40067DF26 /* MoodPeepsTableViewController.m */; };
 		CFDF54D8167D2EED0067DF26 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFDF54D7167D2EED0067DF26 /* AddressBook.framework */; };
-		CFDF54DA167D472F0067DF26 /* leuven station.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CFDF54D9167D472F0067DF26 /* leuven station.gpx */; };
-		CFDF54DC167D47DB0067DF26 /* dekenstraat.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CFDF54DB167D47DB0067DF26 /* dekenstraat.gpx */; };
-		CFDF54DE167D49150067DF26 /* campus.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CFDF54DD167D49150067DF26 /* campus.gpx */; };
-		CFDF54E0167D4ABC0067DF26 /* gent.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CFDF54DF167D4ABC0067DF26 /* gent.gpx */; };
-		CFDF54E2167D4CC70067DF26 /* pennstation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CFDF54E1167D4CC70067DF26 /* pennstation.gpx */; };
 		F4D174071663D8F900785604 /* MoodActivity+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174061663D8F900785604 /* MoodActivity+CRUD.m */; };
 		F4D1740B1663DE1300785604 /* MoodSpot+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1740A1663DE1300785604 /* MoodSpot+CRUD.m */; };
 		F4D174121664130400785604 /* MoodSelection+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D174111664130400785604 /* MoodSelection+CRUD.m */; };
 		F4D17425166419EA00785604 /* MoodEntry+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D17424166419EA00785604 /* MoodEntry+CRUD.m */; };
 		F4D1742816641AA600785604 /* MoodPerson+CRUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D1742716641AA600785604 /* MoodPerson+CRUD.m */; };
 		F4D8B0971667E2B000086BFD /* InputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0961667E2B000086BFD /* InputViewController.m */; };
-		F4D8B09A1667E64600086BFD /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0991667E64600086BFD /* OptionsViewController.m */; };
-		F4D8B0A61668267000086BFD /* Polar2DPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0A51668266F00086BFD /* Polar2DPoint.m */; };
+		F4D8B0A61668267000086BFD /* PolarCoordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D8B0A51668266F00086BFD /* PolarCoordinate.m */; };
 		F4EB6DA01662543B0009F79E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EB6D9F1662543B0009F79E /* CoreData.framework */; };
 		F4FB2F5F1659207000687A9D /* MoodSpacesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4FB2F5D1659207000687A9D /* MoodSpacesModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -69,35 +64,40 @@
 		255BC55F16318F0F00EEF8F5 /* MoodSpacesAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodSpacesAppDelegate.h; sourceTree = "<group>"; };
 		255BC56016318F0F00EEF8F5 /* MoodSpacesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodSpacesAppDelegate.m; sourceTree = "<group>"; };
 		255BC56916318F0F00EEF8F5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		255BC56B16318F0F00EEF8F5 /* MoodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodViewController.h; sourceTree = "<group>"; };
-		255BC56C16318F0F00EEF8F5 /* MoodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodViewController.m; sourceTree = "<group>"; };
+		255BC56B16318F0F00EEF8F5 /* MoodEntryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoodEntryViewController.h; sourceTree = "<group>"; };
+		255BC56C16318F0F00EEF8F5 /* MoodEntryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoodEntryViewController.m; sourceTree = "<group>"; };
 		25E222B0163318EF004290B1 /* WheelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelView.h; sourceTree = "<group>"; };
 		25E222B1163318EF004290B1 /* WheelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelView.m; sourceTree = "<group>"; };
 		25E222BE16376BC0004290B1 /* WheelOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelOverlay.h; sourceTree = "<group>"; };
 		25E222BF16376BC0004290B1 /* WheelOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelOverlay.m; sourceTree = "<group>"; };
-		CF46A207167E16E0005ADB82 /* ladeuze.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ladeuze.gpx; sourceTree = "<group>"; };
-		CF46A20A167E186B005ADB82 /* grotemarkt.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = grotemarkt.gpx; sourceTree = "<group>"; };
+		CF4CEE5A1680C109005BE6E6 /* MoodSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodSelection.h; sourceTree = "<group>"; };
+		CF4CEE5B1680C109005BE6E6 /* MoodSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodSelection.m; sourceTree = "<group>"; };
+		CF4CEE5D1680C109005BE6E6 /* MoodSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodSpot.h; sourceTree = "<group>"; };
+		CF4CEE5E1680C109005BE6E6 /* MoodSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodSpot.m; sourceTree = "<group>"; };
+		CF4CEE601680C109005BE6E6 /* MoodEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodEntry.h; sourceTree = "<group>"; };
+		CF4CEE611680C109005BE6E6 /* MoodEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodEntry.m; sourceTree = "<group>"; };
+		CF4CEE631680C109005BE6E6 /* MoodPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodPerson.h; sourceTree = "<group>"; };
+		CF4CEE641680C109005BE6E6 /* MoodPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodPerson.m; sourceTree = "<group>"; };
+		CF4CEE661680C109005BE6E6 /* MoodActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodActivity.h; sourceTree = "<group>"; };
+		CF4CEE671680C109005BE6E6 /* MoodActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodActivity.m; sourceTree = "<group>"; };
+		CF4CEE6D1680F88C005BE6E6 /* UnmanagedMoodPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnmanagedMoodPerson.h; path = ../UnmanagedMoodPerson.h; sourceTree = "<group>"; };
+		CF4CEE6E1680F88C005BE6E6 /* UnmanagedMoodPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnmanagedMoodPerson.m; path = ../UnmanagedMoodPerson.m; sourceTree = "<group>"; };
+		CF4CEE711680FA56005BE6E6 /* MoodPerson+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MoodPerson+Util.h"; sourceTree = "<group>"; };
+		CF4CEE721680FA57005BE6E6 /* MoodPerson+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MoodPerson+Util.m"; sourceTree = "<group>"; };
 		CF58368F167CC21E0069B662 /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		CF583690167CC21E0069B662 /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		CF583693167CC9F50069B662 /* MoodSpot+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MoodSpot+Util.h"; sourceTree = "<group>"; };
 		CF583694167CC9F50069B662 /* MoodSpot+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MoodSpot+Util.m"; sourceTree = "<group>"; };
-		CF58369E167CE33C0069B662 /* SelectedMoodSpotDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedMoodSpotDataSource.h; sourceTree = "<group>"; };
 		CF5836A0167CE5C50069B662 /* MoodActivity+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MoodActivity+Util.h"; sourceTree = "<group>"; };
 		CF5836A1167CE5C50069B662 /* MoodActivity+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MoodActivity+Util.m"; sourceTree = "<group>"; };
+		CF631733167F8A280003D400 /* MoodEntryDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodEntryDataSource.h; sourceTree = "<group>"; };
+		CF631735167F8B300003D400 /* MoodEntryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodEntryDelegate.h; sourceTree = "<group>"; };
+		CF866BF4167FB5FA00D9C554 /* CartesianCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartesianCoordinate.h; sourceTree = "<group>"; };
+		CF866BF5167FB5FA00D9C554 /* CartesianCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartesianCoordinate.m; sourceTree = "<group>"; };
 		CF874D2C167A8BB300CFC8AE /* MoodSpotEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodSpotEditorViewController.h; sourceTree = "<group>"; };
 		CF874D2D167A8BB300CFC8AE /* MoodSpotEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodSpotEditorViewController.m; sourceTree = "<group>"; };
 		CF874D2F167B7D6300CFC8AE /* MoodSpotsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodSpotsTableViewController.h; sourceTree = "<group>"; };
 		CF874D30167B7D6300CFC8AE /* MoodSpotsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodSpotsTableViewController.m; sourceTree = "<group>"; };
-		CFC57C351678EBC700D9273F /* MoodActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodActivity.h; sourceTree = "<group>"; };
-		CFC57C361678EBC700D9273F /* MoodActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodActivity.m; sourceTree = "<group>"; };
-		CFC57C381678EBC700D9273F /* MoodEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodEntry.h; sourceTree = "<group>"; };
-		CFC57C391678EBC700D9273F /* MoodEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodEntry.m; sourceTree = "<group>"; };
-		CFC57C3B1678EBC700D9273F /* MoodSpot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodSpot.h; sourceTree = "<group>"; };
-		CFC57C3C1678EBC700D9273F /* MoodSpot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodSpot.m; sourceTree = "<group>"; };
-		CFC57C3E1678EBC700D9273F /* MoodSelection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodSelection.h; sourceTree = "<group>"; };
-		CFC57C3F1678EBC700D9273F /* MoodSelection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodSelection.m; sourceTree = "<group>"; };
-		CFC57C411678EBC700D9273F /* MoodPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodPerson.h; sourceTree = "<group>"; };
-		CFC57C421678EBC700D9273F /* MoodPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodPerson.m; sourceTree = "<group>"; };
 		CFC57C441678F4E400D9273F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CFC57C461678F4EA00D9273F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CFC57C531679100000D9273F /* moodspaces-57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moodspaces-57x57.png"; sourceTree = "<group>"; };
@@ -114,11 +114,6 @@
 		CFDF54D3167D2BA40067DF26 /* MoodPeepsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodPeepsTableViewController.h; sourceTree = "<group>"; };
 		CFDF54D4167D2BA40067DF26 /* MoodPeepsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodPeepsTableViewController.m; sourceTree = "<group>"; };
 		CFDF54D7167D2EED0067DF26 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		CFDF54D9167D472F0067DF26 /* leuven station.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "leuven station.gpx"; sourceTree = "<group>"; };
-		CFDF54DB167D47DB0067DF26 /* dekenstraat.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = dekenstraat.gpx; sourceTree = "<group>"; };
-		CFDF54DD167D49150067DF26 /* campus.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = campus.gpx; sourceTree = "<group>"; };
-		CFDF54DF167D4ABC0067DF26 /* gent.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gent.gpx; sourceTree = "<group>"; };
-		CFDF54E1167D4CC70067DF26 /* pennstation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = pennstation.gpx; sourceTree = "<group>"; };
 		F4D174051663D8F900785604 /* MoodActivity+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MoodActivity+CRUD.h"; sourceTree = "<group>"; };
 		F4D174061663D8F900785604 /* MoodActivity+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MoodActivity+CRUD.m"; sourceTree = "<group>"; };
 		F4D174091663DE1300785604 /* MoodSpot+CRUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MoodSpot+CRUD.h"; sourceTree = "<group>"; };
@@ -131,10 +126,8 @@
 		F4D1742716641AA600785604 /* MoodPerson+CRUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MoodPerson+CRUD.m"; sourceTree = "<group>"; };
 		F4D8B0951667E2B000086BFD /* InputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputViewController.h; sourceTree = "<group>"; };
 		F4D8B0961667E2B000086BFD /* InputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputViewController.m; sourceTree = "<group>"; };
-		F4D8B0981667E64600086BFD /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
-		F4D8B0991667E64600086BFD /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
-		F4D8B0A41668266F00086BFD /* Polar2DPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Polar2DPoint.h; sourceTree = "<group>"; };
-		F4D8B0A51668266F00086BFD /* Polar2DPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Polar2DPoint.m; sourceTree = "<group>"; };
+		F4D8B0A41668266F00086BFD /* PolarCoordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PolarCoordinate.h; sourceTree = "<group>"; };
+		F4D8B0A51668266F00086BFD /* PolarCoordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PolarCoordinate.m; sourceTree = "<group>"; };
 		F4EB6D9F1662543B0009F79E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F4FB2F5E1659207000687A9D /* MoodSpacesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MoodSpacesModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,13 +153,6 @@
 		255BC54116318F0F00EEF8F5 = {
 			isa = PBXGroup;
 			children = (
-				CF46A20A167E186B005ADB82 /* grotemarkt.gpx */,
-				CF46A207167E16E0005ADB82 /* ladeuze.gpx */,
-				CFDF54E1167D4CC70067DF26 /* pennstation.gpx */,
-				CFDF54DF167D4ABC0067DF26 /* gent.gpx */,
-				CFDF54DD167D49150067DF26 /* campus.gpx */,
-				CFDF54DB167D47DB0067DF26 /* dekenstraat.gpx */,
-				CFDF54D9167D472F0067DF26 /* leuven station.gpx */,
 				CFC57C5216790FB700D9273F /* Resources */,
 				255BC55616318F0F00EEF8F5 /* MoodSpaces */,
 				255BC54F16318F0F00EEF8F5 /* Frameworks */,
@@ -200,34 +186,37 @@
 		255BC55616318F0F00EEF8F5 /* MoodSpaces */ = {
 			isa = PBXGroup;
 			children = (
+				CF866BF4167FB5FA00D9C554 /* CartesianCoordinate.h */,
+				CF866BF5167FB5FA00D9C554 /* CartesianCoordinate.m */,
 				CFC57C481678F72900D9273F /* Core Data */,
 				F4D8B0951667E2B000086BFD /* InputViewController.h */,
 				F4D8B0961667E2B000086BFD /* InputViewController.m */,
 				255BC56816318F0F00EEF8F5 /* MainStoryboard.storyboard */,
 				CFDF54C1167CEB620067DF26 /* MoodActivitiesTableViewController.h */,
 				CFDF54C2167CEB620067DF26 /* MoodActivitiesTableViewController.m */,
+				CFDF54C4167CF08D0067DF26 /* MoodActivityEditorViewController.h */,
+				CFDF54C5167CF08E0067DF26 /* MoodActivityEditorViewController.m */,
+				CF631733167F8A280003D400 /* MoodEntryDataSource.h */,
+				CF631735167F8B300003D400 /* MoodEntryDelegate.h */,
+				255BC56B16318F0F00EEF8F5 /* MoodEntryViewController.h */,
+				255BC56C16318F0F00EEF8F5 /* MoodEntryViewController.m */,
+				CFDF54D3167D2BA40067DF26 /* MoodPeepsTableViewController.h */,
+				CFDF54D4167D2BA40067DF26 /* MoodPeepsTableViewController.m */,
 				255BC55F16318F0F00EEF8F5 /* MoodSpacesAppDelegate.h */,
 				255BC56016318F0F00EEF8F5 /* MoodSpacesAppDelegate.m */,
 				CFC57C5C167A0B6E00D9273F /* MoodSpotAnnotation.h */,
 				CFC57C5D167A0B6E00D9273F /* MoodSpotAnnotation.m */,
 				CF874D2C167A8BB300CFC8AE /* MoodSpotEditorViewController.h */,
 				CF874D2D167A8BB300CFC8AE /* MoodSpotEditorViewController.m */,
-				CFDF54D3167D2BA40067DF26 /* MoodPeepsTableViewController.h */,
-				CFDF54D4167D2BA40067DF26 /* MoodPeepsTableViewController.m */,
 				CF874D2F167B7D6300CFC8AE /* MoodSpotsTableViewController.h */,
 				CF874D30167B7D6300CFC8AE /* MoodSpotsTableViewController.m */,
 				CFC57C59167A06C000D9273F /* MoodSpotsViewController.h */,
 				CFC57C5A167A06C100D9273F /* MoodSpotsViewController.m */,
-				255BC56B16318F0F00EEF8F5 /* MoodViewController.h */,
-				255BC56C16318F0F00EEF8F5 /* MoodViewController.m */,
-				F4D8B0981667E64600086BFD /* OptionsViewController.h */,
-				F4D8B0991667E64600086BFD /* OptionsViewController.m */,
-				F4D8B0A41668266F00086BFD /* Polar2DPoint.h */,
-				F4D8B0A51668266F00086BFD /* Polar2DPoint.m */,
-				CFDF54C4167CF08D0067DF26 /* MoodActivityEditorViewController.h */,
-				CFDF54C5167CF08E0067DF26 /* MoodActivityEditorViewController.m */,
-				CF58369E167CE33C0069B662 /* SelectedMoodSpotDataSource.h */,
+				F4D8B0A41668266F00086BFD /* PolarCoordinate.h */,
+				F4D8B0A51668266F00086BFD /* PolarCoordinate.m */,
 				255BC55716318F0F00EEF8F5 /* Supporting Files */,
+				CF4CEE6D1680F88C005BE6E6 /* UnmanagedMoodPerson.h */,
+				CF4CEE6E1680F88C005BE6E6 /* UnmanagedMoodPerson.m */,
 				25E222BE16376BC0004290B1 /* WheelOverlay.h */,
 				25E222BF16376BC0004290B1 /* WheelOverlay.m */,
 				25E222B0163318EF004290B1 /* WheelView.h */,
@@ -256,27 +245,29 @@
 				F4D174061663D8F900785604 /* MoodActivity+CRUD.m */,
 				CF5836A0167CE5C50069B662 /* MoodActivity+Util.h */,
 				CF5836A1167CE5C50069B662 /* MoodActivity+Util.m */,
-				CFC57C351678EBC700D9273F /* MoodActivity.h */,
-				CFC57C361678EBC700D9273F /* MoodActivity.m */,
+				CF4CEE661680C109005BE6E6 /* MoodActivity.h */,
+				CF4CEE671680C109005BE6E6 /* MoodActivity.m */,
 				F4D17423166419EA00785604 /* MoodEntry+CRUD.h */,
 				F4D17424166419EA00785604 /* MoodEntry+CRUD.m */,
-				CFC57C381678EBC700D9273F /* MoodEntry.h */,
-				CFC57C391678EBC700D9273F /* MoodEntry.m */,
+				CF4CEE601680C109005BE6E6 /* MoodEntry.h */,
+				CF4CEE611680C109005BE6E6 /* MoodEntry.m */,
 				F4D1742616641AA600785604 /* MoodPerson+CRUD.h */,
 				F4D1742716641AA600785604 /* MoodPerson+CRUD.m */,
-				CFC57C411678EBC700D9273F /* MoodPerson.h */,
-				CFC57C421678EBC700D9273F /* MoodPerson.m */,
+				CF4CEE711680FA56005BE6E6 /* MoodPerson+Util.h */,
+				CF4CEE721680FA57005BE6E6 /* MoodPerson+Util.m */,
+				CF4CEE631680C109005BE6E6 /* MoodPerson.h */,
+				CF4CEE641680C109005BE6E6 /* MoodPerson.m */,
 				F4D174101664130400785604 /* MoodSelection+CRUD.h */,
 				F4D174111664130400785604 /* MoodSelection+CRUD.m */,
-				CFC57C3E1678EBC700D9273F /* MoodSelection.h */,
-				CFC57C3F1678EBC700D9273F /* MoodSelection.m */,
+				CF4CEE5A1680C109005BE6E6 /* MoodSelection.h */,
+				CF4CEE5B1680C109005BE6E6 /* MoodSelection.m */,
 				F4FB2F5D1659207000687A9D /* MoodSpacesModel.xcdatamodeld */,
 				F4D174091663DE1300785604 /* MoodSpot+CRUD.h */,
 				F4D1740A1663DE1300785604 /* MoodSpot+CRUD.m */,
 				CF583693167CC9F50069B662 /* MoodSpot+Util.h */,
 				CF583694167CC9F50069B662 /* MoodSpot+Util.m */,
-				CFC57C3B1678EBC700D9273F /* MoodSpot.h */,
-				CFC57C3C1678EBC700D9273F /* MoodSpot.m */,
+				CF4CEE5D1680C109005BE6E6 /* MoodSpot.h */,
+				CF4CEE5E1680C109005BE6E6 /* MoodSpot.m */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -348,13 +339,6 @@
 				CFC57C541679100000D9273F /* moodspaces-57x57.png in Resources */,
 				CFC57C561679101B00D9273F /* moodspaces-114x114.png in Resources */,
 				CFC57C581679113E00D9273F /* Default.png in Resources */,
-				CFDF54DA167D472F0067DF26 /* leuven station.gpx in Resources */,
-				CFDF54DC167D47DB0067DF26 /* dekenstraat.gpx in Resources */,
-				CFDF54DE167D49150067DF26 /* campus.gpx in Resources */,
-				CFDF54E0167D4ABC0067DF26 /* gent.gpx in Resources */,
-				CFDF54E2167D4CC70067DF26 /* pennstation.gpx in Resources */,
-				CF46A208167E16E0005ADB82 /* ladeuze.gpx in Resources */,
-				CF46A20B167E186B005ADB82 /* grotemarkt.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +351,7 @@
 			files = (
 				255BC55D16318F0F00EEF8F5 /* main.m in Sources */,
 				255BC56116318F0F00EEF8F5 /* MoodSpacesAppDelegate.m in Sources */,
-				255BC56D16318F0F00EEF8F5 /* MoodViewController.m in Sources */,
+				255BC56D16318F0F00EEF8F5 /* MoodEntryViewController.m in Sources */,
 				25E222B2163318EF004290B1 /* WheelView.m in Sources */,
 				25E222C016376BC0004290B1 /* WheelOverlay.m in Sources */,
 				F4FB2F5F1659207000687A9D /* MoodSpacesModel.xcdatamodeld in Sources */,
@@ -377,13 +361,7 @@
 				F4D17425166419EA00785604 /* MoodEntry+CRUD.m in Sources */,
 				F4D1742816641AA600785604 /* MoodPerson+CRUD.m in Sources */,
 				F4D8B0971667E2B000086BFD /* InputViewController.m in Sources */,
-				F4D8B09A1667E64600086BFD /* OptionsViewController.m in Sources */,
-				F4D8B0A61668267000086BFD /* Polar2DPoint.m in Sources */,
-				CFC57C371678EBC700D9273F /* MoodActivity.m in Sources */,
-				CFC57C3A1678EBC700D9273F /* MoodEntry.m in Sources */,
-				CFC57C3D1678EBC700D9273F /* MoodSpot.m in Sources */,
-				CFC57C401678EBC700D9273F /* MoodSelection.m in Sources */,
-				CFC57C431678EBC700D9273F /* MoodPerson.m in Sources */,
+				F4D8B0A61668267000086BFD /* PolarCoordinate.m in Sources */,
 				CFC57C5B167A06C200D9273F /* MoodSpotsViewController.m in Sources */,
 				CFC57C5E167A0B6F00D9273F /* MoodSpotAnnotation.m in Sources */,
 				CF874D2E167A8BB300CFC8AE /* MoodSpotEditorViewController.m in Sources */,
@@ -394,6 +372,14 @@
 				CFDF54C3167CEB630067DF26 /* MoodActivitiesTableViewController.m in Sources */,
 				CFDF54C6167CF08E0067DF26 /* MoodActivityEditorViewController.m in Sources */,
 				CFDF54D5167D2BA40067DF26 /* MoodPeepsTableViewController.m in Sources */,
+				CF866BF6167FB5FA00D9C554 /* CartesianCoordinate.m in Sources */,
+				CF4CEE5C1680C109005BE6E6 /* MoodSelection.m in Sources */,
+				CF4CEE5F1680C109005BE6E6 /* MoodSpot.m in Sources */,
+				CF4CEE621680C109005BE6E6 /* MoodEntry.m in Sources */,
+				CF4CEE651680C109005BE6E6 /* MoodPerson.m in Sources */,
+				CF4CEE681680C109005BE6E6 /* MoodActivity.m in Sources */,
+				CF4CEE6F1680F88C005BE6E6 /* UnmanagedMoodPerson.m in Sources */,
+				CF4CEE731680FA57005BE6E6 /* MoodPerson+Util.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

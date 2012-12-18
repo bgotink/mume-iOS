@@ -10,20 +10,12 @@
 
 #import "WheelView.h"
 
-@interface WheelOverlay : UIView {
-    WheelView *wheelView;
-    CGPoint *points;
-    int nbPoints;
-}
+@interface WheelOverlay : UIView
 
-@property (strong,nonatomic,setter=setWheelView:) WheelView *wheelView;
+@property (nonatomic, strong) WheelView *wheelView;
+@property (nonatomic, strong) NSMutableArray *points;
 
 - (void)pointTapped:(CGPoint)point;
-
-- (CGPoint*)getPoint:(int)index;
-- (PolarCoordinate*)getPointPolar:(int)index;
-- (int)getNbOfPoints;
-
-- (void)resetPoints;
+- (void)reset;
 
 @end

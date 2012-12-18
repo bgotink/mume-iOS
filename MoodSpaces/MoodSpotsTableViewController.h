@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataTableViewController.h"
-#import "SelectedMoodSpotDataSource.h"
+#import "MoodEntryDataSource.h"
+#import "MoodEntryDelegate.h"
 
 @interface MoodSpotsTableViewController : CoreDataTableViewController
 
-@property (nonatomic, weak) id <SelectedMoodSpotDataSource> dataSource;
+@property (nonatomic, weak) UIViewController <MoodEntryDataSource> *moodEntryDataSource;
+@property (nonatomic, weak) UIViewController <MoodEntryDelegate> *moodEntryDelegate;
 
 @end

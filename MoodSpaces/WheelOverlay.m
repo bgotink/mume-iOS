@@ -13,7 +13,7 @@
 
 @implementation WheelOverlay
 
-@synthesize wheelView;
+@synthesize wheelView = _wheelView;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -43,23 +43,28 @@
     return self;
 }
 
+- (NSMutableArray *)points
+{
+    if (!_points) {
+        _points = [[NSMutableArray  alloc] initWithCapacity:MAX_NB_POINTS];
+    }
+    return _points;
+}
+
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    if ((nbPoints == 0) || wheelView == nil)
-        return;
+    if (!self.wheelView || self.points.count == 0) return;
     
     NSLog(@"Drawing WheelOverlay...");
     
     CGPoint _point;
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    int i;
-    for(i = 0; i < nbPoints; i++) {
-        _point = points[i];
-        
+    for(PolarCoordinate *pc in self.points) {
+        _point = [self.wheelView getCGPoint:pc];
         
         //Waarom hier transformatie ipv gewoon _point.x en _point.y in te vullen in de addArc?
         CGContextConcatCTM(context, CGAffineTransformMakeTranslation(_point.x, _point.y));
@@ -72,60 +77,22 @@
     }
 }
 
-- (void)pointTapped:(CGPoint)newPoint
+- (void)pointTapped:(CGPoint)point
 {
-    if (points == nil) {
-        points = malloc(sizeof(CGPoint) * MAX_NB_POINTS);
-        if (points == nil) {
-            NSLog(@"Failed to create CGPoint array!!!");
-            return;
-        }
-    }
-    
-    if([wheelView getPolar:newPoint] != nil) {
-        if(nbPoints >= MAX_NB_POINTS) {
+    PolarCoordinate *coordinate = [self.wheelView getPolar:point];
+    if(coordinate) {
+        if(self.points.count >= MAX_NB_POINTS) {
             NSLog(@"Maximum nb points reached");
-                /*CGPoint temp1 = newPoint;
-                CGPoint temp2;
-                for (int i = MAX_NB_POINTS - 1; i >= 0; i--) {
-                    temp2 = points[i];
-                    points[i] = temp1;
-                    temp1 = temp2;
-                }
-            [self setNeedsDisplay];*/
         } else {
-            points[nbPoints++] = newPoint;
+            [self.points addObject:coordinate];
             [self setNeedsDisplay];
         }
     }
 }
 
-- (CGPoint*)getPoint:(int)index
+- (void)reset
 {
-    if (points == nil)
-        return nil;
-    
-    if (index < 0 || index >= nbPoints)
-        return nil;
-    return &points[index];
-}
-
-- (PolarCoordinate*)getPointPolar:(int)index
-{
-    if (points == nil)
-        return nil;
-    
-    if (index < 0 || index >= nbPoints)
-        return nil;
-    return [wheelView getPolar:points[index]];
-}
-
-- (int)getNbOfPoints{
-    return nbPoints;
-}
-
-- (void)resetPoints{
-    nbPoints = 0;
+    self.points = nil;
     [self setNeedsDisplay];
 }
 

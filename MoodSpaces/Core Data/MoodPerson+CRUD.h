@@ -12,10 +12,12 @@ static NSString *MOODPERSON_TABLE = @"MoodPerson";
 
 @interface MoodPerson (CRUD)
 
-+ (MoodPerson *)createMoodPersonWithName:(NSString *)name
-                  inManagedObjectContext:(NSManagedObjectContext *)context;
++ (MoodPerson *)createMoodPersonWithFirstName:(NSString *)firstName
+                                  andLastName:(NSString *)lastName
+                       inManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSArray *)queryMoodPersonWithName:(NSString *)name
-              inManagedObjectContext:(NSManagedObjectContext *)context;
++ (NSArray *)queryMoodPersonWithFirstName:(NSString *)firstName
+                              andLastName:(NSString *)lastName
+                   inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

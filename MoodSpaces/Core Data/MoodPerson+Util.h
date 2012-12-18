@@ -1,5 +1,5 @@
 //
-//  MoodPerson.m
+//  MoodPerson+Util.h
 //  MoodSpaces
 //
 //  Created by Michiel Staessen on 18/12/12.
@@ -7,14 +7,11 @@
 //
 
 #import "MoodPerson.h"
-#import "MoodEntry.h"
+#import "UnmanagedMoodPerson.h"
 
+@interface MoodPerson (Util)
 
-@implementation MoodPerson
-
-@dynamic firstName;
-@dynamic lastName;
-@dynamic recordId;
-@dynamic in;
+- (UnmanagedMoodPerson *)unmanagedCopy;
+- (NSString *)description;
 
 @end

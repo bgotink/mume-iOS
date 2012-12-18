@@ -18,6 +18,8 @@
 @implementation MoodActivitiesTableViewController
 
 @synthesize context = _context;
+@synthesize moodEntryDataSource = _moodEntryDataSource;
+@synthesize moodEntryDelegate = _moodEntryDelegate;
 
 - (void)viewDidLoad
 {
@@ -65,7 +67,7 @@
 {
     MoodActivity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
-    // TODO: Set MoodActivity
+    [self.moodEntryDelegate setMoodActivity:activity];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
