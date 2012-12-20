@@ -20,6 +20,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.contentMode = UIViewContentModeRedraw;
         self.backgroundColor = [UIColor clearColor];
     }
     return self;
@@ -29,6 +30,7 @@
 {
     self = [super init];
     if (self) {
+        self.contentMode = UIViewContentModeRedraw;
         self.backgroundColor = [UIColor clearColor];
     }
     return self;
@@ -38,6 +40,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.contentMode = UIViewContentModeRedraw;
         self.backgroundColor = [UIColor clearColor];
     }
     return self;

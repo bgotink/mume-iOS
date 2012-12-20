@@ -8,10 +8,11 @@
 
 #import "MoodSpotsViewController.h"
 #import <MapKit/MapKit.h>
-#import "MoodSpot.h"
-#import "MoodSpot+CRUD.h"
 #import "MoodSpotAnnotation.h"
+#import "MoodSpot+CRUD.h"
 #import "MoodSpacesAppDelegate.h"
+#import "MoodEntry.h"
+#import "MoodSelection+Util.h"
 
 @interface MoodSpotsViewController () <MKMapViewDelegate>
 
@@ -22,21 +23,50 @@
 @implementation MoodSpotsViewController
 
 @synthesize mapView = _mapView;
+@synthesize moodSpots = _moodSpots;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //self.mapView.delegate = self;
-    
-    //MoodSpacesAppDelegate *appDelegate = (MoodSpacesAppDelegate *)[[UIApplication sharedApplication] delegate];
-    //self.moodSpots = [MoodSpot findAllInManagedObjectContext:appDelegate.document.managedObjectContext];
+    self.mapView.delegate = self;
+    [self refresh:self];
+}
+
+- (IBAction)refresh:(id)sender
+{
+    self.moodSpots = [self fetchMoodSpotsAndVectors];
+}
+
+- (NSArray *)fetchMoodSpotsAndVectors
+{
+    MoodSpacesAppDelegate *appDelegate = (MoodSpacesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.document.managedObjectContext;
+    NSArray *moodSpots = [MoodSpot queryAllInManagedObjectContext:context];
+    for (int mood = 0; mood < 8; mood++) {
+        for (MoodSpot *spot in moodSpots) {
+            double vector = 0.0;
+            for (MoodEntry *entry in spot.in) {
+                double sum = 0.0;
+                double number = 0.0;
+                for (MoodSelection *selection in entry.feeling) {
+                    NSLog(@"MoodSelection = %@", selection.description);
+                    if(selection.mood == mood) {
+                        sum += [selection.r floatValue];
+                        number++;
+                    }
+                }
+                if (number != 0.0) vector += (sum / number);
+            }
+            [spot setVector:vector forMood:mood];
+        }
+    }
+    return moodSpots;
 }
 
 - (void)updateMapView
 {
     if (self.mapView.annotations) [self.mapView removeAnnotations:self.mapView.annotations];
-    if (self.moodSpots) [self.mapView addAnnotations:self.moodSpots];
+    [self.mapView addAnnotations:[self moodSpotAnnotations]];
 }
 
 - (void)setMapView:(MKMapView *)mapView
@@ -61,16 +91,21 @@
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
-            viewForAnnotation:(id<MKAnnotation>)annotation
+            viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:@"MoodSpotAnnotationView"];
-    if(!view) {
-        view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
-                                               reuseIdentifier:@"MoodSpotAnnotationView"];
-        view.canShowCallout = YES;
+    // Don't override the current user location pin...
+    if ([annotation isKindOfClass:[MKUserLocation class]]) return nil;
+    
+    static NSString *IDENTIFIER = @"MoodSpotAnnotation";
+    MKAnnotationView *view = [mapView dequeueReusableAnnotationViewWithIdentifier:IDENTIFIER];
+    if (!view) {
+        view = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                            reuseIdentifier:IDENTIFIER];
     }
+    view.draggable = NO;
+    view.canShowCallout = YES;
     view.annotation = annotation;
-    // TODO: view.image = [(MoodSpotAnnotation *)annotation createImage];
+    view.image = [(MoodSpotAnnotation *)annotation visualization];
     return view;
 }
 

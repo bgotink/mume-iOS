@@ -146,9 +146,8 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.fearVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _fearActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_fearActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
-                return [a1.fearVector compare:a2.fearVector];
+            _fearActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+                return [a1.fearVector compare:a1.fearVector];
             }];
         }
     }
@@ -162,9 +161,8 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.surpriseVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _surpriseActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_surpriseActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
-                return [a1.surpriseVector compare:a2.surpriseVector];
+            _surpriseActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+                return [a2.surpriseVector compare:a1.surpriseVector];
             }];
         }
     }
@@ -178,9 +176,8 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.sadnessVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _sadnessActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_sadnessActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
-                return [a1.surpriseVector compare:a2.surpriseVector];
+            _sadnessActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+                return [a2.surpriseVector compare:a1.surpriseVector];
             }];
         }
     }
@@ -194,9 +191,8 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.disgustVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _disgustActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_disgustActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
-                return [a1.disgustVector compare:a2.disgustVector];
+            _disgustActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+                return [a2.disgustVector compare:a1.disgustVector];
             }];
         }
     }
@@ -210,9 +206,8 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.angerVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _angerActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_angerActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
-                return [a1.angerVector compare:a2.angerVector];
+            _angerActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+                return [a2.angerVector compare:a1.angerVector];
             }];
         }
     }
@@ -226,9 +221,8 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.anticipationVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _anticipationActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_anticipationActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
-                return [a1.anticipationVector compare:a2.anticipationVector];
+            _anticipationActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+                return [a2.anticipationVector compare:a1.anticipationVector];
             }];
         }
     }
@@ -242,9 +236,8 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.joyVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _joyActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_joyActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
-                return [a1.joyVector compare:a2.joyVector];
+            _joyActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+                return [a2.joyVector compare:a1.joyVector];
             }];
         }
     }
@@ -258,8 +251,7 @@
             NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(MoodActivity *evaluatedObject, NSDictionary *bindings) {
                 return ![evaluatedObject.trustVector isEqualToNumber:[NSNumber numberWithDouble:0.0]];
             }];
-            _trustActivities = [self.moodActivities filteredArrayUsingPredicate:predicate];
-            [_trustActivities sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
+            _trustActivities = [[self.moodActivities filteredArrayUsingPredicate:predicate] sortedArrayUsingComparator:^NSComparisonResult(MoodActivity *a1, MoodActivity *a2) {
                 return [a1.trustVector compare:a2.trustVector];
             }];
         }

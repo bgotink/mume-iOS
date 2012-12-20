@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
-#import "MoodSpot.h"
+#import "MoodSpot+Util.h"
 
 static NSString *MOODSPOT_ENTITY = @"MoodSpot";
 static NSString *MOODSPOT_NAME = @"name";

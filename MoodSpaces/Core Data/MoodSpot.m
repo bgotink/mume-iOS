@@ -15,6 +15,14 @@
 @dynamic latitude;
 @dynamic longitude;
 @dynamic name;
+@dynamic angerVector;
+@dynamic anticipationVector;
+@dynamic disgustVector;
+@dynamic fearVector;
+@dynamic joyVector;
+@dynamic sadnessVector;
+@dynamic surpriseVector;
+@dynamic trustVector;
 @dynamic in;
 
 @end

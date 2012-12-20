@@ -7,25 +7,24 @@
 //
 
 #import "WheelView.h"
-
+#import "UIColor+Hex.h"
 
 #define DEFAULT_SCALE 0.9
 
 @interface WheelView ()
 
--(UIColor *)colorFromHex:(NSString*)hex;
-
 @end
 
 @implementation WheelView
 
-- (id)initWithFrame:(CGRect)frame
+- (void)setup
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+    self.contentMode = UIViewContentModeRedraw;
+}
+
+- (void)awakeFromNib
+{
+    [self setup];
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -42,14 +41,14 @@
     NSLog(@"Drawing Wheel with radius: %f at (%f, %f)", radius, wheelCenter.x, wheelCenter.y);
     
     // Define all the colors, yay
-    UIColor *joyColor = [self colorFromHex:@"EDC500"];
-    UIColor *trustColor = [self colorFromHex:@"7BBD0D"];
-    UIColor *fearColor = [self colorFromHex:@"007B33"];
-    UIColor *surpriseColor = [self colorFromHex:@"0081AB"];
-    UIColor *sadnessColor = [self colorFromHex:@"1F6CAD"];
-    UIColor *disgustColor = [self colorFromHex:@"7B4EA3"];
-    UIColor *angerColor = [self colorFromHex:@"DC0047"];
-    UIColor *anticipationColor = [self colorFromHex:@"E87200"];
+    UIColor *joyColor = [UIColor colorFromHex:@"EDC500"];
+    UIColor *trustColor = [UIColor colorFromHex:@"7BBD0D"];
+    UIColor *fearColor = [UIColor colorFromHex:@"007B33"];
+    UIColor *surpriseColor = [UIColor colorFromHex:@"0081AB"];
+    UIColor *sadnessColor = [UIColor colorFromHex:@"1F6CAD"];
+    UIColor *disgustColor = [UIColor colorFromHex:@"7B4EA3"];
+    UIColor *angerColor = [UIColor colorFromHex:@"DC0047"];
+    UIColor *anticipationColor = [UIColor colorFromHex:@"E87200"];
 
     [self drawPartWithName:@"fear" atIndex:0 withColor:fearColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
     [self drawPartWithName:@"surprise" atIndex:1 withColor:surpriseColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
@@ -157,42 +156,6 @@
         CGContextConcatCTM(context, CGAffineTransformMakeTranslation(-wheelCenter.x, -wheelCenter.y));
         CGContextSetTextMatrix(context, CGAffineTransformIdentity);
     }
-}
-
--(UIColor *)colorFromHex:(NSString*)hex
-{
-    NSString *cString = [[hex stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
-    
-    // String should be 6 or 8 characters
-    if ([cString length] < 6) return [UIColor grayColor];
-    
-    // strip 0X if it appears
-    if ([cString hasPrefix:@"0X"]) cString = [cString substringFromIndex:2];
-    
-    if ([cString length] != 6) return  [UIColor grayColor];
-    
-    // Separate into r, g, b substrings
-    NSRange range;
-    range.location = 0;
-    range.length = 2;
-    NSString *rString = [cString substringWithRange:range];
-    
-    range.location = 2;
-    NSString *gString = [cString substringWithRange:range];
-    
-    range.location = 4;
-    NSString *bString = [cString substringWithRange:range];
-    
-    // Scan values
-    unsigned int r, g, b;
-    [[NSScanner scannerWithString:rString] scanHexInt:&r];
-    [[NSScanner scannerWithString:gString] scanHexInt:&g];
-    [[NSScanner scannerWithString:bString] scanHexInt:&b];
-    
-    return [UIColor colorWithRed:((float) r / 255.0f)
-                           green:((float) g / 255.0f)
-                            blue:((float) b / 255.0f)
-                           alpha:1.0f];
 }
 
 //Returns the coordinates of the given point in polar format.

@@ -10,6 +10,11 @@
 
 @implementation MoodActivity (Util)
 
+- (NSString *)description
+{
+    return self.name;
+}
+
 - (void)setVector:(double)vector forMood:(NSInteger)mood
 {
     switch (mood) {
@@ -38,11 +43,6 @@
             self.trustVector = [NSNumber numberWithDouble:vector];
             break;
     }
-}
-
-- (NSString *)description
-{
-    return self.name;
 }
 
 - (NSString *)vectorForMood:(NSInteger)mood

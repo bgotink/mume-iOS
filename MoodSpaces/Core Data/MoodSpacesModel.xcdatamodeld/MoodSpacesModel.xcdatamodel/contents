@@ -39,9 +39,17 @@
         <relationship name="in" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="feeling" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <entity name="MoodSpot" representedClassName="MoodSpot" syncable="YES">
+        <attribute name="angerVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="anticipationVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="disgustVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fearVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="joyVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="latitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="sadnessVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="surpriseVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="trustVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="at" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <elements>
@@ -49,6 +57,6 @@
         <element name="MoodEntry" positionX="0" positionY="0" width="128" height="120"/>
         <element name="MoodPerson" positionX="0" positionY="0" width="128" height="225"/>
         <element name="MoodSelection" positionX="0" positionY="0" width="128" height="90"/>
-        <element name="MoodSpot" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="MoodSpot" positionX="0" positionY="0" width="128" height="225"/>
     </elements>
 </model>

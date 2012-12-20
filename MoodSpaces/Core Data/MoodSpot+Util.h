@@ -13,6 +13,8 @@
 
 - (void)setCoordinate:(CLLocationCoordinate2D)coordinate;
 - (NSString *)subtitle;
+- (void)setVector:(double)vector forMood:(NSInteger)mood;
+- (float)vectorForMood:(NSInteger)mood;
 
 
 @end

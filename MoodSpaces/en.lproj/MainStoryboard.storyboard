@@ -24,11 +24,11 @@
             <objects>
                 <tableViewController id="gRq-14-EZH" customClass="MoodActivitiesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="Q9n-AB-XBM">
-                        <rect key="frame" x="0.0" y="64" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodActivity" textLabel="vy0-NJ-MEk" detailTextLabel="zrO-m0-qPX" style="IBUITableViewCellStyleValue1" id="X9C-sE-rRt">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodActivity" textLabel="vy0-NJ-MEk" detailTextLabel="zrO-m0-qPX" style="IBUITableViewCellStyleValue1" id="X9C-sE-rRt">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -79,8 +79,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="YnO-rI-yLN">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" id="YnO-rI-yLN">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -144,7 +145,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
-                                            <segue destination="SDa-eB-h0M" kind="push" id="PZR-Qd-6QT"/>
+                                            <segue destination="FWT-Lc-1s8" kind="push" id="foR-7A-VCq"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="EBa-Xs-qOh" style="IBUITableViewCellStyleDefault" id="Ruh-xu-OHD">
@@ -198,7 +199,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MoodSpaces" id="uey-qj-kwh">
-                        <barButtonItem key="rightBarButtonItem" title="Enter" id="KFr-Ey-I1P">
+                        <barButtonItem key="rightBarButtonItem" title="New" id="KFr-Ey-I1P">
                             <connections>
                                 <segue destination="2" kind="push" id="PL3-SF-1XY"/>
                             </connections>
@@ -208,6 +209,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="go8-CJ-mdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1089" y="-485"/>
+        </scene>
+        <!--Mood Peeps View Controller - MoodPeeps-->
+        <scene sceneID="gZv-LO-ZNe">
+            <objects>
+                <tableViewController id="FWT-Lc-1s8" customClass="MoodPeepsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="ug5-6l-xnV">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoodPerson" textLabel="BV3-4Z-WvY" detailTextLabel="chh-NY-Zyj" style="IBUITableViewCellStyleValue1" id="O2J-bT-0RB">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BV3-4Z-WvY">
+                                            <rect key="frame" x="10" y="11" width="35" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="chh-NY-Zyj">
+                                            <rect key="frame" x="246" y="11" width="44" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.2196078431372549" green="0.32941176470588235" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FWT-Lc-1s8" id="QqU-RK-Ze7"/>
+                            <outlet property="delegate" destination="FWT-Lc-1s8" id="GC2-c9-BqG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="MoodPeeps" id="Aj8-JI-cEC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="hSr-N0-VTG">
+                            <connections>
+                                <action selector="refresh:" destination="FWT-Lc-1s8" id="uYh-BQ-vlp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Nf-N6-FAc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1089" y="190"/>
         </scene>
         <!--Mood Entry View Controller - Enter Mood-->
         <scene sceneID="5">
@@ -612,13 +665,73 @@
             <point key="canvasLocation" x="-497" y="-1162"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="InputViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/InputViewController.h"/>
+        </class>
+        <class className="MoodActivitiesTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodActivitiesTableViewController.h"/>
+        </class>
+        <class className="MoodActivitiesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodActivitiesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresh:"/>
+            </relationships>
+        </class>
+        <class className="MoodActivityEditorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodActivityEditorViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameText" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MoodEntryViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodEntryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="reset:"/>
+                <relationship kind="outlet" name="wheelOverlay" candidateClass="WheelOverlay"/>
+                <relationship kind="outlet" name="wheelView" candidateClass="WheelView"/>
+            </relationships>
+        </class>
+        <class className="MoodPeepsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodPeepsTableViewController.h"/>
+        </class>
+        <class className="MoodPeepsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodPeepsViewController.h"/>
+        </class>
+        <class className="MoodSpotEditorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodSpotEditorViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="done:"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="nameText" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="MoodSpotsTableViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodSpotsTableViewController.h"/>
+        </class>
+        <class className="MoodSpotsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoodSpotsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+            </relationships>
+        </class>
+        <class className="WheelOverlay" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WheelOverlay.h"/>
+        </class>
+        <class className="WheelView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WheelView.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vID-tK-Iqt"/>
         <segue reference="NK0-6O-YL7"/>
         <segue reference="tOG-H7-pXy"/>
     </inferredMetricsTieBreakers>

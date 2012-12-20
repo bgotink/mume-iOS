@@ -12,6 +12,7 @@
 @interface MoodPerson (Util)
 
 - (UnmanagedMoodPerson *)unmanagedCopy;
-- (NSString *)description;
+- (void)setVector:(double)vector forMood:(NSInteger)mood;
+- (NSString *)vectorForMood:(NSInteger)mood;
 
 @end
