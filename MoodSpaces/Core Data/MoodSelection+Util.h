@@ -1,5 +1,5 @@
 //
-//  MoodSelection.m
+//  MoodSelection+Util.h
 //  MoodSpaces
 //
 //  Created by Michiel Staessen on 20/12/12.
@@ -7,13 +7,9 @@
 //
 
 #import "MoodSelection.h"
-#import "MoodEntry.h"
 
+@interface MoodSelection (Util)
 
-@implementation MoodSelection
-
-@dynamic r;
-@dynamic theta;
-@dynamic in;
+- (int)mood;
 
 @end

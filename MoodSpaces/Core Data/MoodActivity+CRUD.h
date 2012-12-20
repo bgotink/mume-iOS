@@ -19,4 +19,6 @@ static NSString *MOODACTIVITY_NAME = @"name";
 + (NSArray *)queryMoodActivityWithName:(NSString *)name
                 inManagedObjectContext:(NSManagedObjectContext *)context;
 
++ (NSArray *)findAllInManagedObjectContext:(NSManagedObjectContext *)context;
+
 @end

@@ -8,7 +8,7 @@
 
 #import "MoodEntry.h"
 
-static NSString *MOODENTRY_TABLE = @"MoodEntry";
+static NSString *MOODENTRY_ENTITY = @"MoodEntry";
 
 @interface MoodEntry (CRUD)
 

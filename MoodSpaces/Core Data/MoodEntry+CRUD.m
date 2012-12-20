@@ -22,13 +22,13 @@
     //We dont check whether the same MoodEntry already exists because double are allowed.
     MoodEntry *entry;
     if (!entry) {
-        entry = [NSEntityDescription insertNewObjectForEntityForName:MOODENTRY_TABLE
+        entry = [NSEntityDescription insertNewObjectForEntityForName:MOODENTRY_ENTITY
                                               inManagedObjectContext:context];
-        
-        [entry setFeeling:moodSelections];
-        [entry setWith:moodPeeps];
-        [entry setAt:moodSpot];
-        [entry setDoing:moodActivity];
+        entry.date = [NSDate date];
+        entry.feeling = moodSelections;
+        entry.with = moodPeeps;
+        entry.at = moodSpot;
+        entry.doing = moodActivity;
     }
     return entry;
 }

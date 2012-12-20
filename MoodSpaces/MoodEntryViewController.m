@@ -88,9 +88,22 @@
     [self.wheelOverlay reset];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier
+                                  sender:(id)sender
+{
+    BOOL result = (self.wheelOverlay.points.count != 0);
+    if (!result) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Please enter your mood by clicking the wheel" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+    return result;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
+    self.moodSelections = self.wheelOverlay.points;
+    
     if ([segue.destinationViewController respondsToSelector:@selector(setMoodEntryDelegate:)]) {
         [segue.destinationViewController performSelector:@selector(setMoodEntryDelegate:)
                                               withObject:self];

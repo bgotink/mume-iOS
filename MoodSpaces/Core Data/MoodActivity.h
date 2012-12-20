@@ -2,7 +2,7 @@
 //  MoodActivity.h
 //  MoodSpaces
 //
-//  Created by Michiel Staessen on 18/12/12.
+//  Created by Michiel Staessen on 20/12/12.
 //  Copyright (c) 2012 KU Leuven Ariadne. All rights reserved.
 //
 
@@ -14,6 +14,14 @@
 @interface MoodActivity : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * fearVector;
+@property (nonatomic, retain) NSNumber * surpriseVector;
+@property (nonatomic, retain) NSNumber * sadnessVector;
+@property (nonatomic, retain) NSNumber * disgustVector;
+@property (nonatomic, retain) NSNumber * angerVector;
+@property (nonatomic, retain) NSNumber * anticipationVector;
+@property (nonatomic, retain) NSNumber * joyVector;
+@property (nonatomic, retain) NSNumber * trustVector;
 @property (nonatomic, retain) NSSet *in;
 @end
 

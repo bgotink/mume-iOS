@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C3006" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="MoodActivity" representedClassName="MoodActivity" syncable="YES">
+        <attribute name="angerVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="anticipationVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="disgustVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fearVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="joyVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="sadnessVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="surpriseVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="trustVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="doing" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <entity name="MoodEntry" representedClassName="MoodEntry" syncable="YES">
@@ -12,9 +20,17 @@
         <relationship name="with" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodPerson" inverseName="in" inverseEntity="MoodPerson" syncable="YES"/>
     </entity>
     <entity name="MoodPerson" representedClassName="MoodPerson" syncable="YES">
+        <attribute name="angerVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="anticipationVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="disgustVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fearVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="firstName" attributeType="String" syncable="YES"/>
+        <attribute name="joyVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="recordId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="sadnessVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="surpriseVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="trustVector" optional="YES" transient="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="with" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <entity name="MoodSelection" representedClassName="MoodSelection" syncable="YES">
@@ -29,9 +45,9 @@
         <relationship name="in" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntry" inverseName="at" inverseEntity="MoodEntry" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MoodActivity" positionX="0" positionY="0" width="128" height="75"/>
+        <element name="MoodActivity" positionX="0" positionY="0" width="128" height="195"/>
         <element name="MoodEntry" positionX="0" positionY="0" width="128" height="120"/>
-        <element name="MoodPerson" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="MoodPerson" positionX="0" positionY="0" width="128" height="225"/>
         <element name="MoodSelection" positionX="0" positionY="0" width="128" height="90"/>
         <element name="MoodSpot" positionX="0" positionY="0" width="128" height="105"/>
     </elements>

@@ -10,42 +10,48 @@
 
 @implementation MoodPerson (CRUD)
 
-/* Creates a person with the given name in the database if a person with this name didn't already exist in the database. */
-+ (MoodPerson *)createMoodPersonWithFirstName:(NSString *)firstName
-                                  andLastName:(NSString *)lastName
-                  inManagedObjectContext:(NSManagedObjectContext *)context
++ (MoodPerson *)findByRecordID:(ABRecordID)recordId
+        inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    // Check whether a person with the name already exists in the database.
-    NSArray *people = [MoodPerson queryMoodPersonWithFirstName:firstName
-                                                   andLastName:lastName
-                                        inManagedObjectContext:context];
-    if (!people) {
-        NSLog(@"Error occured while fetching from database");
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODPERSON_ENTITY];
+    request.predicate = [NSPredicate predicateWithFormat:@"%@ = %d", MOODPERSON_RECORD_ID, recordId];
+    request.fetchLimit = 1;
+    NSError *error = nil;
+    NSArray *people = [context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Got error %@", error);
         return nil;
-    } else if (people.count > 0) {
-        NSLog(@"Person with name: %@ %@ already exists in database, no new person is made.", firstName, lastName);
-        return people[0];
-    } else{
-        NSLog(@"Creating Person with name: %@ %@", firstName, lastName);
-        MoodPerson *person = [NSEntityDescription insertNewObjectForEntityForName:MOODPERSON_TABLE
-                                                           inManagedObjectContext:context];
-        person.firstName = firstName;
-        person.lastName = lastName;
-        return person;
+    } else {
+        return [people lastObject];
     }
 }
 
-/* This method queries for a person with the given name in the database. */
-+ (NSArray *)queryMoodPersonWithFirstName:(NSString *)firstName
-                              andLastName:(NSString *)lastName
-              inManagedObjectContext:(NSManagedObjectContext *)context
++ (MoodPerson *)moodPersonWithUnmanagedMoodPerson:(UnmanagedMoodPerson *)person
+                           inManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODPERSON_TABLE];
-    request.fetchLimit = 1;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@ %@", firstName, lastName];
-    request.predicate = predicate;
+    NSLog(@"Fetching %@", person);
+    MoodPerson *moodPerson = [MoodPerson findByRecordID:person.recordId
+                                 inManagedObjectContext:context];
+    NSLog(@"Fetched MoodPerson = %@", moodPerson);
+    if (!moodPerson) {
+        moodPerson = [NSEntityDescription insertNewObjectForEntityForName:MOODPERSON_ENTITY
+                                                   inManagedObjectContext:context];
+    }
+    moodPerson.recordId = [NSNumber numberWithInt:person.recordId];
+    moodPerson.firstName = person.firstName;
+    moodPerson.lastName = person.lastName;
+    return moodPerson;
+}
+
++ (NSArray *)findAllInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODPERSON_ENTITY];
     NSError *error;
-    return [context executeFetchRequest:request error:&error];
+    NSArray *result = [context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Error while fetching: %@", error);
+    }
+    return result;
 }
 
 @end

@@ -49,8 +49,11 @@
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+    NSError *error;
+    [self.document.managedObjectContext save:&error];
+    if (error) {
+        NSLog(@"Error saving document: %@", error);
+    }
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -75,70 +78,6 @@
     [self.document closeWithCompletionHandler:^(BOOL success) {
         if (!success) NSLog(@"Could not close document %@", self.document.fileURL.path);
     }];
-}
-
-- (void)documentIsReady{
-    //if (self.document.documentState == UIDocumentStateNormal){
-        //NSManagedObjectContext *context = self.document.managedObjectContext;
-        //Do something with it...
-        
-        //The following test code creates some database entities.
-        /*NSLog(@"It succeeded to make the context.");
-        NSManagedObject *newPerson = [NSEntityDescription insertNewObjectForEntityForName:@"Person" inManagedObjectContext:context];
-
-        
-        NSLog(@"Person is made");
-        [newPerson setValue:@"Geert" forKey:@"name"];
-        NSLog(@"value %@",[newPerson valueForKey:@"name"]);
-		
-        Person *michiel = [Person createPerson:@"Michiel" inManagedObjectContext:context];
-        NSLog(@"name: %@", michiel.name);
-        
-        Activity *mume = [Activity createActivity:@"mume12" inManagedObjectContext:context];
-        NSLog(@"activity: %@", mume.activity);
-        
-        Location *kot = [Location createLocation:@"kot" inManagedObjectContext:context];
-        NSLog(@"location: %@", kot.location);
-        
-        
-        //Waarom gebruik ik hier [NSNumber numberWithDouble:0.12] ??
-        // Omdat een NSManagedObject een double als een NSNumber opslaat en je dus een double moet wrappen met NSNumber.
-        MoodSelection *selection = [MoodSelection createMoodSelection:[NSNumber numberWithDouble:0.12] withTheta:[NSNumber numberWithDouble:1.23] inManagedObjectContext:context];
-        NSLog(@"moodselection: (%@, %@)", selection.r, selection.theta);
-        
-        NSSet *closePeople = [NSSet setWithObjects:michiel, newPerson, nil];
-        NSSet *selectedMoods = [NSSet setWithObject:selection];
-        
-        MoodEntry *entry = [MoodEntry createMoodEntry:closePeople at:kot withSelected:selectedMoods doing:mume inManagedObjectContext:context];
-        NSLog(@"MoodEntry: ");
-        for(Person *closePerson in entry.closePersons){
-            NSLog(@"closePeople contains: %@", closePerson.name);
-        }
-        NSLog(@"location: %@", entry.fromWhere.location);
-        for(MoodSelection *selectedMoods in entry.selectedMoods){
-            NSLog(@"selectedMoods contains: (%@, %@)", selectedMoods.r, selectedMoods.theta);
-        }
-        NSLog(@"activity: %@", entry.whichActivity.activity);
-        
-        //Object can be deleted by calling
-        //[self.document.managedObjectContext deleteObject:entry];
-        
-        //Querying
-        
-        NSArray *persons = [Person queryPerson:@"Michiel" inManagedObjectContext:context];
-        if(persons == nil){
-            NSLog(@"an error occured while querying");
-        } else{
-            NSLog(@"Persons found in database: ");
-            for(Person *result in persons){
-                NSLog(@"name: %@", result.name);
-            }
-            NSLog(@"___");
-        }
-        
-        Person *bram = [Person createPerson:@"Bram" inManagedObjectContext:context];
-        NSLog(@"name: %@", bram.name);*/
-    //}
 }
 
 @end

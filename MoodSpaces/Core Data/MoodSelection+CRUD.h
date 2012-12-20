@@ -7,9 +7,15 @@
 //
 
 #import "MoodSelection.h"
+#import "PolarCoordinate.h"
+
+static NSString *MOODSELECTION_ENTITY = @"MoodSelection";
+static NSString *MOODSELECTION_R = @"r";
+static NSString *MOODSELECTION_THETA = @"theta";
 
 @interface MoodSelection (CRUD)
 
-+ (MoodSelection *)createMoodSelection:(NSNumber *)r withTheta:(NSNumber *)theta inManagedObjectContext:(NSManagedObjectContext *)context;
++ (MoodSelection *)moodSelectionWithPolarCoordinate:(PolarCoordinate *)coordinate
+                             inManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end

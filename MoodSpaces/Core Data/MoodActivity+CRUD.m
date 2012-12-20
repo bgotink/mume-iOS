@@ -41,4 +41,15 @@
     return [context executeFetchRequest:request error:&error];
 }
 
++ (NSArray *)findAllInManagedObjectContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:MOODACTIVITY_ENTITY];
+    NSError *error;
+    NSArray *result = [context executeFetchRequest:request error:&error];
+    if (error) {
+        NSLog(@"Error while fetching: %@", error);
+    }
+    return result;
+}
+
 @end

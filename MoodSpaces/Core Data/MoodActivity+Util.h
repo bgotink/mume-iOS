@@ -10,4 +10,8 @@
 
 @interface MoodActivity (Util)
 
+- (void)setVector:(double)vector forMood:(NSInteger)mood;
+- (NSString *)description;
+- (NSString *)vectorForMood:(NSInteger)mood;
+
 @end

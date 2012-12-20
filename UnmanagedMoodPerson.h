@@ -13,6 +13,6 @@
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
-@property int recordId;
+@property ABRecordID recordId;
 
 @end

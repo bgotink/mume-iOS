@@ -50,16 +50,15 @@
     UIColor *disgustColor = [self colorFromHex:@"7B4EA3"];
     UIColor *angerColor = [self colorFromHex:@"DC0047"];
     UIColor *anticipationColor = [self colorFromHex:@"E87200"];
-    
-    
-    [self drawPartWithName:@"joy" atIndex:6 withColor:joyColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
-    [self drawPartWithName:@"trust" atIndex:7 withColor:trustColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+
     [self drawPartWithName:@"fear" atIndex:0 withColor:fearColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
     [self drawPartWithName:@"surprise" atIndex:1 withColor:surpriseColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
     [self drawPartWithName:@"sadness" atIndex:2 withColor:sadnessColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
     [self drawPartWithName:@"disgust" atIndex:3 withColor:disgustColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
     [self drawPartWithName:@"anger" atIndex:4 withColor:angerColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
     [self drawPartWithName:@"anticipation" atIndex:5 withColor:anticipationColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"joy" atIndex:6 withColor:joyColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
+    [self drawPartWithName:@"trust" atIndex:7 withColor:trustColor.CGColor fromCenter:wheelCenter withRadius:radius inContext:context];
 }
 
 -(void)drawPartWithName:(NSString*)name
@@ -199,8 +198,6 @@
 //Returns the coordinates of the given point in polar format.
 - (PolarCoordinate *)getPolar:(CGPoint)point
 {
-    NSLog(@"Tapped wheel");
-    
     CGPoint wheelCenter;
     wheelCenter.x = self.bounds.origin.x + self.bounds.size.width / 2;
     wheelCenter.y = self.bounds.origin.y + self.bounds.size.height / 2;
@@ -209,8 +206,6 @@
     float x = point.x - wheelCenter.x;
     float y = point.y - wheelCenter.y;
     
-    NSLog(@"Tap location: %f x %f", point.x, point.y);
-    
     PolarCoordinate *result = [[PolarCoordinate alloc] init];
     result.r = sqrt(x * x + y * y) / radius;
     
@@ -218,9 +213,10 @@
         return nil;
     }
     
-    result.theta = atan2f(-y, x);
+    result.theta = atan2f(y, x);
     
     NSLog(@"Tap location polar: r = %f, theta = %f", result.r, result.theta);
+    NSLog(@"Mood Index = %d", (int)(result.theta * 4 * M_1_PI + 8) % 8);
     return result;
 }
 
@@ -231,7 +227,7 @@
     wheelCenter.y = self.bounds.origin.y + self.bounds.size.height / 2;
     CGFloat radius = MIN(self.bounds.size.width, self.bounds.size.height) * DEFAULT_SCALE / 2;
     
-    return CGPointMake(wheelCenter.x + polarCoordinate.r * radius * cosf(polarCoordinate.theta), wheelCenter.y - polarCoordinate.r * radius * sinf(polarCoordinate.theta));
+    return CGPointMake(wheelCenter.x + polarCoordinate.r * radius * cosf(polarCoordinate.theta), wheelCenter.y + polarCoordinate.r * radius * sinf(polarCoordinate.theta));
 }
 
 @end

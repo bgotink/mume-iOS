@@ -10,9 +10,8 @@
 #import "MoodSpacesAppDelegate.h"
 #import "MoodSelection+CRUD.h"
 #import "MoodEntry+CRUD.h"
+#import "MoodEntry+Util.h"
 #import "MoodPerson+CRUD.h"
-#import "MoodSpot+CRUD.h"
-#import "MoodActivity+CRUD.h"
 
 @interface InputViewController ()
 
@@ -117,7 +116,32 @@
 
 - (IBAction)done:(id)sender
 {
+    // 1. Grab context
+    MoodSpacesAppDelegate *appDelegate = (MoodSpacesAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = appDelegate.document.managedObjectContext;
     
+    // 2. Create MoodSelections
+    NSMutableSet *selections = [[NSMutableSet alloc] initWithCapacity:self.moodEntryDataSource.moodSelections.count];
+    for (PolarCoordinate *coordinate in self.moodEntryDataSource.moodSelections) {
+        [selections addObject:[MoodSelection moodSelectionWithPolarCoordinate:coordinate
+                                                       inManagedObjectContext:context]];
+    }
+    
+    // 3. Create MoodPeeps
+    NSMutableSet *peeps = [[NSMutableSet alloc] initWithCapacity:self.moodEntryDataSource.moodPeeps.count];
+    for (UnmanagedMoodPerson *person in self.moodEntryDataSource.moodPeeps) {
+        [peeps addObject:[MoodPerson moodPersonWithUnmanagedMoodPerson:person
+                                                inManagedObjectContext:context]];
+    }
+    
+    // 4. Create MoodEntry
+    [MoodEntry createMoodEntryWithSelections:selections
+                                        with:peeps
+                                          at:self.moodEntryDataSource.moodSpot
+                                       doing:self.moodEntryDataSource.moodActivity
+                      inManagedObjectContext:context];
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender

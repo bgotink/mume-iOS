@@ -29,11 +29,6 @@
     return self.moodSpot.name;
 }
 
-- (NSString *)subtitle
-{
-    return @"Some Description";
-}
-
 - (CLLocationCoordinate2D)coordinate
 {
     return CLLocationCoordinate2DMake([self.moodSpot.latitude doubleValue], [self.moodSpot.longitude doubleValue]);

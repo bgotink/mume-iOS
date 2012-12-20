@@ -7,17 +7,22 @@
 //
 
 #import "MoodPerson.h"
+#import "UnmanagedMoodPerson.h"
+#import <AddressBook/AddressBook.h>
 
-static NSString *MOODPERSON_TABLE = @"MoodPerson";
+static NSString *MOODPERSON_ENTITY = @"MoodPerson";
+static NSString *MOODPERSON_RECORD_ID = @"recordId";
+static NSString *MOODPERSON_FIRST_NAME = @"firstName";
+static NSString *MOODPERSON_LAST_NAME = @"lastName";
 
 @interface MoodPerson (CRUD)
 
-+ (MoodPerson *)createMoodPersonWithFirstName:(NSString *)firstName
-                                  andLastName:(NSString *)lastName
-                       inManagedObjectContext:(NSManagedObjectContext *)context;
++ (MoodPerson *)findByRecordID:(ABRecordID)recordId
+        inManagedObjectContext:(NSManagedObjectContext *)context;
 
-+ (NSArray *)queryMoodPersonWithFirstName:(NSString *)firstName
-                              andLastName:(NSString *)lastName
-                   inManagedObjectContext:(NSManagedObjectContext *)context;
++ (MoodPerson *)moodPersonWithUnmanagedMoodPerson:(UnmanagedMoodPerson *)person
+                           inManagedObjectContext:(NSManagedObjectContext *)context;
+
++ (NSArray *)findAllInManagedObjectContext:(NSManagedObjectContext *)context;
 
 @end
