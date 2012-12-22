@@ -48,7 +48,7 @@ static NSString *RECORD_LAST_NAME = @"RECORD_LAST_NAME";
         if (granted) {
             // There are 26 letters in the alphabet, let's start with that :)
             NSMutableDictionary *contactsDictionary = [[NSMutableDictionary alloc] initWithCapacity:26];
-            CFArrayRef contacts = ABAddressBookCopyArrayOfAllPeople(addressBook);
+            CFArrayRef contacts = ABAddressBookCopyArrayOfAllPeopleInSource(addressBook, ABAddressBookCopyDefaultSource(addressBook));
             for(CFIndex index = 0; index < CFArrayGetCount(contacts); index++) {
                 ABRecordRef record = CFArrayGetValueAtIndex(contacts, index);
                 ABRecordID recordId = ABRecordGetRecordID(record);
@@ -125,7 +125,9 @@ static NSString *RECORD_LAST_NAME = @"RECORD_LAST_NAME";
 
 - (BOOL)isContactChecked:(UnmanagedMoodPerson *)contact
 {
-    for(UnmanagedMoodPerson *person in self.moodEntryDataSource.moodPeeps) {
+    NSArray *array = self.moodEntryDataSource.moodPeeps.allObjects;
+    for(int i = 0; i < self.moodEntryDataSource.moodPeeps.count; i++) {
+        UnmanagedMoodPerson *person = [array objectAtIndex:i];
         if(person.recordId == contact.recordId) {
             return YES;
         }
